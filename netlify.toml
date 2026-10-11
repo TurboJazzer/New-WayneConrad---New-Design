@@ -1,0 +1,193 @@
+[build]
+  command = "echo staging"
+  publish = "."
+  functions = "netlify/functions"
+[functions]
+  directory = "netlify/functions"
+# Enforce .html as the single canonical URL form site-wide.
+# Netlify's built-in Pretty URLs feature is deprecated and documented as
+# unreliable when toggled off, so this is handled explicitly here instead.
+# Strip Range header for crawlers to ensure full 200 OK HTML responses
+[[edge_functions]]
+  path = "/*.html"
+  function = "strip-range"
+[[edge_functions]]
+  path = "/*.html"
+  function = "serve-markdown"
+[[edge_functions]]
+  path = "/"
+  function = "serve-markdown"
+# Remove the ignored [[headers]] rule for Accept-Ranges = "none"
+[[redirects]]
+  from = "/resources"
+  to = "/resources.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/diagnostic"
+  to = "/diagnostic.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/ai-trust-gap"
+  to = "/ai-trust-gap.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/articles/real-cost-of-shadow-payroll.html"
+  to = "/articles/hidden-friction-tax.html"
+  status = 301
+  force = true
+# Allow public access to image files for social media crawlers
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Accept-Ranges = "none"
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    X-Robots-Tag = "all"
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    X-Robots-Tag = "all"
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    X-Robots-Tag = "all"
+# Block WordPress/CMS exploit scanning paths
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/wp-includes/*"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/xmlrpc.php/*"
+  to = "/index.html"
+  status = 404
+  force = true
+# Block Joomla/CMS exploit scanning paths
+[[redirects]]
+  from = "/administrator/*"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/api/index.php/*"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/.env"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/.env.*"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/.git/*"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/credentials.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/secrets.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/key.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/keyfile.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/service-account.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/firebase*.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/gcp-credentials.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/google-credentials.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/config.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/appsettings.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/account.json"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/api/env"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/api/config"
+  to = "/index.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/actuator/*"
+  to = "/index.html"
+  status = 404
+  force = true
+
+# STAGING ONLY: keep search engines out of the test site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

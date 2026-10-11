@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Health Scorecard | Wayne Conrad Advisory</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:     #0f172a;
+  --navy-mid: #1e3a8a;
+  --blue:     #2563eb;
+  --blue-lt:  #eff6ff;
+  --border:   #e2e8f0;
+  --mid-grey: #6b7280;
+  --off-white:#f8fafc;
+  --white:    #ffffff;
+  --text:     #0f172a;
+  --text-soft:#374151;
+  --danger:   #dc2626;
+  --warning:  #d97706;
+  --success:  #16a34a;
+}
+html { font-size: 16px; }
+body {
+  font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  background: var(--off-white);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+nav {
+  background: var(--navy);
+  padding: 0 5%; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; }
+.nav-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-link:hover { color: var(--white); }
+.page-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  padding: 52px 5% 48px;
+  position: relative; overflow: hidden;
+}
+.page-header::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue) 0%, #93c5fd 100%);
+}
+.page-header h1 {
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 700; color: var(--white);
+  line-height: 1.2; margin-bottom: 12px;
+}
+.page-header p {
+  font-size: 16px; color: rgba(255,255,255,0.65);
+  max-width: 560px; line-height: 1.7;
+}
+.header-meta { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+.header-meta span { font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.header-meta span::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #93c5fd; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 40px 5% 80px; }
+.how-to {
+  background: var(--white); border: 1px solid var(--border);
+  border-left: 3px solid var(--blue); border-radius: 4px;
+  padding: 24px 28px; margin-bottom: 32px;
+}
+.how-to h3 { font-size: 13px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+.how-to ol { padding-left: 18px; }
+.how-to li { font-size: 14px; color: var(--text-soft); line-height: 1.7; margin-bottom: 4px; }
+.section-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--blue); margin: 32px 0 14px;
+}
+.card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; margin-bottom: 16px; overflow: hidden; }
+.card-header { background: var(--navy); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.card-header-left { display: flex; align-items: center; gap: 12px; }
+.card-num {
+  width: 28px; height: 28px; background: rgba(255,255,255,0.12); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: #93c5fd; flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--white); }
+.client-score-badge {
+  font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+  background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);
+}
+.card-body { padding: 24px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mid-grey); }
+.field input { font-family: inherit; font-size: 14px; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 6px; color: var(--text); background: var(--off-white); outline: none; transition: border-color 0.15s; width: 100%; }
+.field input:focus { border-color: var(--blue); background: var(--white); }
+.field input::placeholder { color: #9ca3af; }
+
+/* SIGNAL ROWS */
+.signal-row {
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.signal-row:last-child { border-bottom: none; }
+.signal-text { font-size: 14px; color: var(--text-soft); line-height: 1.5; }
+.signal-text strong { color: var(--text); font-weight: 600; }
+.signal-options { display: flex; gap: 6px; flex-shrink: 0; }
+.sig-btn {
+  font-family: inherit; font-size: 11px; font-weight: 600;
+  padding: 7px 12px; border-radius: 4px;
+  border: 1.5px solid var(--border);
+  background: var(--white); color: var(--mid-grey);
+  cursor: pointer; transition: all 0.15s; white-space: nowrap;
+}
+.sig-btn.active-good { background: #dcfce7; border-color: #16a34a; color: #15803d; }
+.sig-btn.active-warn { background: #fef3c7; border-color: #d97706; color: #b45309; }
+.sig-btn.active-bad  { background: #fee2e2; border-color: #dc2626; color: #dc2626; }
+@media (max-width: 600px) {
+  .signal-row { grid-template-columns: 1fr; }
+  .signal-options { width: 100%; }
+  .sig-btn { flex: 1; }
+}
+
+.add-client-btn {
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  background: transparent; color: var(--blue);
+  border: 1.5px dashed var(--blue); border-radius: 6px;
+  padding: 12px 20px; cursor: pointer; width: 100%; margin-top: 8px;
+  transition: all 0.15s;
+}
+.add-client-btn:hover { background: var(--blue-lt); }
+.remove-client-btn {
+  font-family: inherit; font-size: 11px;
+  background: transparent; color: #94a3b8;
+  border: none; cursor: pointer; padding: 4px 8px;
+  transition: color 0.15s;
+}
+.remove-client-btn:hover { color: #fca5a5; }
+
+/* RESULTS */
+.results-panel { background: var(--navy); border-radius: 6px; padding: 32px; margin-top: 32px; }
+.results-panel h2 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
+.client-summary-row {
+  display: grid; grid-template-columns: 2fr 1fr 2fr;
+  align-items: center; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.client-summary-row:last-child { border-bottom: none; }
+.client-name { font-size: 14px; font-weight: 600; color: var(--white); }
+.client-score-pill {
+  font-size: 13px; font-weight: 700; padding: 5px 14px; border-radius: 20px;
+  text-align: center; white-space: nowrap;
+}
+.score-healthy { background: rgba(22,163,74,0.2); color: #4ade80; }
+.score-watch   { background: rgba(217,119,6,0.2); color: #fbbf24; }
+.score-risk    { background: rgba(220,38,38,0.2); color: #f87171; }
+.client-status-text { font-size: 12px; color: #94a3b8; }
+
+@media (max-width: 600px) {
+  .client-summary-row { grid-template-columns: 1fr; gap: 6px; text-align: left; }
+}
+
+.insight-box {
+  background: rgba(255,255,255,0.05); border-left: 3px solid #93c5fd;
+  border-radius: 0 6px 6px 0; padding: 20px 24px; margin-top: 20px;
+}
+.insight-box p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 10px; }
+.insight-box p:last-child { margin-bottom: 0; }
+.insight-box strong { color: var(--white); }
+
+.actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn-print {
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  background: var(--blue); color: var(--white);
+  padding: 13px 28px; border-radius: 4px; border: none; cursor: pointer; transition: background 0.2s;
+}
+.btn-print:hover { background: #1d4ed8; }
+.btn-clear {
+  font-family: inherit; font-size: 14px; font-weight: 500;
+  background: transparent; color: var(--mid-grey);
+  padding: 13px 28px; border-radius: 4px; border: 1.5px solid var(--border);
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-clear:hover { border-color: var(--text); color: var(--text); }
+
+footer {
+  background: var(--navy); padding: 24px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+footer p { font-size: 12px; color: #94a3b8; }
+footer a { font-size: 12px; color: #94a3b8; text-decoration: none; }
+footer a:hover { color: #93c5fd; }
+
+@media print {
+  nav, .how-to, .actions, footer, .add-client-btn, .remove-client-btn { display: none !important; }
+  body { background: white; }
+  .page-header { padding: 24px 0; }
+  .page-header::after { display: none; }
+  .wrap { padding: 20px 0; }
+  .results-panel { background: #0f172a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .client-card { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div id="gateOverlay" style="
+  position: fixed; inset: 0; z-index: 9999;
+  background: #f8fafc;
+  display: flex; align-items: center; justify-content: center;
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+">
+  <div id="gateMessage" style="text-align: center; max-width: 420px; padding: 32px;">
+    <p style="font-size: 14px; color: #6b7280;">Checking your access link…</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var token = params.get('token');
+  var overlay = document.getElementById('gateOverlay');
+  var messageEl = document.getElementById('gateMessage');
+
+  function showBlocked(reason) {
+    var text = 'This link is no longer valid.';
+    if (reason === 'expired') text = 'This link has expired. Links are valid for 7 days.';
+    if (reason === 'missing_token') text = 'This page requires an access link.';
+    messageEl.innerHTML =
+      '<p style="font-size: 15px; color: #0f172a; font-weight: 600; margin-bottom: 12px;">' + text + '</p>' +
+      '<p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">Request a fresh link from the resources page and it will arrive by email in a moment.</p>' +
+      '<a href="https://wayneconrad.com/resources.html" style="display: inline-block; background: #1d4ed8; color: #ffffff; font-size: 14px; font-weight: 600; padding: 10px 24px; border-radius: 4px; text-decoration: none;">Go to Resources</a>';
+  }
+
+  if (!token) {
+    showBlocked('missing_token');
+    return;
+  }
+
+  fetch('/.netlify/functions/verify-token?token=' + encodeURIComponent(token))
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (data.valid) {
+        overlay.remove();
+      } else {
+        showBlocked(data.reason);
+      }
+    })
+    .catch(function () {
+      showBlocked('error');
+    });
+})();
+</script>
+
+<nav>
+  <a href="https://wayneconrad.com/" class="nav-brand" style="display:flex;align-items:center;">
+    <picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32" style="display:block;"></picture>
+  </a>
+  <a href="https://wayneconrad.com/resources.html" class="nav-link">Back to Resources</a>
+</nav>
+
+<div class="page-header">
+  <h1>Client Health Scorecard</h1>
+  <p>Surface the early warning signals of client disengagement before a relationship is lost. Score each client weekly across six signals that predict churn before it happens.</p>
+  <div class="header-meta">
+    <span>Wayne Conrad Advisory</span>
+    <span>Fill in on screen then print to PDF</span>
+    <span>Review weekly with your team</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="how-to">
+    <h3>How to use this scorecard</h3>
+    <ol>
+      <li>Add each active client relationship you want to track.</li>
+      <li>For each client, rate the six signals based on what you have actually observed in the last two to four weeks, not what you assume or hope is true.</li>
+      <li>The results panel calculates a health status for each client automatically.</li>
+      <li>Clients flagged as "At Risk" or "Watch" are worth a direct conversation before the relationship cools further.</li>
+      <li>Print to PDF and review with your team weekly or fortnightly. Five minutes per client is enough.</li>
+    </ol>
+  </div>
+
+  <p class="section-label">Clients</p>
+  <div id="clientCards"></div>
+  <button class="add-client-btn" onclick="addClient()">+ Add another client</button>
+
+  <div class="results-panel" id="resultsPanel">
+    <h2>Client Health Summary</h2>
+    <div id="summaryRows"></div>
+    <div class="insight-box" id="insightBox">
+      <p>Add clients above and rate the six signals to see your health summary.</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn-print" onclick="window.print()">Print to PDF</button>
+    <button class="btn-clear" onclick="clearAll()">Clear all clients</button>
+  </div>
+
+</div>
+
+<footer>
+  <p>Wayne Conrad Advisory &nbsp;·&nbsp; Client Health Scorecard &nbsp;·&nbsp; wayneconrad.com</p>
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <a href="https://wayneconrad.com/" style="font-size:12px;color:#94a3b8;text-decoration:none;">Back to main site</a>
+    <a href="https://linkedin.com/in/wayneconrad" aria-label="LinkedIn" style="color:#94a3b8;display:flex;" onmouseover="this.style.color='#93c5fd'" onmouseout="this.style.color='#94a3b8'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://x.com/RealWayneConrad" aria-label="X" style="color:#94a3b8;display:flex;" onmouseover="this.style.color='#93c5fd'" onmouseout="this.style.color='#94a3b8'">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61574427795984" aria-label="Facebook" style="color:#94a3b8;display:flex;" onmouseover="this.style.color='#93c5fd'" onmouseout="this.style.color='#94a3b8'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@wayne.ai.automati" aria-label="TikTok" style="color:#94a3b8;display:flex;" onmouseover="this.style.color='#93c5fd'" onmouseout="this.style.color='#94a3b8'">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+    </a>
+    <a href="/privacy.html">Privacy</a>
+    <button id="cookie-preferences-link" onclick="window.showCookieBanner()" style="background:none;border:none;font-size:12px;color:#94a3b8;cursor:pointer;">Manage Cookies</button>
+  </div>
+</footer>
+
+<script src="/cookie-consent.js" defer></script>
+
+<script>
+const signals = [
+  { key: 'response', text: 'Response time to your messages compared to three months ago' },
+  { key: 'brief', text: 'Length and detail of their project briefs compared to three months ago' },
+  { key: 'frequency', text: 'How often they send new work compared to their historical pattern' },
+  { key: 'referrals', text: 'Whether they have referred anyone or mentioned you to others recently' },
+  { key: 'engagement', text: 'How engaged they are in calls and meetings, questions asked, energy level' },
+  { key: 'payment', text: 'Payment timeliness compared to their historical pattern' }
+];
+
+let clientCount = 0;
+
+function addClient() {
+  clientCount++;
+  const id = clientCount;
+  const container = document.getElementById('clientCards');
+  const div = document.createElement('div');
+  div.className = 'card client-card';
+  div.id = 'client' + id;
+
+  let signalsHtml = '';
+  signals.forEach(sig => {
+    signalsHtml += `
+      <div class="signal-row">
+        <div class="signal-text">${sig.text}</div>
+        <div class="signal-options">
+          <button class="sig-btn" onclick="setSignal(${id}, '${sig.key}', 'good', this)">Better / Same</button>
+          <button class="sig-btn" onclick="setSignal(${id}, '${sig.key}', 'warn', this)">Slightly worse</button>
+          <button class="sig-btn" onclick="setSignal(${id}, '${sig.key}', 'bad', this)">Noticeably worse</button>
+        </div>
+      </div>`;
+  });
+
+  div.innerHTML = `
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="card-num">${id}</div>
+        <div class="card-title">
+          <input type="text" placeholder="Client name" style="background:transparent;border:none;color:white;font-size:15px;font-weight:600;outline:none;width:200px;" oninput="recalc()" id="name${id}" />
+        </div>
+      </div>
+      <button class="remove-client-btn" onclick="removeClient(${id})">Remove ✕</button>
+    </div>
+    <div class="card-body">
+      ${signalsHtml}
+    </div>
+  `;
+  container.appendChild(div);
+  recalc();
+}
+
+function setSignal(clientId, sigKey, value, btn) {
+  const row = btn.closest('.signal-row');
+  row.querySelectorAll('.sig-btn').forEach(b => {
+    b.classList.remove('active-good', 'active-warn', 'active-bad');
+  });
+  btn.classList.add('active-' + value);
+  btn.dataset.value = value;
+  recalc();
+}
+
+function removeClient(id) {
+  const el = document.getElementById('client' + id);
+  if (el) el.remove();
+  recalc();
+}
+
+function recalc() {
+  const cards = document.querySelectorAll('.client-card');
+  const summaryContainer = document.getElementById('summaryRows');
+  let html = '';
+  let atRiskCount = 0;
+  let watchCount = 0;
+  let healthyCount = 0;
+  let worstClient = '';
+  let worstScore = 100;
+
+  cards.forEach(card => {
+    const id = card.id.replace('client', '');
+    const nameInput = document.getElementById('name' + id);
+    const name = nameInput.value || ('Client ' + id);
+
+    const buttons = card.querySelectorAll('.sig-btn');
+    let score = 0;
+    let rated = 0;
+    let badCount = 0;
+    let warnCount = 0;
+
+    const seen = {};
+    buttons.forEach(b => {
+      const row = b.closest('.signal-row');
+      if (b.classList.contains('active-good') || b.classList.contains('active-warn') || b.classList.contains('active-bad')) {
+        if (!seen[row]) {
+          seen[row] = true;
+          rated++;
+          if (b.classList.contains('active-good')) score += 100;
+          else if (b.classList.contains('active-warn')) { score += 50; warnCount++; }
+          else if (b.classList.contains('active-bad')) { score += 0; badCount++; }
+        }
+      }
+    });
+
+    const avgScore = rated > 0 ? Math.round(score / rated) : null;
+
+    let statusClass, statusText, statusLabel;
+    if (avgScore === null) {
+      statusClass = 'score-watch';
+      statusLabel = 'Not yet rated';
+      statusText = 'Rate the six signals above';
+    } else if (badCount >= 2 || avgScore < 50) {
+      statusClass = 'score-risk';
+      statusLabel = 'At Risk';
+      statusText = badCount + ' signal' + (badCount !== 1 ? 's' : '') + ' noticeably worse';
+      atRiskCount++;
+      if (avgScore < worstScore) { worstScore = avgScore; worstClient = name; }
+    } else if (badCount >= 1 || warnCount >= 2 || avgScore < 75) {
+      statusClass = 'score-watch';
+      statusLabel = 'Watch';
+      statusText = 'Some signals trending down';
+      watchCount++;
+      if (avgScore < worstScore) { worstScore = avgScore; worstClient = name; }
+    } else {
+      statusClass = 'score-healthy';
+      statusLabel = 'Healthy';
+      statusText = 'No concerning signals';
+      healthyCount++;
+    }
+
+    html += `
+      <div class="client-summary-row">
+        <div class="client-name">${name}</div>
+        <div class="client-score-pill ${statusClass}">${statusLabel}</div>
+        <div class="client-status-text">${statusText}</div>
+      </div>`;
+  });
+
+  summaryContainer.innerHTML = html || '<p style="font-size:13px;color:#94a3b8;">No clients added yet.</p>';
+
+  const insight = document.getElementById('insightBox');
+  if (cards.length === 0) {
+    insight.innerHTML = '<p>Add clients above and rate the six signals to see your health summary.</p>';
+  } else if (atRiskCount === 0 && watchCount === 0) {
+    insight.innerHTML = `
+      <p><strong>No clients flagged this week.</strong> That is a good result, not a reason to stop checking. The value of this scorecard comes from reviewing it consistently, not from one clean result.</p>
+      <p>Keep the weekly habit. The first sign of drift is usually small enough to miss if you are not looking deliberately.</p>
+    `;
+  } else {
+    let urgentNote = '';
+    if (atRiskCount > 0) {
+      urgentNote = `<p><strong>${atRiskCount} client${atRiskCount !== 1 ? 's are' : ' is'} flagged At Risk.</strong> ${worstClient ? 'Start with ' + worstClient + '.' : ''} A direct conversation now, while there is still something to act on, is worth more than waiting for them to raise it themselves. Most clients who are drifting will not tell you. They will simply send less work.</p>`;
+    }
+    let watchNote = '';
+    if (watchCount > 0) {
+      watchNote = `<p><strong>${watchCount} client${watchCount !== 1 ? 's' : ''} on Watch.</strong> Not urgent, but worth a check-in within the next two weeks before the trend continues.</p>`;
+    }
+    insight.innerHTML = urgentNote + watchNote + '<p style="margin-top:12px;font-size:13px;color:#94a3b8;">If you want to talk through how to approach one of these conversations, reply to your diagnostic report email or contact Wayne directly at wayne@wayneconrad.com.</p>';
+  }
+}
+
+function clearAll() {
+  if (!confirm('Clear all clients? This cannot be undone.')) return;
+  document.getElementById('clientCards').innerHTML = '';
+  clientCount = 0;
+  recalc();
+}
+
+// Start with two example client rows
+addClient();
+addClient();
+</script>
+</body>
+</html>

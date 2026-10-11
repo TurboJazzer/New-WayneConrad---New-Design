@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Manual Coordination Is Costing You | Wayne Conrad Advisory</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:     #0f172a;
+  --navy-mid: #1e3a8a;
+  --blue:     #2563eb;
+  --blue-lt:  #eff6ff;
+  --border:   #e2e8f0;
+  --mid-grey: #6b7280;
+  --off-white:#f8fafc;
+  --white:    #ffffff;
+  --text:     #0f172a;
+  --text-soft:#374151;
+  --danger:   #dc2626;
+  --warning:  #d97706;
+  --success:  #16a34a;
+}
+html { font-size: 16px; }
+body {
+  font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  background: var(--off-white);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+nav {
+  background: var(--navy);
+  padding: 0 5%;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; }
+.nav-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-link:hover { color: var(--white); }
+.page-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  padding: 52px 5% 48px;
+  position: relative; overflow: hidden;
+}
+.page-header::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue) 0%, #93c5fd 100%);
+}
+.page-header h1 {
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 700; color: var(--white);
+  line-height: 1.2; margin-bottom: 12px;
+}
+.page-header p {
+  font-size: 16px; color: rgba(255,255,255,0.65);
+  max-width: 560px; line-height: 1.7;
+}
+.header-meta {
+  display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap;
+}
+.header-meta span {
+  font-size: 12px; color: #94a3b8;
+  display: flex; align-items: center; gap: 6px;
+}
+.header-meta span::before {
+  content: ''; width: 4px; height: 4px;
+  border-radius: 50%; background: #93c5fd;
+}
+.wrap { max-width: 900px; margin: 0 auto; padding: 40px 5% 80px; }
+.how-to {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 4px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+}
+.how-to h3 { font-size: 13px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+.how-to ol { padding-left: 18px; }
+.how-to li { font-size: 14px; color: var(--text-soft); line-height: 1.7; margin-bottom: 4px; }
+.section-label {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--blue); margin: 32px 0 14px;
+}
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.card-header {
+  background: var(--navy);
+  padding: 14px 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.card-num {
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: #93c5fd;
+  flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: var(--white); }
+.card-body { padding: 24px; }
+.grid-3 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; margin-bottom: 14px; align-items: end; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+@media (max-width: 640px) { .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mid-grey); }
+.field input, .field select {
+  font-family: inherit; font-size: 14px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px; color: var(--text);
+  background: var(--off-white);
+  outline: none; transition: border-color 0.15s;
+}
+.field input:focus, .field select:focus { border-color: var(--blue); background: var(--white); }
+.field input::placeholder { color: #9ca3af; }
+.field-result {
+  font-family: inherit; font-size: 15px; font-weight: 600;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background: var(--blue-lt);
+  color: var(--blue);
+  min-height: 42px;
+}
+.add-btn {
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  background: transparent; color: var(--blue);
+  border: 1.5px dashed var(--blue);
+  border-radius: 6px; padding: 10px 20px;
+  cursor: pointer; width: 100%; margin-top: 8px;
+  transition: all 0.15s;
+}
+.add-btn:hover { background: var(--blue-lt); }
+.remove-btn {
+  font-family: inherit; font-size: 12px;
+  background: transparent; color: #9ca3af;
+  border: none; cursor: pointer; padding: 4px 8px;
+  transition: color 0.15s; align-self: flex-end; margin-bottom: 2px;
+}
+.remove-btn:hover { color: var(--danger); }
+.row-with-remove { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; margin-bottom: 10px; align-items: end; }
+@media (max-width: 640px) { .row-with-remove { grid-template-columns: 1fr; } }
+
+/* RESULTS PANEL */
+.results-panel {
+  background: var(--navy);
+  border-radius: 6px;
+  padding: 32px;
+  margin-top: 32px;
+}
+.results-panel h2 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 24px; }
+.results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.result-box {
+  background: rgba(255,255,255,0.07);
+  border-radius: 6px; padding: 20px;
+}
+.result-box label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; display: block; margin-bottom: 8px; }
+.result-value { font-size: 28px; font-weight: 700; color: #93c5fd; line-height: 1; }
+.result-sub { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+.result-box.highlight { background: rgba(37,99,235,0.25); border: 1px solid rgba(37,99,235,0.4); }
+.result-box.highlight .result-value { color: #ffffff; }
+.insight-box {
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid #93c5fd;
+  border-radius: 0 6px 6px 0;
+  padding: 20px 24px;
+  margin-top: 8px;
+}
+.insight-box p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 10px; }
+.insight-box p:last-child { margin-bottom: 0; }
+.insight-box strong { color: var(--white); }
+
+/* ACTIONS */
+.actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn-print {
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  background: var(--blue); color: var(--white);
+  padding: 13px 28px; border-radius: 4px;
+  border: none; cursor: pointer; transition: background 0.2s;
+}
+.btn-print:hover { background: #1d4ed8; }
+.btn-clear {
+  font-family: inherit; font-size: 14px; font-weight: 500;
+  background: transparent; color: var(--mid-grey);
+  padding: 13px 28px; border-radius: 4px;
+  border: 1.5px solid var(--border); cursor: pointer; transition: all 0.2s;
+}
+.btn-clear:hover { border-color: var(--text); color: var(--text); }
+
+footer {
+  background: var(--navy); padding: 24px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+footer p { font-size: 12px; color: #94a3b8; }
+footer a { font-size: 12px; color: #94a3b8; text-decoration: none; }
+footer a:hover { color: #93c5fd; }
+
+@media print {
+  nav, .how-to, .actions, footer, .add-btn, .remove-btn { display: none !important; }
+  body { background: white; }
+  .page-header { padding: 24px 0; }
+  .page-header::after { display: none; }
+  .wrap { padding: 20px 0; }
+  .results-panel { background: #0f172a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div id="gateOverlay" style="
+  position: fixed; inset: 0; z-index: 9999;
+  background: #f8fafc;
+  display: flex; align-items: center; justify-content: center;
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+">
+  <div id="gateMessage" style="text-align: center; max-width: 420px; padding: 32px;">
+    <p style="font-size: 14px; color: #6b7280;">Checking your access link…</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var token = params.get('token');
+  var overlay = document.getElementById('gateOverlay');
+  var messageEl = document.getElementById('gateMessage');
+
+  function showBlocked(reason) {
+    var text = 'This link is no longer valid.';
+    if (reason === 'expired') text = 'This link has expired. Links are valid for 7 days.';
+    if (reason === 'missing_token') text = 'This page requires an access link.';
+    messageEl.innerHTML =
+      '<p style="font-size: 15px; color: #0f172a; font-weight: 600; margin-bottom: 12px;">' + text + '</p>' +
+      '<p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">Request a fresh link from the resources page and it will arrive by email in a moment.</p>' +
+      '<a href="https://wayneconrad.com/resources.html" style="display: inline-block; background: #1d4ed8; color: #ffffff; font-size: 14px; font-weight: 600; padding: 10px 24px; border-radius: 4px; text-decoration: none;">Go to Resources</a>';
+  }
+
+  if (!token) {
+    showBlocked('missing_token');
+    return;
+  }
+
+  fetch('/.netlify/functions/verify-token?token=' + encodeURIComponent(token))
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (data.valid) {
+        overlay.remove();
+      } else {
+        showBlocked(data.reason);
+      }
+    })
+    .catch(function () {
+      showBlocked('error');
+    });
+})();
+</script>
+
+<nav>
+  <a href="https://wayneconrad.com/" class="nav-brand">Wayne Conrad Advisory</a>
+  <a href="https://wayneconrad.com/resources.html" class="nav-link">Back to Resources</a>
+</nav>
+
+<div class="page-header">
+  <h1>What Manual Coordination Is Costing You</h1>
+  <p>Calculate what manual coordination is actually costing your business. Enter your team roles, hourly cost, and hours spent on administrative work each week. The number usually surprises people, and it's the number that should come before any AI implementation, not after.</p>
+  <div class="header-meta">
+    <span>Wayne Conrad Advisory</span>
+    <span>Fill in on screen then print to PDF</span>
+    <span>Share with your leadership team</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="how-to">
+    <h3>How to use this calculator</h3>
+    <ol>
+      <li>Enter each person or role in your team in Section 1. Include their fully loaded cost per hour (salary plus on-costs divided by annual hours).</li>
+      <li>In Section 2, estimate how many hours per week each role spends on work that could be handled by a repeatable process. This includes manual reporting, data transfer, chasing approvals, formatting documents, and administrative coordination.</li>
+      <li>The results panel calculates your weekly and annual manual coordination cost automatically.</li>
+      <li>Print to PDF using your browser (File → Print → Save as PDF) and share with your leadership team.</li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1: TEAM -->
+  <p class="section-label">Section 1 — Team and Hourly Cost</p>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">1</div>
+      <div class="card-title">Enter each role and their fully loaded hourly cost</div>
+    </div>
+    <div class="card-body">
+      <div class="grid-3" style="margin-bottom:8px;">
+        <div class="field"><label>Role or name</label></div>
+        <div class="field"><label>Annual cost (total)</label></div>
+        <div class="field"><label>Hourly cost (auto)</label></div>
+      </div>
+      <div id="teamRows">
+        <div class="row-with-remove">
+          <div class="field"><input type="text" placeholder="e.g. Senior Consultant" oninput="recalc()" /></div>
+          <div class="field"><input type="number" placeholder="e.g. 85000" min="0" oninput="recalc()" /></div>
+          <div class="field"><div class="field-result" id="hr0">—</div></div>
+          <button class="remove-btn" onclick="removeRow(this)" title="Remove">✕</button>
+        </div>
+        <div class="row-with-remove">
+          <div class="field"><input type="text" placeholder="e.g. Account Manager" oninput="recalc()" /></div>
+          <div class="field"><input type="number" placeholder="e.g. 65000" min="0" oninput="recalc()" /></div>
+          <div class="field"><div class="field-result" id="hr1">—</div></div>
+          <button class="remove-btn" onclick="removeRow(this)" title="Remove">✕</button>
+        </div>
+        <div class="row-with-remove">
+          <div class="field"><input type="text" placeholder="e.g. Operations Coordinator" oninput="recalc()" /></div>
+          <div class="field"><input type="number" placeholder="e.g. 50000" min="0" oninput="recalc()" /></div>
+          <div class="field"><div class="field-result" id="hr2">—</div></div>
+          <button class="remove-btn" onclick="removeRow(this)" title="Remove">✕</button>
+        </div>
+      </div>
+      <button class="add-btn" onclick="addRow()">+ Add another role</button>
+      <div style="margin-top:16px;">
+        <div class="grid-2">
+          <div class="field">
+            <label>Currency</label>
+            <select id="currency" onchange="recalc()">
+              <option value="$">USD — US Dollar ($)</option>
+              <option value="R">ZAR — South African Rand (R)</option>
+              <option value="A$">AUD — Australian Dollar (A$)</option>
+              <option value="₹">INR — Indian Rupee (₹)</option>
+              <option value="S$">SGD — Singapore Dollar (S$)</option>
+              <option value="£">GBP — British Pound (£)</option>
+              <option value="฿">THB — Thai Baht (฿)</option>
+              <option value="€">EUR — Euro (€)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Working weeks per year</label>
+            <input type="number" id="weeksPerYear" value="48" min="1" max="52" oninput="recalc()" />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label>Working hours per week</label>
+            <input type="number" id="hoursPerWeek" value="40" min="1" max="80" oninput="recalc()" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: MANUAL COORDINATION HOURS -->
+  <p class="section-label">Section 2 — Manual Coordination Hours Per Week</p>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">2</div>
+      <div class="card-title">Hours per week each role spends on work a process should handle</div>
+    </div>
+    <div class="card-body">
+      <p style="font-size:13px;color:var(--mid-grey);margin-bottom:16px;line-height:1.6;">Include: manual reporting, copying information between documents, chasing approvals, formatting documents from scratch, sending status updates that a process should send automatically, administrative coordination that requires a person only because no process exists.</p>
+      <div id="shadowRows"></div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-panel" id="resultsPanel">
+    <h2>Your Manual Coordination Cost</h2>
+    <div class="results-grid">
+      <div class="result-box">
+        <label>Coordination hours per week</label>
+        <div class="result-value" id="totalHrsWeek">0</div>
+        <div class="result-sub">across your whole team</div>
+      </div>
+      <div class="result-box">
+        <label>Coordination cost per week</label>
+        <div class="result-value" id="totalCostWeek">$0</div>
+        <div class="result-sub">at your team's hourly rates</div>
+      </div>
+      <div class="result-box">
+        <label>Coordination cost per month</label>
+        <div class="result-value" id="totalCostMonth">$0</div>
+        <div class="result-sub">based on 48 working weeks</div>
+      </div>
+      <div class="result-box highlight">
+        <label>Coordination cost per year</label>
+        <div class="result-value" id="totalCostYear">$0</div>
+        <div class="result-sub">invisible on every cost report</div>
+      </div>
+    </div>
+    <div class="results-grid">
+      <div class="result-box">
+        <label>Coordination cost as % of total payroll</label>
+        <div class="result-value" id="pctOfPayroll">0%</div>
+        <div class="result-sub">industry average is 15 to 20%</div>
+      </div>
+      <div class="result-box">
+        <label>Highest coordination cost role</label>
+        <div class="result-value" style="font-size:18px;" id="highestRole">—</div>
+        <div class="result-sub">by weekly cost</div>
+      </div>
+    </div>
+    <div class="insight-box" id="insightBox">
+      <p>Enter your team details above to see your manual coordination calculation.</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn-print" onclick="window.print()">Print to PDF</button>
+    <button class="btn-clear" onclick="clearAll()">Clear all fields</button>
+  </div>
+
+</div>
+
+<footer>
+  <p>Wayne Conrad Advisory &nbsp;·&nbsp; Manual Coordination Cost Calculator &nbsp;·&nbsp; wayneconrad.com</p>
+  <a href="https://wayneconrad.com/">Back to main site</a>
+</footer>
+
+<script>
+let rowCount = 3;
+
+function addRow() {
+  rowCount++;
+  const container = document.getElementById('teamRows');
+  const idx = container.children.length;
+  const div = document.createElement('div');
+  div.className = 'row-with-remove';
+  div.innerHTML = `
+    <div class="field"><input type="text" placeholder="e.g. Project Manager" oninput="recalc()" /></div>
+    <div class="field"><input type="number" placeholder="0" min="0" oninput="recalc()" /></div>
+    <div class="field"><div class="field-result" id="hr${idx}">—</div></div>
+    <button class="remove-btn" onclick="removeRow(this)" title="Remove">✕</button>
+  `;
+  container.appendChild(div);
+  updateShadowRows();
+  recalc();
+}
+
+function removeRow(btn) {
+  const row = btn.closest('.row-with-remove');
+  row.remove();
+  updateShadowRows();
+  recalc();
+}
+
+function updateShadowRows() {
+  const teamRows = document.querySelectorAll('#teamRows .row-with-remove');
+  const shadowContainer = document.getElementById('shadowRows');
+  const existing = shadowContainer.querySelectorAll('.shadow-row');
+
+  // Add missing rows
+  for (let i = existing.length; i < teamRows.length; i++) {
+    const name = teamRows[i].querySelector('input[type="text"]').value || ('Role ' + (i+1));
+    const div = document.createElement('div');
+    div.className = 'shadow-row grid-3';
+    div.style.marginBottom = '10px';
+    div.innerHTML = `
+      <div class="field"><label>${name}</label><div style="font-size:13px;color:var(--mid-grey);padding:4px 0;">&nbsp;</div></div>
+      <div class="field"><label>Hours per week</label><input type="number" placeholder="0" min="0" max="40" step="0.5" oninput="recalc()" /></div>
+      <div class="field"><label>Weekly coordination cost</label><div class="field-result shadow-cost">$0</div></div>
+    `;
+    shadowContainer.appendChild(div);
+  }
+
+  // Remove extra rows
+  const allShadow = shadowContainer.querySelectorAll('.shadow-row');
+  for (let i = teamRows.length; i < allShadow.length; i++) {
+    allShadow[i].remove();
+  }
+
+  // Update labels
+  const updatedShadow = shadowContainer.querySelectorAll('.shadow-row');
+  teamRows.forEach((row, i) => {
+    if (updatedShadow[i]) {
+      const name = row.querySelector('input[type="text"]').value || ('Role ' + (i+1));
+      updatedShadow[i].querySelector('label').textContent = name;
+    }
+  });
+}
+
+function recalc() {
+  const weeks = parseFloat(document.getElementById('weeksPerYear').value) || 48;
+  const hrsPerWeek = parseFloat(document.getElementById('hoursPerWeek').value) || 40;
+  const sym = document.getElementById('currency').value || '$';
+  const annualHours = weeks * hrsPerWeek;
+
+  const teamRows = document.querySelectorAll('#teamRows .row-with-remove');
+  const shadowRows = document.querySelectorAll('#shadowRows .shadow-row');
+
+  // Update labels in shadow section
+  teamRows.forEach((row, i) => {
+    if (shadowRows[i]) {
+      const name = row.querySelector('input[type="text"]').value || ('Role ' + (i+1));
+      shadowRows[i].querySelector('label').textContent = name;
+    }
+  });
+
+  let totalPayroll = 0;
+  let totalShadowWeek = 0;
+  let totalShadowCostWeek = 0;
+  let highestCost = 0;
+  let highestName = '';
+
+  const hourlyRates = [];
+
+  teamRows.forEach((row, i) => {
+    const annual = parseFloat(row.querySelectorAll('input')[1].value) || 0;
+    const hourly = annualHours > 0 ? annual / annualHours : 0;
+    hourlyRates.push(hourly);
+    totalPayroll += annual;
+
+    const hrEl = document.getElementById('hr' + i);
+    if (hrEl) hrEl.textContent = hourly > 0 ? sym + hourly.toFixed(2) + '/hr' : '—';
+
+    if (shadowRows[i]) {
+      const shadowHrs = parseFloat(shadowRows[i].querySelector('input').value) || 0;
+      const shadowCost = shadowHrs * hourly;
+      totalShadowWeek += shadowHrs;
+      totalShadowCostWeek += shadowCost;
+
+      const costEl = shadowRows[i].querySelector('.shadow-cost');
+      if (costEl) costEl.textContent = sym + shadowCost.toFixed(0);
+
+      const name = row.querySelector('input[type="text"]').value || ('Role ' + (i+1));
+      if (shadowCost > highestCost) { highestCost = shadowCost; highestName = name; }
+    }
+  });
+
+  const totalShadowYear = totalShadowCostWeek * weeks;
+  const totalShadowMonth = totalShadowYear / 12;
+  const pct = totalPayroll > 0 ? (totalShadowYear / totalPayroll * 100) : 0;
+
+  document.getElementById('totalHrsWeek').textContent = totalShadowWeek.toFixed(1);
+  document.getElementById('totalCostWeek').textContent = sym + totalShadowCostWeek.toFixed(0);
+  document.getElementById('totalCostMonth').textContent = sym + totalShadowMonth.toFixed(0);
+  document.getElementById('totalCostYear').textContent = sym + totalShadowYear.toFixed(0);
+  document.getElementById('pctOfPayroll').textContent = pct.toFixed(1) + '%';
+  document.getElementById('highestRole').textContent = highestName || '—';
+
+  // Insight text
+  const insight = document.getElementById('insightBox');
+  if (totalShadowYear === 0) {
+    insight.innerHTML = '<p>Enter your team details above to see your manual coordination calculation.</p>';
+  } else {
+    let level = '';
+    let action = '';
+    if (pct < 10) {
+      level = 'Your manual coordination cost is below the service business average of 15 to 20 percent. Either your processes are well-designed, or the hours are being underestimated. Worth a second look at the roles doing the most coordination work.';
+      action = 'Map the three highest-volume coordination tasks in your business and ask whether a defined process could remove the manual step.';
+    } else if (pct < 20) {
+      level = 'Your manual coordination cost sits within the typical range for a service business at your stage. The cost is real but it is not yet at a level that suggests structural dysfunction. There is meaningful room to recover margin through process improvement.';
+      action = 'Start with the role showing the highest coordination cost. Map exactly what that person does manually each week and identify the single task most suitable for a repeatable process.';
+    } else {
+      level = 'Your manual coordination cost is above the typical range. At this level the cost is a margin problem, not an efficiency inconvenience. Your most expensive people are spending a significant portion of their week on work that does not require their expertise.';
+      action = 'This warrants a structured process mapping exercise before the next hire. Adding headcount into an environment with this level of administrative overhead typically makes the problem worse, not better.';
+    }
+    insight.innerHTML = `
+      <p>${level}</p>
+      <p><strong>What to do next:</strong> ${action}</p>
+      <p style="margin-top:12px;font-size:13px;color:#94a3b8;">If you want to talk through what this means for your business specifically, reply to your diagnostic report email or contact Wayne directly at wayne@wayneconrad.com.</p>
+    `;
+  }
+}
+
+function clearAll() {
+  if (!confirm('Clear all fields? This cannot be undone.')) return;
+  document.querySelectorAll('input[type="text"], input[type="number"]').forEach(el => {
+    if (el.id !== 'weeksPerYear' && el.id !== 'hoursPerWeek') el.value = '';
+  });
+  document.getElementById('weeksPerYear').value = 48;
+  document.getElementById('hoursPerWeek').value = 40;
+  recalc();
+}
+
+// Initialise shadow rows on load
+updateShadowRows();
+recalc();
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+
+</body>
+</html>

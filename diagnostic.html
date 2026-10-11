@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operational Dependency Diagnostic | Wayne Conrad</title>
+<meta name="description" content="Free 5-question assessment. Get a personalised report showing exactly where your business depends on you to run, and what to fix first.">
+<meta property="og:title" content="Operational Dependency Diagnostic | Wayne Conrad">
+<meta property="og:description" content="Free 5-question assessment. Get a personalised report showing exactly where your business depends on you to run, and what to fix first.">
+<meta property="og:image" content="https://wayneconrad.com/wayne_featured_slot1.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wayneconrad.com/diagnostic.html">
+<link rel="canonical" href="https://wayneconrad.com/diagnostic.html">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy-deep:   #0d1b4b;
+  --navy-mid:    #1a3a8f;
+  --navy-bright: #2450c8;
+  --blue-cta:    #2d5be3;
+  --blue-cta-h:  #1a46cc;
+  --blue-light:  #eef2ff;
+  --white:       #ffffff;
+  --body-bg:     #f4f6fb;
+  --card-bg:     #ffffff;
+  --border:      #dde2ef;
+  --text:        #0d1b4b;
+  --text-soft:   #445078;
+  --text-muted:  #8892b0;
+  --success:     #16a34a;
+  --danger:      #dc2626;
+}
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background: var(--body-bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 66px;
+  box-shadow: 0 1px 4px rgba(13,27,75,0.07);
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 15px; font-weight: 700;
+  color: var(--navy-deep); text-decoration: none;
+}
+.nav-icon {
+  width: 28px; height: 28px;
+  background: var(--blue-cta); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 14px;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--text-soft); text-decoration: none; transition: color 0.18s; }
+.nav-links a:hover { color: var(--navy-deep); }
+.nav-cta {
+  font-size: 13px; font-weight: 600;
+  background: var(--blue-cta); color: white;
+  padding: 9px 22px; border-radius: 7px;
+  text-decoration: none; transition: background 0.18s;
+  box-shadow: 0 2px 8px rgba(45,91,227,0.28);
+}
+.nav-cta:hover { background: var(--blue-cta-h); }
+@media (max-width: 640px) { nav { padding: 0 18px; } .nav-links { display: none; } }
+.hero {
+  padding: 86px 40px 70px;
+  text-align: center;
+  position: relative; overflow: hidden;
+  background: linear-gradient(140deg, var(--navy-deep) 0%, var(--navy-mid) 55%, var(--navy-bright) 100%);
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(220deg, rgba(45,91,227,0.25) 0%, transparent 55%);
+  pointer-events: none;
+}
+.hero-badge {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 20px; padding: 6px 16px;
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 26px;
+}
+.badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #4ade80;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.45;transform:scale(0.75);} }
+.hero h1 {
+  position: relative; z-index: 1;
+  font-size: clamp(30px, 5.5vw, 54px);
+  font-weight: 800; line-height: 1.1;
+  color: white; margin-bottom: 18px;
+  max-width: 740px; margin-left: auto; margin-right: auto;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(130deg, #93c5fd, #c4b5fd);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub {
+  position: relative; z-index: 1;
+  font-size: 17px; color: rgba(255,255,255,0.7);
+  max-width: 500px; margin: 0 auto 38px; line-height: 1.7;
+}
+.hero-btns {
+  position: relative; z-index: 1;
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 44px;
+}
+.btn-hw {
+  font-family: inherit; font-size: 15px; font-weight: 700;
+  background: white; color: var(--navy-deep);
+  padding: 14px 30px; border-radius: 8px; border: none; cursor: pointer;
+  display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18); transition: all 0.18s;
+}
+.btn-hw:hover { background: #eef2ff; transform: translateY(-1px); }
+.btn-ho {
+  font-family: inherit; font-size: 15px; font-weight: 600;
+  background: transparent; color: white;
+  padding: 14px 30px; border-radius: 8px;
+  border: 2px solid #94a3b8; cursor: pointer; transition: all 0.18s;
+}
+.btn-ho:hover { border-color: white; background: rgba(255,255,255,0.07); }
+.hero-meta {
+  position: relative; z-index: 1;
+  display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+  font-size: 12px; color: rgba(255,255,255,0.48);
+}
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
+.hero-meta span::before { content:''; width:3px; height:3px; border-radius:50%; background:rgba(255,255,255,0.35); }
+@media (max-width: 640px) { .hero { padding: 60px 20px 50px; } }
+.wrap { max-width: 720px; margin: 0 auto; padding: 56px 22px 100px; }
+.prog-wrap { margin-bottom: 36px; }
+.prog-top { display: flex; justify-content: space-between; font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 9px; }
+.prog-track { height: 5px; background: var(--border); border-radius: 5px; overflow: hidden; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, var(--blue-cta), #6b8ff5); border-radius: 5px; transition: width 0.5s cubic-bezier(0.4,0,0.2,1); }
+.q-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+  padding: 44px 48px 36px;
+  box-shadow: 0 2px 14px rgba(13,27,75,0.07);
+  animation: up 0.32s ease forwards;
+}
+@keyframes up { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
+@media (max-width: 640px) { .q-card { padding: 28px 20px 24px; } }
+.q-num { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--blue-cta); margin-bottom: 14px; }
+.q-text { font-size: clamp(17px, 2.6vw, 22px); font-weight: 700; line-height: 1.35; color: var(--text); margin-bottom: 8px; }
+.q-hint { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
+.opts { display: flex; flex-direction: column; gap: 9px; }
+.opt {
+  display: flex; align-items: flex-start; gap: 13px;
+  padding: 14px 17px;
+  background: var(--body-bg); border: 1.5px solid var(--border); border-radius: 9px;
+  cursor: pointer; text-align: left; width: 100%; font-family: inherit; color: var(--text);
+  transition: all 0.17s ease;
+}
+.opt:hover { border-color: var(--blue-cta); background: var(--blue-light); }
+.opt.sel { border-color: var(--blue-cta); background: var(--blue-light); box-shadow: inset 0 0 0 1px var(--blue-cta); }
+.opt-circle {
+  width: 20px; height: 20px; flex-shrink: 0;
+  border: 2px solid var(--border); border-radius: 50%; margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: transparent; background: white; transition: all 0.17s;
+}
+.opt.sel .opt-circle { background: var(--blue-cta); border-color: var(--blue-cta); color: white; }
+.opt-main { font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--text); }
+.opt-sub  { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.nav-row { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+.btn { font-family: inherit; font-size: 13px; font-weight: 600; padding: 11px 26px; border-radius: 7px; cursor: pointer; border: none; transition: all 0.17s; }
+.btn-back { background: transparent; border: 1.5px solid var(--border); color: var(--text-soft); }
+.btn-back:hover { border-color: var(--text-muted); color: var(--text); }
+.btn-next { background: var(--blue-cta); color: white; box-shadow: 0 2px 10px rgba(45,91,227,0.28); }
+.btn-next:hover { background: var(--blue-cta-h); }
+.btn-next:disabled { background: var(--border); color: var(--text-muted); cursor: not-allowed; box-shadow: none; }
+.contact-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+  padding: 44px 48px; box-shadow: 0 2px 14px rgba(13,27,75,0.07);
+  animation: up 0.32s ease forwards;
+}
+@media (max-width: 640px) { .contact-card { padding: 28px 20px; } }
+.contact-card h2 { font-size: 26px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.contact-card > p { font-size: 14px; color: var(--text-soft); margin-bottom: 28px; line-height: 1.65; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); }
+.field input, .field select {
+  font-family: inherit; font-size: 14px; padding: 11px 14px;
+  background: var(--body-bg); border: 1.5px solid var(--border);
+  border-radius: 7px; color: var(--text); outline: none; transition: border-color 0.17s;
+}
+.field input:focus, .field select:focus { border-color: var(--blue-cta); background: white; }
+.field input::placeholder { color: var(--text-muted); }
+.err { font-size: 12px; color: var(--danger); margin-top: 10px; }
+.load-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+  padding: 64px 48px; text-align: center;
+  box-shadow: 0 2px 14px rgba(13,27,75,0.07);
+  animation: up 0.32s ease forwards;
+}
+.spinner { width: 46px; height: 46px; border: 3px solid var(--border); border-top-color: var(--blue-cta); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 22px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.load-card h3 { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.load-card p { font-size: 13px; color: var(--text-muted); }
+.load-steps { margin: 28px auto 0; max-width: 300px; display: flex; flex-direction: column; gap: 11px; text-align: left; }
+.lstep { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 10px; transition: color 0.28s; }
+.lstep.active { color: var(--blue-cta); font-weight: 600; }
+.lstep.done   { color: var(--success); }
+.lsdot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.rep-header {
+  background: linear-gradient(140deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+  border-radius: 12px 12px 0 0; padding: 44px 48px;
+  position: relative; overflow: hidden;
+  animation: up 0.32s ease forwards;
+}
+.rep-header::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(45,91,227,0.3) 0%, transparent 65%);
+  pointer-events: none;
+}
+@media (max-width: 640px) { .rep-header { padding: 28px 22px; } }
+.rep-eye { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #94a3b8; margin-bottom: 14px; }
+.rep-header h2 { font-size: clamp(20px, 3.2vw, 30px); font-weight: 800; color: white; line-height: 1.25; margin-bottom: 4px; }
+.rep-co { font-size: 13px; color: #94a3b8; margin-bottom: 26px; }
+.score-row { display: flex; align-items: center; gap: 18px; }
+.ring-wrap { position: relative; width: 78px; height: 78px; flex-shrink: 0; }
+.ring-wrap svg { transform: rotate(-90deg); }
+.ring-num { position: absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size: 21px; font-weight: 800; color: white; }
+.score-text h3 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px; }
+.score-text p  { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; max-width: 360px; }
+.rep-body {
+  background: var(--card-bg); border: 1px solid var(--border); border-top: none;
+  padding: 40px 48px; animation: up 0.38s 0.08s ease both;
+}
+@media (max-width: 640px) { .rep-body { padding: 26px 22px; } }
+.rsec { margin-bottom: 34px; padding-bottom: 34px; border-bottom: 1px solid var(--border); }
+.rsec:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.rsec-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-cta); margin-bottom: 13px; }
+.rsec-text { font-size: 14px; color: var(--text-soft); line-height: 1.8; }
+.rsec-text strong { color: var(--text); font-weight: 600; }
+.rsec-text p { margin-bottom: 11px; }
+.rsec-text p:last-child { margin-bottom: 0; }
+.rep-cta {
+  background: var(--navy-deep);
+  border-radius: 0 0 12px 12px; padding: 36px 48px;
+  display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap;
+  animation: up 0.38s 0.16s ease both;
+}
+@media (max-width: 640px) { .rep-cta { padding: 26px 22px; flex-direction: column; align-items: flex-start; } }
+.rep-cta h3 { font-size: 19px; font-weight: 700; color: white; margin-bottom: 4px; }
+.rep-cta p  { font-size: 13px; color: rgba(255,255,255,0.5); max-width: 370px; line-height: 1.5; }
+.btn-book {
+  font-family: inherit; font-size: 14px; font-weight: 700;
+  background: white; color: var(--navy-deep);
+  padding: 13px 28px; border-radius: 8px; border: none; cursor: pointer; white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18); transition: all 0.17s; flex-shrink: 0;
+}
+.btn-book:hover { background: #eef2ff; transform: translateY(-1px); }
+.hidden { display: none !important; }
+footer {
+  background: var(--white); border-top: 1px solid var(--border);
+  padding: 22px 40px; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 10px;
+  font-size: 12px; color: var(--text-muted);
+}
+footer a { color: var(--blue-cta); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 640px) { footer { padding: 18px 20px; } }
+</style>
+<!-- STRUCTURED DATA: WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://wayneconrad.com/diagnostic.html#app",
+      "name": "Operational Dependency Diagnostic",
+      "url": "https://wayneconrad.com/diagnostic.html",
+      "description": "Free 5-question AI readiness assessment. Get a personalised report showing exactly where your business depends on you to run, and what to fix first.",
+      "applicationCategory": "BusinessApplication",
+      "browserRequirements": "Requires JavaScript and a modern web browser.",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://wayneconrad.com/#wayne-conrad",
+        "name": "Wayne Conrad",
+        "url": "https://wayneconrad.com",
+        "sameAs": [
+          "https://linkedin.com/in/wayneconrad",
+          "https://x.com/RealWayneConrad"
+        ]
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://wayneconrad.com/" class="nav-brand" style="display:flex;align-items:center;">
+    <picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32" style="display:block;"></picture>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://wayneconrad.com/#story">How it works</a></li>
+    <li><a href="https://wayneconrad.com/#about">About Wayne</a></li>
+  </ul>
+  <a href="https://linkedin.com/in/wayneconrad" target="_blank" class="nav-cta">Connect on LinkedIn</a>
+</nav>
+<div class="hero">
+  <div class="hero-badge"><span class="badge-dot"></span>Free AI Readiness Assessment &nbsp;&middot;&nbsp; 3 minutes</div>
+  <h1>Why is your business <em>still depending on you</em> to run?</h1>
+  <p class="hero-sub">5 questions. A personalised report that names exactly where founder dependency is holding your business operationally stuck, and what to fix first.</p>
+  <div class="hero-btns">
+    <button class="btn-hw" onclick="document.querySelector('.wrap').scrollIntoView({behavior:'smooth'})">
+      &#10003;&nbsp; Take the Free Diagnostic
+    </button>
+    <button class="btn-ho" onclick="window.location='https://wayneconrad.com/#story'">
+      How this works
+    </button>
+  </div>
+  <div class="hero-meta">
+    <span>28 years building service businesses</span>
+    <span>50+ SME clients</span>
+    <span>No generic scores</span>
+    <span>Personalised report</span>
+  </div>
+</div>
+<div class="wrap">
+  <div class="prog-wrap" id="progWrap">
+    <div class="prog-top">
+      <span id="progLabel">Question 1 of 5</span>
+      <span id="progPct">0%</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  </div>
+  <div id="qSection"></div>
+  <div id="teaserSection" class="hidden">
+    <div class="contact-card" id="teaserCard"></div>
+  </div>
+  <div id="contactSection" class="hidden">
+    <div class="contact-card">
+      <h2>Almost there.</h2>
+      <p>Your report is ready to generate. Enter your details below and Wayne will create a personalised assessment based on your exact answers.</p>
+      <div class="form-row">
+        <div class="field"><label>First name</label><input type="text" id="fName" placeholder="Sarah" /></div>
+        <div class="field"><label>Last name</label><input type="text" id="lName" placeholder="Mitchell" /></div>
+      </div>
+      <div class="field"><label>Business email</label><input type="email" id="email" placeholder="sarah@yourcompany.com" /></div>
+      <div class="form-row">
+        <div class="field"><label>Company name</label><input type="text" id="company" placeholder="Mitchell &amp; Co" /></div>
+        <div class="field">
+          <label>Team size</label>
+          <select id="teamSize">
+            <option value="">Select...</option>
+            <option value="1-10">1 to 10 people</option>
+            <option value="11-30">11 to 30 people</option>
+            <option value="31-75">31 to 75 people</option>
+            <option value="76-150">76 to 150 people</option>
+            <option value="150+">150 or more</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-next" style="font-size:14px;padding:13px 32px;margin-top:6px;" onclick="generateReport()">Generate my report</button>
+      <div id="contactErr"></div>
+    </div>
+  </div>
+  <div id="loadSection" class="hidden">
+    <div class="load-card">
+      <div class="spinner"></div>
+      <h3>Analysing your responses</h3>
+      <p>Building a report specific to your situation</p>
+      <div class="load-steps">
+        <div class="lstep active" id="ls1"><span class="lsdot"></span>Reading your answers</div>
+        <div class="lstep" id="ls2"><span class="lsdot"></span>Identifying your dependency pattern</div>
+        <div class="lstep" id="ls3"><span class="lsdot"></span>Writing your recommendations</div>
+        <div class="lstep" id="ls4"><span class="lsdot"></span>Finalising your report</div>
+      </div>
+    </div>
+  </div>
+  <div id="repSection" class="hidden">
+    <div class="rep-header" id="repHeader"></div>
+    <div class="rep-body"   id="repBody"></div>
+    <div class="rep-cta">
+      <div>
+        <h3>Want to go deeper?</h3>
+        <p>A 30-minute conversation with Wayne. No pitch, no slides. An honest look at where to focus first.</p>
+      </div>
+      <a href="mailto:wayne@wayneconrad.com?subject=I'd like to book a call&body=Hi Wayne, I just completed the diagnostic and would like to book a 30-minute call. Here are some times that work for me:" class="btn-book">Book a conversation</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <span>Wayne Conrad &nbsp;|&nbsp; AI Automation Advisor for SME Owners</span>
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <a href="https://linkedin.com/in/wayneconrad" aria-label="LinkedIn" style="display:flex;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://x.com/RealWayneConrad" aria-label="X" style="display:flex;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61574427795984" aria-label="Facebook" style="display:flex;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@wayne.ai.automati" aria-label="TikTok" style="display:flex;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+    </a>
+    <a href="/privacy.html">Privacy</a>
+    <button id="cookie-preferences-link" onclick="window.showCookieBanner()" style="background:none;border:none;font:inherit;color:inherit;cursor:pointer;">Manage Cookies</button>
+    <span>Available globally &nbsp;|&nbsp; <a href="https://wayneconrad.com/">wayneconrad.com</a></span>
+  </div>
+</footer>
+<script src="/cookie-consent.js" defer></script>
+<script>
+const Qs = [
+  { num:'Question 01', id:'q1',
+    text:'When you are away from the business for two days, what happens?',
+    sub:'Think about the last time you were genuinely unavailable for a full working day.',
+    opts:[
+      {v:'a', l:'The business runs without me needing to check in', h:'Clear processes and ownership mean things keep moving'},
+      {v:'b', l:'Things slow down but nothing critical breaks', h:'Some dependency on me but the team manages'},
+      {v:'c', l:'I get called or messaged about things that should not need me', h:'My availability is still the default for too many decisions'},
+      {v:'d', l:'I cannot really be away without something falling over', h:'The business depends on my presence to function normally'}
+    ]},
+  { num:'Question 02', id:'q2',
+    text:'How does work actually move through your business when you are not directly involved?',
+    sub:'Not how it is supposed to work. What you actually observe happening day to day.',
+    opts:[
+      {v:'a', l:'Clear ownership and defined steps mean work moves without me', h:'Processes are documented and people know what to do next'},
+      {v:'b', l:'Most things move but some tasks stall waiting for my input', h:'Partial dependency — I am still in the loop more than I should be'},
+      {v:'c', l:'Work moves but people compensate manually for gaps in the process', h:'The team works hard to fill in what the system does not handle'},
+      {v:'d', l:'Most work routes through me at some point before it is complete', h:'I am the central coordination point for too much of what happens'}
+    ]},
+  { num:'Question 03', id:'q3',
+    text:'When your business makes a pricing, discounting, or scope decision, who can actually make that call?',
+    sub:'Think about the last time a client asked for an exception or adjustment outside your standard terms.',
+    opts:[
+      {v:'a', l:'My team has clear boundaries within which they can decide', h:'Decision rights are defined and my team uses them confidently'},
+      {v:'b', l:'Some decisions my team can make, others always come to me', h:'Partial delegation — the line is not always clear'},
+      {v:'c', l:'Most non-standard decisions wait for me to be available', h:'I am the default sign-off for anything outside the routine'},
+      {v:'d', l:'Almost everything comes to me before it is confirmed', h:'The business cannot commit to a client without my involvement'}
+    ]},
+  { num:'Question 04', id:'q4',
+    text:'How clearly can you see the financial health of your business right now — without pulling anything together manually?',
+    sub:'Not what you could find if you spent two hours on it. What you can see without doing that work.',
+    opts:[
+      {v:'a', l:'I can see cash position, outstanding invoices, and margin at any time', h:'Financial visibility is automatic and current'},
+      {v:'b', l:'I have a reasonable picture but it requires some manual checking', h:'Partial visibility — I can get there but it takes effort'},
+      {v:'c', l:'I know the rough numbers but the detail requires compiling from several places', h:'The numbers exist but nobody has connected them into a clear view'},
+      {v:'d', l:'My financial picture is always a few weeks behind what is actually happening', h:'Manual processes mean I am making decisions on outdated information'}
+    ]},
+  { num:'Question 05', id:'q5',
+    text:'When your business last hired someone, what problem were you actually solving?',
+    sub:'Be honest about the real reason the hire happened, not the job description you wrote.',
+    opts:[
+      {v:'a', l:'We had a clearly defined gap in a working process and hired into it', h:'The role was deliberate and the process was ready for a person'},
+      {v:'b', l:'We were growing and needed more capacity in an area that was working', h:'Scaling a functioning part of the business'},
+      {v:'c', l:'Things were getting busy and we needed someone to absorb the load', h:'Reactive hire driven by volume rather than process clarity'},
+      {v:'d', l:'I was exhausted and needed someone to take things off my plate', h:'The hire was an act of relief more than a strategic decision'}
+    ]}
+];
+let cur = 0;
+let furthestStep = 'landed';
+const ans = {};
+
+// ── Funnel tracking ─────────────────────────────────────────────────────
+// Fires a tiny GET request per funnel event, same-origin, no cookies, no
+// PII. Shows up in the normal request log as /.netlify/functions/track,
+// filterable by the e= param, so the existing log view doubles as the
+// funnel view without adding a separate analytics tool.
+function getSid() {
+  try {
+    var s = sessionStorage.getItem('wc_sid');
+    if (!s) {
+      s = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+      sessionStorage.setItem('wc_sid', s);
+    }
+    return s;
+  } catch (e) { return 'nosession'; }
+}
+function trackEvent(name, extra) {
+  try {
+    var params = 'e=' + encodeURIComponent(name) +
+      '&sid=' + encodeURIComponent(getSid()) +
+      '&step=' + encodeURIComponent(furthestStep);
+    if (extra) {
+      for (var k in extra) {
+        if (extra.hasOwnProperty(k)) params += '&' + encodeURIComponent(k) + '=' + encodeURIComponent(extra[k]);
+      }
+    }
+    new Image().src = '/.netlify/functions/track?' + params;
+  } catch (e) { /* tracking must never break the funnel it is measuring */ }
+}
+var trackedAbandon = false;
+function trackAbandonIfNeeded() {
+  if (trackedAbandon) return;
+  if (furthestStep === 'report_success') return; // completed, not an abandon
+  trackedAbandon = true;
+  trackEvent('abandon', { at: furthestStep });
+}
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'hidden') trackAbandonIfNeeded();
+});
+window.addEventListener('pagehide', trackAbandonIfNeeded);
+function renderQ(i) {
+  const q = Qs[i];
+  const pct = Math.round((i / Qs.length) * 100);
+  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('progLabel').textContent = 'Question ' + (i+1) + ' of ' + Qs.length;
+  document.getElementById('progPct').textContent = pct + '%';
+  document.getElementById('qSection').innerHTML =
+    '<div class="q-card">' +
+    '<div class="q-num">' + q.num + '</div>' +
+    '<div class="q-text">' + q.text + '</div>' +
+    '<div class="q-hint">' + q.sub + '</div>' +
+    '<div class="opts">' +
+    q.opts.map(function(o) {
+      return '<button class="opt' + (ans[q.id]===o.v?' sel':'') + '" onclick="pick(\'' + q.id + '\',\'' + o.v + '\',this)">' +
+        '<div class="opt-circle">' + (ans[q.id]===o.v?'&#10003;':'') + '</div>' +
+        '<div><div class="opt-main">' + o.l + '</div><div class="opt-sub">' + o.h + '</div></div>' +
+        '</button>';
+    }).join('') +
+    '</div>' +
+    '<div class="nav-row">' +
+    (i>0?'<button class="btn btn-back" onclick="back()">Back</button>':'<span></span>') +
+    '<button class="btn btn-next" id="nBtn" onclick="next()"' + (ans[q.id]?'':' disabled') + '>' +
+    (i===Qs.length-1?'See my results':'Next') +
+    '</button></div></div>';
+}
+function scrollToTop() {
+  var hero = document.querySelector('.hero');
+  if (hero) hero.style.display = 'none';
+  window.scrollTo(0, 0);
+}
+function pick(qid, val, el) {
+  var isFirstAnswer = Object.keys(ans).length === 0;
+  ans[qid] = val;
+  furthestStep = qid;
+  if (isFirstAnswer) trackEvent('quiz_started');
+  trackEvent('question_answered', { qid: qid, val: val });
+  var opts = document.querySelectorAll('.opt');
+  for (var i=0; i<opts.length; i++) {
+    opts[i].classList.remove('sel');
+    opts[i].querySelector('.opt-circle').innerHTML = '';
+  }
+  el.classList.add('sel');
+  el.querySelector('.opt-circle').innerHTML = '&#10003;';
+  var nb = document.getElementById('nBtn');
+  if (nb) nb.disabled = false;
+}
+function calcScore() {
+  var sm = {a:4, b:2, c:1, d:0};
+  var total = 0;
+  var keys = Object.keys(ans);
+  for (var k=0; k<keys.length; k++) { total += (sm[ans[keys[k]]] || 0); }
+  var pct = Math.round((total / 20) * 100);
+  var level = pct >= 80 ? 'Operationally Independent' : pct >= 55 ? 'Partially Systematised' : pct >= 30 ? 'Founder Dependent' : 'Critically Dependent';
+  return { pct: pct, level: level };
+}
+function next() {
+  if (!ans[Qs[cur].id]) return;
+  cur++;
+  if (cur >= Qs.length) { showTeaser(); return; }
+  renderQ(cur);
+  scrollToTop();
+}
+function back() {
+  if (cur > 0) { cur--; renderQ(cur); scrollToTop(); }
+}
+function showTeaser() {
+  furthestStep = 'quiz_completed';
+  document.getElementById('progFill').style.width = '100%';
+  document.getElementById('progLabel').textContent = 'Almost done';
+  document.getElementById('progPct').textContent = '100%';
+  document.getElementById('qSection').innerHTML = '';
+  var s = calcScore();
+  trackEvent('quiz_completed', { level: s.level, pct: s.pct });
+  var teaserCopy = {
+    'Critically Dependent': 'That level usually means at least two or three daily decisions are still routing through you by default, not by design.',
+    'Founder Dependent': 'That level usually means the business runs day to day, but slows or stalls the moment you step back.',
+    'Partially Systematised': 'That level usually means the core of the business runs without you, with a few specific gaps still pulling you back in.',
+    'Operationally Independent': 'That level is rare. Most owners who score here still find one or two blind spots once they see the full breakdown.'
+  };
+  document.getElementById('teaserCard').innerHTML =
+    '<div class="rep-eye">Your Result</div>' +
+    '<h2>' + s.level + '</h2>' +
+    '<p style="margin:14px 0 24px;color:rgba(255,255,255,0.65);font-size:14px;line-height:1.6;">' + teaserCopy[s.level] + '</p>' +
+    '<p style="margin:0 0 22px;color:rgba(255,255,255,0.55);font-size:13px;">Your full report names exactly where this shows up in your business, and the three things worth fixing first.</p>' +
+    '<button class="btn btn-next" style="font-size:14px;padding:13px 32px;" onclick="showContact()">Get my full report</button>';
+  document.getElementById('teaserSection').classList.remove('hidden');
+  scrollToTop();
+}
+function showContact() {
+  furthestStep = 'email_gate_viewed';
+  trackEvent('teaser_cta_clicked');
+  document.getElementById('teaserSection').classList.add('hidden');
+  document.getElementById('contactSection').classList.remove('hidden');
+  trackEvent('email_gate_viewed');
+  scrollToTop();
+}
+async function generateReport() {
+  var fn = document.getElementById('fName').value.trim();
+  var ln = document.getElementById('lName').value.trim();
+  var em = document.getElementById('email').value.trim();
+  var co = document.getElementById('company').value.trim();
+  var ts = document.getElementById('teamSize').value;
+  var errEl = document.getElementById('contactErr');
+  if (!fn || !em || !co) {
+    trackEvent('form_validation_error', {
+      missing: [!fn ? 'name' : '', !em ? 'email' : '', !co ? 'company' : ''].filter(Boolean).join('-')
+    });
+    errEl.innerHTML = '<div class="err">Please fill in your first name, email, and company to continue.</div>';
+    return;
+  }
+  furthestStep = 'form_submitted';
+  trackEvent('form_submitted');
+  errEl.innerHTML = '';
+  document.getElementById('contactSection').classList.add('hidden');
+  document.getElementById('loadSection').classList.remove('hidden');
+  scrollToTop();
+  var ids = ['ls1','ls2','ls3','ls4'];
+  var si = 0;
+  var iv = setInterval(function() {
+    if (si > 0) document.getElementById(ids[si-1]).classList.remove('active');
+    if (si < ids.length) {
+      document.getElementById(ids[si]).classList.add('active');
+      if (si > 0) document.getElementById(ids[si-1]).classList.add('done');
+      si++;
+    }
+  }, 950);
+  var s = calcScore();
+  var pct = s.pct;
+  var level = s.level;
+  function gl(qid) {
+    for (var i=0; i<Qs.length; i++) {
+      if (Qs[i].id === qid) {
+        for (var j=0; j<Qs[i].opts.length; j++) {
+          if (Qs[i].opts[j].v === ans[qid]) return Qs[i].opts[j].l;
+        }
+      }
+    }
+    return 'No answer';
+  }
+  var prompt = 'You are Wayne Conrad. You built and sold two service businesses over 28 years. You now advise SME owners on operational automation and process design. You write in first person, plainly, with calm authority. No hype. No corporate language. No em dashes. No semicolons. Short direct sentences. Write as someone who has run the exact problems you are describing.\n\n' +
+    'A business owner just completed your Operational Dependency Diagnostic. Here are their details:\n\n' +
+    'Name: ' + fn + ' ' + ln + '\n' +
+    'Company: ' + co + '\n' +
+    'Team size: ' + (ts || 'not specified') + '\n' +
+    'Dependency score: ' + pct + '/100 — ' + level + '\n\n' +
+    'Their five answers:\n' +
+    '1. Business continuity without founder: "' + gl('q1') + '"\n' +
+    '2. How work moves without founder involvement: "' + gl('q2') + '"\n' +
+    '3. Decision-making authority in the team: "' + gl('q3') + '"\n' +
+    '4. Financial visibility without manual effort: "' + gl('q4') + '"\n' +
+    '5. Last hire motivation: "' + gl('q5') + '"\n\n' +
+    'Write a personalised operational dependency report for ' + fn + '. Use exactly these three section headers on their own lines:\n\n' +
+    'WHERE YOU STAND\nWHAT THIS MEANS FOR YOUR BUSINESS\nTHREE THINGS WORTH DOING NEXT\n\n' +
+    'Section 1 — WHERE YOU STAND: Two to three short paragraphs. Name their dependency pattern directly. Be honest, not harsh. Reference their specific answers. Do not mention the score number. Describe what the pattern means in operational terms for a service business their size.\n\n' +
+    'Section 2 — WHAT THIS MEANS FOR YOUR BUSINESS: Two paragraphs. Name the one or two structural issues their answers reveal. Be specific. Connect to real business risk — lost deals, margin erosion, staff retention, business value at exit. Not generic advice.\n\n' +
+    'Section 3 — THREE THINGS WORTH DOING NEXT: Three numbered actions. Each is one short paragraph. Practical, sequenced, and specific to their answers. Grounded in process design and operational clarity, not tool recommendations. Start with the highest-leverage change based on their pattern.\n\n' +
+    'Write only the report content. No preamble. No sign-off. No explanation.';
+  try {
+    var res = await fetch('/.netlify/functions/generate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5',
+        max_tokens: 1000,
+        messages: [{role: 'user', content: prompt}],
+        submitterName: (fn + ' ' + ln).trim(),
+        submitterEmail: em,
+        submitterCompany: co
+      })
+    });
+    clearInterval(iv);
+    for (var i=0; i<ids.length; i++) {
+      document.getElementById(ids[i]).classList.remove('active');
+      document.getElementById(ids[i]).classList.add('done');
+    }
+    var data = await res.json();
+    var text = '';
+    if (data.content) {
+      for (var i=0; i<data.content.length; i++) {
+        if (data.content[i].type === 'text') { text = data.content[i].text; break; }
+      }
+    }
+    document.getElementById('loadSection').classList.add('hidden');
+    if (text) {
+      furthestStep = 'report_success';
+      trackEvent('report_success');
+      renderReport(fn, co, pct, level, text);
+    } else {
+      trackEvent('report_error', { reason: 'empty_response' });
+      document.getElementById('contactSection').classList.remove('hidden');
+      document.getElementById('contactErr').innerHTML = '<div class="err">Something went wrong generating your report. Please try again.</div>';
+    }
+  } catch(e) {
+    clearInterval(iv);
+    trackEvent('report_error', { reason: 'fetch_exception' });
+    document.getElementById('loadSection').classList.add('hidden');
+    document.getElementById('contactSection').classList.remove('hidden');
+    document.getElementById('contactErr').innerHTML = '<div class="err">Something went wrong. Please try again.</div>';
+  }
+}
+function renderReport(name, company, pct, level, text) {
+  document.getElementById('repSection').classList.remove('hidden');
+  document.getElementById('progWrap').style.display = 'none';
+  scrollToTop();
+  var C = 2 * Math.PI * 32;
+  var offset = C - (pct / 100) * C;
+  document.getElementById('repHeader').innerHTML =
+    '<div class="rep-eye">Operational Dependency Report</div>' +
+    '<h2>' + name + ', here is where your business stands.</h2>' +
+    '<div class="rep-co">' + company + '</div>' +
+    '<div class="score-row">' +
+    '<div class="ring-wrap">' +
+    '<svg width="78" height="78" viewBox="0 0 78 78">' +
+    '<circle cx="39" cy="39" r="32" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="5"/>' +
+    '<circle cx="39" cy="39" r="32" fill="none" stroke="#93c5fd" stroke-width="5"' +
+    ' stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + offset.toFixed(1) + '" stroke-linecap="round"/>' +
+    '</svg>' +
+    '<div class="ring-num">' + pct + '</div>' +
+    '</div>' +
+    '<div class="score-text">' +
+    '<h3>' + level + '</h3>' +
+    '<p>Assessed across operational continuity, process ownership, decision rights, financial visibility, and hiring discipline.</p>' +
+    '</div></div>';
+  var sections = splitSections(text);
+  var labels = ['Where you stand', 'What this means for your business', 'Three things worth doing next'];
+  var html = '';
+  for (var i=0; i<sections.length; i++) {
+    html += '<div class="rsec"><div class="rsec-label">' + (labels[i] || 'Insight') + '</div><div class="rsec-text">' + fmt(sections[i]) + '</div></div>';
+  }
+  document.getElementById('repBody').innerHTML = html;
+}
+function splitSections(text) {
+  var parts = text.split(/\n(?=WHERE YOU STAND|WHAT THIS MEANS|THREE THINGS)/i);
+  if (parts.length >= 2) {
+    var result = [];
+    for (var i=0; i<parts.length; i++) {
+      var p = parts[i].replace(/^(WHERE YOU STAND|WHAT THIS MEANS FOR YOUR BUSINESS|THREE THINGS WORTH DOING NEXT)\s*\n/i, '').trim();
+      if (p) result.push(p);
+    }
+    return result.slice(0, 3);
+  }
+  var t = Math.ceil(text.length / 3);
+  return [text.slice(0, t), text.slice(t, t*2), text.slice(t*2)].filter(function(s) { return s.trim(); });
+}
+function fmt(t) {
+  return '<p>' + t
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n\n/g, '</p><p style="margin-top:12px;">')
+    .replace(/\n(\d+\.)/g, '</p><p style="margin-top:10px;"><strong>$1</strong> ')
+    .replace(/\n/g, ' ') + '</p>';
+}
+trackEvent('page_view', { ref: (document.referrer || 'direct').slice(0, 120) });
+renderQ(0);
+</script>
+</body>
+</html>
