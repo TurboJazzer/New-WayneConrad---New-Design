@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What Manual Coordination Is Costing You | Wayne Conrad Advisory</title>
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
+<link rel="stylesheet" href="/shell.css">
+<style>*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
+:root{
   --navy:     #0f172a;
   --navy-mid: #1e3a8a;
   --blue:     #2563eb;
@@ -21,55 +21,48 @@
   --warning:  #d97706;
   --success:  #16a34a;
 }
-html { font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+html{ font-size: 16px; }
+body{
+  font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   background: var(--off-white);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-nav {
-  background: var(--navy);
-  padding: 0 5%;
-  height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-brand { font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; }
-.nav-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; }
-.nav-link:hover { color: var(--white); }
-.page-header {
+.nav-link{ font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-link:hover{ color: var(--white); }
+.page-header{
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
   padding: 52px 5% 48px;
   position: relative; overflow: hidden;
 }
-.page-header::after {
+.page-header::after{
   content: ''; position: absolute; bottom: 0; left: 0; right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--blue) 0%, #93c5fd 100%);
 }
-.page-header h1 {
+.page-header h1{
   font-size: clamp(24px, 4vw, 38px);
   font-weight: 700; color: var(--white);
   line-height: 1.2; margin-bottom: 12px;
 }
-.page-header p {
+.page-header p{
   font-size: 16px; color: rgba(255,255,255,0.65);
   max-width: 560px; line-height: 1.7;
 }
-.header-meta {
+.header-meta{
   display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap;
 }
-.header-meta span {
+.header-meta span{
   font-size: 12px; color: #94a3b8;
   display: flex; align-items: center; gap: 6px;
 }
-.header-meta span::before {
+.header-meta span::before{
   content: ''; width: 4px; height: 4px;
   border-radius: 50%; background: #93c5fd;
 }
-.wrap { max-width: 900px; margin: 0 auto; padding: 40px 5% 80px; }
-.how-to {
+.wrap{ max-width: 900px; margin: 0 auto; padding: 40px 5% 80px; }
+.how-to{
   background: var(--white);
   border: 1px solid var(--border);
   border-left: 3px solid var(--blue);
@@ -77,27 +70,27 @@ nav {
   padding: 24px 28px;
   margin-bottom: 32px;
 }
-.how-to h3 { font-size: 13px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
-.how-to ol { padding-left: 18px; }
-.how-to li { font-size: 14px; color: var(--text-soft); line-height: 1.7; margin-bottom: 4px; }
-.section-label {
+.how-to h2{ font-size: 13px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+.how-to ol{ padding-left: 18px; }
+.how-to li{ font-size: 14px; color: var(--text-soft); line-height: 1.7; margin-bottom: 4px; }
+.section-label{
   font-size: 11px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--blue); margin: 32px 0 14px;
 }
-.card {
+.card{
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 6px;
   margin-bottom: 16px;
   overflow: hidden;
 }
-.card-header {
+.card-header{
   background: var(--navy);
   padding: 14px 24px;
   display: flex; align-items: center; gap: 12px;
 }
-.card-num {
+.card-num{
   width: 28px; height: 28px;
   background: rgba(255,255,255,0.12);
   border-radius: 50%;
@@ -105,14 +98,14 @@ nav {
   font-size: 12px; font-weight: 700; color: #93c5fd;
   flex-shrink: 0;
 }
-.card-title { font-size: 15px; font-weight: 600; color: var(--white); }
-.card-body { padding: 24px; }
-.grid-3 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; margin-bottom: 14px; align-items: end; }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-@media (max-width: 640px) { .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } }
-.field { display: flex; flex-direction: column; gap: 6px; }
-.field label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mid-grey); }
-.field input, .field select {
+.card-title{ font-size: 15px; font-weight: 600; color: var(--white); }
+.card-body{ padding: 24px; }
+.grid-3{ display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; margin-bottom: 14px; align-items: end; }
+.grid-2{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+@media (max-width: 640px){.grid-3{ grid-template-columns: 1fr; }.grid-2{ grid-template-columns: 1fr; }}
+.field{ display: flex; flex-direction: column; gap: 6px; }
+.field label{ font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mid-grey); }
+.field input, .field select{
   font-family: inherit; font-size: 14px;
   padding: 10px 14px;
   border: 1.5px solid var(--border);
@@ -120,9 +113,9 @@ nav {
   background: var(--off-white);
   outline: none; transition: border-color 0.15s;
 }
-.field input:focus, .field select:focus { border-color: var(--blue); background: var(--white); }
-.field input::placeholder { color: #9ca3af; }
-.field-result {
+.field input:focus, .field select:focus{ border-color: var(--blue); background: var(--white); }
+.field input::placeholder{ color: #6b7280; }
+.field-result{
   font-family: inherit; font-size: 15px; font-weight: 600;
   padding: 10px 14px;
   border: 1.5px solid var(--border);
@@ -131,7 +124,7 @@ nav {
   color: var(--blue);
   min-height: 42px;
 }
-.add-btn {
+.add-btn{
   font-family: inherit; font-size: 13px; font-weight: 600;
   background: transparent; color: var(--blue);
   border: 1.5px dashed var(--blue);
@@ -139,80 +132,80 @@ nav {
   cursor: pointer; width: 100%; margin-top: 8px;
   transition: all 0.15s;
 }
-.add-btn:hover { background: var(--blue-lt); }
-.remove-btn {
+.add-btn:hover{ background: var(--blue-lt); }
+.remove-btn{
   font-family: inherit; font-size: 12px;
-  background: transparent; color: #9ca3af;
+  background: transparent; color: #6b7280;
   border: none; cursor: pointer; padding: 4px 8px;
   transition: color 0.15s; align-self: flex-end; margin-bottom: 2px;
 }
-.remove-btn:hover { color: var(--danger); }
-.row-with-remove { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; margin-bottom: 10px; align-items: end; }
-@media (max-width: 640px) { .row-with-remove { grid-template-columns: 1fr; } }
-
+.remove-btn:hover{ color: var(--danger); }
+.row-with-remove{ display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; margin-bottom: 10px; align-items: end; }
+@media (max-width: 640px){.row-with-remove{ grid-template-columns: 1fr; }}
 /* RESULTS PANEL */
-.results-panel {
+.results-panel{
   background: var(--navy);
   border-radius: 6px;
   padding: 32px;
   margin-top: 32px;
 }
-.results-panel h2 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 24px; }
-.results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
-.result-box {
+.results-panel h2{ font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 24px; }
+.results-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.result-box{
   background: rgba(255,255,255,0.07);
   border-radius: 6px; padding: 20px;
 }
-.result-box label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; display: block; margin-bottom: 8px; }
-.result-value { font-size: 28px; font-weight: 700; color: #93c5fd; line-height: 1; }
-.result-sub { font-size: 12px; color: #94a3b8; margin-top: 4px; }
-.result-box.highlight { background: rgba(37,99,235,0.25); border: 1px solid rgba(37,99,235,0.4); }
-.result-box.highlight .result-value { color: #ffffff; }
-.insight-box {
+.result-box label{ font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; display: block; margin-bottom: 8px; }
+.result-value{ font-size: 28px; font-weight: 700; color: #93c5fd; line-height: 1; }
+.result-sub{ font-size: 12px; color: #94a3b8; margin-top: 4px; }
+.result-box.highlight{ background: rgba(37,99,235,0.25); border: 1px solid rgba(37,99,235,0.4); }
+.result-box.highlight .result-value{ color: #ffffff; }
+.insight-box{
   background: rgba(255,255,255,0.05);
   border-left: 3px solid #93c5fd;
   border-radius: 0 6px 6px 0;
   padding: 20px 24px;
   margin-top: 8px;
 }
-.insight-box p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 10px; }
-.insight-box p:last-child { margin-bottom: 0; }
-.insight-box strong { color: var(--white); }
-
+.insight-box p{ font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 10px; }
+.insight-box p:last-child{ margin-bottom: 0; }
+.insight-box strong{ color: var(--white); }
 /* ACTIONS */
-.actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
-.btn-print {
+.actions{ display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn-print{
   font-family: inherit; font-size: 14px; font-weight: 600;
   background: var(--blue); color: var(--white);
   padding: 13px 28px; border-radius: 4px;
   border: none; cursor: pointer; transition: background 0.2s;
 }
-.btn-print:hover { background: #1d4ed8; }
-.btn-clear {
+.btn-print:hover{ background: #1d4ed8; }
+.btn-clear{
   font-family: inherit; font-size: 14px; font-weight: 500;
   background: transparent; color: var(--mid-grey);
   padding: 13px 28px; border-radius: 4px;
   border: 1.5px solid var(--border); cursor: pointer; transition: all 0.2s;
 }
-.btn-clear:hover { border-color: var(--text); color: var(--text); }
+.btn-clear:hover{ border-color: var(--text); color: var(--text); }
+@media print{body{ background: white; }.page-header{ padding: 24px 0; }.page-header::after{ display: none; }.wrap{ padding: 20px 0; }.results-panel{ background: #0f172a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
 
-footer {
-  background: var(--navy); padding: 24px 5%;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 12px;
-}
-footer p { font-size: 12px; color: #94a3b8; }
-footer a { font-size: 12px; color: #94a3b8; text-decoration: none; }
-footer a:hover { color: #93c5fd; }
+</style>
 
-@media print {
-  nav, .how-to, .actions, footer, .add-btn, .remove-btn { display: none !important; }
-  body { background: white; }
-  .page-header { padding: 24px 0; }
-  .page-header::after { display: none; }
-  .wrap { padding: 20px 0; }
-  .results-panel { background: #0f172a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-}
+<style>/* tap targets: at least 44px */
+.sig-btn,.toggle-btn,.remove-client-btn,.remove-btn,.add-client-btn,.add-btn,.btn-print,.btn-clear{min-height:44px;min-width:44px}
+input.text,input.number,select.select-one{min-height:44px}
+</style>
+<style id="final-polish">
+a[href="/resources.html"]{min-height:44px;display:inline-flex;align-items:center}
+/* final polish: contrast, 44px targets, visible focus, placeholders */
+:root{--mid-grey:#475569}
+::placeholder{color:#64748b!important;opacity:1}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #1d4ed8!important;outline-offset:2px;box-shadow:0 0 0 6px #fff}
+.hero a:focus-visible,.page-header a:focus-visible,.cta-block a:focus-visible,.cta-block button:focus-visible,.cta-block input:focus-visible,.final a:focus-visible,.final button:focus-visible{outline-color:#93c5fd!important;box-shadow:none}
+input:not([type=checkbox]):not([type=radio]):not([type=hidden]),select,textarea{min-height:44px}
+button,.btn-clear,.opt,.cta-btn,.cta-input{min-height:44px}
+input[type=checkbox],input[type=radio]{width:24px;height:24px}
+.btn-clear{color:#475569}
+.header-meta,.header-meta span,.header .sub,.page-header p.sub{color:#e2e8f0}
 </style>
 </head>
 <body>
@@ -241,7 +234,7 @@ footer a:hover { color: #93c5fd; }
     messageEl.innerHTML =
       '<p style="font-size: 15px; color: #0f172a; font-weight: 600; margin-bottom: 12px;">' + text + '</p>' +
       '<p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">Request a fresh link from the resources page and it will arrive by email in a moment.</p>' +
-      '<a href="https://wayneconrad.com/resources.html" style="display: inline-block; background: #1d4ed8; color: #ffffff; font-size: 14px; font-weight: 600; padding: 10px 24px; border-radius: 4px; text-decoration: none;">Go to Resources</a>';
+      '<a href="/resources.html" style="display: inline-block; background: #1d4ed8; color: #ffffff; font-size: 14px; font-weight: 600; padding: 10px 24px; border-radius: 4px; text-decoration: none;">Go to Resources</a>';
   }
 
   if (!token) {
@@ -264,11 +257,24 @@ footer a:hover { color: #93c5fd; }
 })();
 </script>
 
-<nav>
-  <a href="https://wayneconrad.com/" class="nav-brand">Wayne Conrad Advisory</a>
-  <a href="https://wayneconrad.com/resources.html" class="nav-link">Back to Resources</a>
-</nav>
-
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="/" aria-label="Wayne Conrad Advisory, home"><picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32"></picture></a>
+    <nav aria-label="Main" style="display:contents">
+      <ul class="nav-links" id="site-links">
+        <li><a href="/#sprints">Sprints</a></li>
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#results">Results</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/diagnostic.html">Diagnostic</a></li>
+      </ul>
+    </nav>
+    <a class="nav-book" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free call</a>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-links">Menu</button>
+  </div>
+</header>
 <div class="page-header">
   <h1>What Manual Coordination Is Costing You</h1>
   <p>Calculate what manual coordination is actually costing your business. Enter your team roles, hourly cost, and hours spent on administrative work each week. The number usually surprises people, and it's the number that should come before any AI implementation, not after.</p>
@@ -282,7 +288,7 @@ footer a:hover { color: #93c5fd; }
 <div class="wrap">
 
   <div class="how-to">
-    <h3>How to use this calculator</h3>
+    <h2>How to use this calculator</h2>
     <ol>
       <li>Enter each person or role in your team in Section 1. Include their fully loaded cost per hour (salary plus on-costs divided by annual hours).</li>
       <li>In Section 2, estimate how many hours per week each role spends on work that could be handled by a repeatable process. This includes manual reporting, data transfer, chasing approvals, formatting documents, and administrative coordination.</li>
@@ -397,7 +403,7 @@ footer a:hover { color: #93c5fd; }
       <div class="result-box">
         <label>Coordination cost as % of total payroll</label>
         <div class="result-value" id="pctOfPayroll">0%</div>
-        <div class="result-sub">industry average is 15 to 20%</div>
+        <div class="result-sub">my rule of thumb is 15 to 20% (my own estimate, not an industry benchmark)</div>
       </div>
       <div class="result-box">
         <label>Highest coordination cost role</label>
@@ -417,9 +423,22 @@ footer a:hover { color: #93c5fd; }
 
 </div>
 
-<footer>
-  <p>Wayne Conrad Advisory &nbsp;·&nbsp; Manual Coordination Cost Calculator &nbsp;·&nbsp; wayneconrad.com</p>
-  <a href="https://wayneconrad.com/">Back to main site</a>
+<footer class="site-foot">
+  <div class="foot-in">
+    <div>
+      <p><strong>Wayne Conrad Advisory, a remote-first company.</strong></p>
+      <div class="foot-links">
+        <a href="/growth.html">Advisory Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
+      </div>
+    </div>
+    <div class="social"><a href="https://www.linkedin.com/company/ai-automation-wayne" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://x.com/RealWayneConrad" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61574427795984" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.tiktok.com/@wayne.ai.automati" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></div>
+  </div>
 </footer>
 
 <script>
@@ -551,7 +570,7 @@ function recalc() {
     let level = '';
     let action = '';
     if (pct < 10) {
-      level = 'Your manual coordination cost is below the service business average of 15 to 20 percent. Either your processes are well-designed, or the hours are being underestimated. Worth a second look at the roles doing the most coordination work.';
+      level = 'Your manual coordination cost is below the 15 to 20 percent rule of thumb I use (my own estimate, not a measured industry figure). Either your processes are well-designed, or the hours are being underestimated. Worth a second look at the roles doing the most coordination work.';
       action = 'Map the three highest-volume coordination tasks in your business and ask whether a defined process could remove the manual step.';
     } else if (pct < 20) {
       level = 'Your manual coordination cost sits within the typical range for a service business at your stage. The cost is real but it is not yet at a level that suggests structural dysfunction. There is meaningful room to recover margin through process improvement.';
@@ -583,6 +602,7 @@ updateShadowRows();
 recalc();
 </script>
 
+<script>(function(){document.documentElement.classList.add('js');var mb=document.querySelector('.menu-btn'),ln=document.getElementById('site-links');if(mb&&ln){mb.addEventListener('click',function(){var o=ln.classList.toggle('open');mb.setAttribute('aria-expanded',o?'true':'false');});}})();</script>
 <script src="/cookie-consent.js" defer></script>
 
 </body>

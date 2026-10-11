@@ -102,21 +102,28 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .faq-item summary{min-height:44px}
 .page-header p.sub,.hero p.sub{color:#e2e8f0!important}
 </style>
+<style id="final-polish">
+/* final polish: contrast, 44px targets, visible focus, placeholders */
+:root{--mid-grey:#475569}
+::placeholder{color:#64748b!important;opacity:1}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #1d4ed8!important;outline-offset:2px;box-shadow:0 0 0 6px #fff}
+.hero a:focus-visible,.page-header a:focus-visible,.cta-block a:focus-visible,.cta-block button:focus-visible,.cta-block input:focus-visible,.final a:focus-visible,.final button:focus-visible{outline-color:#93c5fd!important;box-shadow:none}
+</style>
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-nav">
   <div class="nav-in">
-    <a class="nav-logo" href="https://wayneconrad.com/" aria-label="Wayne Conrad Advisory, home"><picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32"></picture></a>
+    <a class="nav-logo" href="/" aria-label="Wayne Conrad Advisory, home"><picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32"></picture></a>
     <nav aria-label="Main" style="display:contents">
       <ul class="nav-links" id="site-links">
-        <li><a href="https://wayneconrad.com/#sprints">Sprints</a></li>
-        <li><a href="https://wayneconrad.com/#how-it-works">How it works</a></li>
-        <li><a href="https://wayneconrad.com/#results">Results</a></li>
-        <li><a href="https://wayneconrad.com/pricing.html">Pricing</a></li>
-        <li><a href="https://wayneconrad.com/resources.html">Resources</a></li>
-        <li><a href="https://wayneconrad.com/diagnostic.html">Diagnostic</a></li>
+        <li><a href="/#sprints">Sprints</a></li>
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#results">Results</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/diagnostic.html">Diagnostic</a></li>
       </ul>
     </nav>
     <a class="nav-book" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free call</a>
@@ -155,22 +162,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
           <strong style="color: var(--navy); display: block; margin-bottom: 6px;">What this template actually does</strong>
           Most delegation fails at the same point: nobody defined where a team member's authority actually ends. This template turns business process delegation into a written structure: it maps five common decision categories, names who owns each one now versus who should, and sets clear escalation triggers so exceptions stop defaulting back to the founder by habit.
         </div>
-        <p style="font-size:13px;margin-top:12px;"><a href="https://wayneconrad.com/articles/delegate-decision-rights.html" style="color:var(--blue);text-decoration:none;">Read the full breakdown: How to Delegate Decision Rights &rarr;</a></p>
+        <p style="font-size:13px;margin-top:12px;"><a href="/articles/delegate-decision-rights.html" style="color:var(--blue);text-decoration:none;">Read the full breakdown: How to Delegate Decision Rights &rarr;</a></p>
       </div>
       <div class="gate-form" id="gateForm1">
         <p>Enter your details to access the full template. You will receive a direct link by email.</p>
         <div class="gate-fields">
-          <input type="text" id="g1fn" placeholder="First name" />
-          <input type="text" id="g1ln" placeholder="Last name" />
+          <input type="text" id="g1fn" placeholder="First name" aria-label="First name" autocomplete="given-name" />
         </div>
-        <input type="email" id="g1em" placeholder="Business email address" />
+        <input type="email" id="g1em" placeholder="Business email address" aria-label="Business email address" autocomplete="email" />
         <button class="btn-download" onclick="submitGate(1)">Get the Template</button>
-        <p class="gate-note">No spam. One email with your template link.</p>
+        <p class="gate-note">No spam. One email with your template link. <a href="/privacy.html">Privacy policy</a>.</p>
         <p class="gate-err" id="g1err"></p>
       </div>
       <div class="gate-success" id="gateSuccess1">
         <p>Done. Check your inbox for the template link.<br>If you do not see it within a few minutes, check your spam folder.</p>
-      </div>
+      <p style="margin-top:12px"><strong>Next:</strong> <a href="/diagnostic.html">take the 2-minute diagnostic</a> or <a href="https://meetings-na2.hubspot.com/wayne-conrad">book a free 15-minute call</a>.</p></div>
     </div>
 
     <!-- RESOURCE 2 — What Manual Coordination Is Costing You (calculator) -->
@@ -185,7 +191,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
           <li>Enter each role and annual cost, hourly rate calculated automatically</li>
           <li>Estimate manual coordination hours per week per role across five common categories</li>
           <li>See weekly, monthly, and annual coordination cost instantly</li>
-          <li>Compared against my own estimate of 15 to 20 percent</li>
+          <li>Shows your result against the 15 to 20 percent rule of thumb I use, which is my own estimate, not a measured industry figure</li>
           <li>Dynamic insight text identifies your highest-leverage next action</li>
         </ul>
 
@@ -194,22 +200,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
           <strong style="color: var(--navy); display: block; margin-bottom: 6px;">What this calculator actually does</strong>
           Chasing updates, cross-checking spreadsheets, and redoing work that should have been handed off cleanly never shows up as its own line on a P&L. This calculator turns your team's actual roles and hourly rates into a real weekly, monthly, and annual number for what manual coordination is costing you, before any AI implementation is even discussed.
         </div>
-        <p style="font-size:13px;margin-top:12px;"><a href="https://wayneconrad.com/articles/hidden-friction-tax.html" style="color:var(--blue);text-decoration:none;">Read the full breakdown: The Hidden Friction Tax &rarr;</a></p>
+        <p style="font-size:13px;margin-top:12px;"><a href="/articles/hidden-friction-tax.html" style="color:var(--blue);text-decoration:none;">Read the full breakdown: The Hidden Friction Tax &rarr;</a></p>
       </div>
       <div class="gate-form" id="gateForm2">
         <p>Enter your details to access the calculator. You will receive a direct link by email.</p>
         <div class="gate-fields">
-          <input type="text" id="g2fn" placeholder="First name" />
-          <input type="text" id="g2ln" placeholder="Last name" />
+          <input type="text" id="g2fn" placeholder="First name" aria-label="First name" autocomplete="given-name" />
         </div>
-        <input type="email" id="g2em" placeholder="Business email address" />
+        <input type="email" id="g2em" placeholder="Business email address" aria-label="Business email address" autocomplete="email" />
         <button class="btn-download" onclick="submitGate(2)">Get the Calculator</button>
-        <p class="gate-note">No spam. One email with your calculator link.</p>
+        <p class="gate-note">No spam. One email with your calculator link. <a href="/privacy.html">Privacy policy</a>.</p>
         <p class="gate-err" id="g2err"></p>
       </div>
       <div class="gate-success" id="gateSuccess2">
         <p>Done. Check your inbox for the calculator link.<br>If you do not see it within a few minutes, check your spam folder.</p>
-      </div>
+      <p style="margin-top:12px"><strong>Next:</strong> <a href="/diagnostic.html">take the 2-minute diagnostic</a> or <a href="https://meetings-na2.hubspot.com/wayne-conrad">book a free 15-minute call</a>.</p></div>
     </div>
 
     <!-- RESOURCE 3 — Client Health Scorecard -->
@@ -236,23 +241,31 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
       <div class="gate-form" id="gateForm3">
         <p>Enter your details to access the scorecard. You will receive a direct link by email.</p>
         <div class="gate-fields">
-          <input type="text" id="g3fn" placeholder="First name" />
-          <input type="text" id="g3ln" placeholder="Last name" />
+          <input type="text" id="g3fn" placeholder="First name" aria-label="First name" autocomplete="given-name" />
         </div>
-        <input type="email" id="g3em" placeholder="Business email address" />
+        <input type="email" id="g3em" placeholder="Business email address" aria-label="Business email address" autocomplete="email" />
         <button class="btn-download" onclick="submitGate(3)">Get the Scorecard</button>
-        <p class="gate-note">No spam. One email with your scorecard link.</p>
+        <p class="gate-note">No spam. One email with your scorecard link. <a href="/privacy.html">Privacy policy</a>.</p>
         <p class="gate-err" id="g3err"></p>
       </div>
       <div class="gate-success" id="gateSuccess3">
         <p>Done. Check your inbox for the scorecard link.<br>If you do not see it within a few minutes, check your spam folder.</p>
-      </div>
+      <p style="margin-top:12px"><strong>Next:</strong> <a href="/diagnostic.html">take the 2-minute diagnostic</a> or <a href="https://meetings-na2.hubspot.com/wayne-conrad">book a free 15-minute call</a>.</p></div>
     </div>
 
   </div>
 </div>
 
 <!-- VISIBLE FAQ SECTION -->
+<section style="max-width: 860px; margin: 0 auto 48px; padding: 0 5%;">
+  <div style="background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 24px;">
+    <p style="font-size:13px; letter-spacing:.08em; text-transform:uppercase; color: var(--mid-grey); margin-bottom:6px;">Self-assessment &middot; No email needed</p>
+    <h2 style="font-size:22px; color: var(--navy); margin-bottom:8px;">Founder Bottleneck Scorecard</h2>
+    <p style="margin-bottom:14px;">Five questions about who really makes the calls in your business, and the first move to make. It runs on the page and nothing is stored unless you ask for the breakdown by email.</p>
+    <a class="btn btn-primary" href="/founder_bottleneck_scorecard.html" style="display:inline-flex;align-items:center;min-height:44px;padding:0 20px;background:#1d4ed8;color:#fff;border-radius:6px;text-decoration:none;font-weight:600">Take the scorecard</a>
+  </div>
+</section>
+
 <section class="faq-section" style="max-width: 860px; margin: 0 auto 80px; padding: 0 5%;">
   <h2 style="font-family: var(--sys); font-size: 28px; color: var(--navy); margin-bottom: 24px; text-align: center;">
     Frequently Asked Questions
@@ -299,7 +312,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   </div>
 
   <p style="text-align: center; margin-top: 32px; font-size: 14px; color: var(--mid-grey);">
-    Want more direct support rebuilding your operational architecture? <a href="https://wayneconrad.com/growth.html" style="color: var(--blue-cta); font-weight: 600; text-decoration: none;">See how the full engagement works</a>.
+    Want more direct support rebuilding your operational architecture? <a href="/growth.html" style="color: var(--blue-cta); font-weight: 600; text-decoration: none;">See how the full engagement works</a>.
   </p>
 </section>
 
@@ -310,11 +323,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
     <div>
       <p><strong>Wayne Conrad Advisory, a remote-first company.</strong></p>
       <div class="foot-links">
-        <a href="https://wayneconrad.com/growth.html">Advisory Services</a>
-        <a href="https://wayneconrad.com/pricing.html">Pricing</a>
-        <a href="https://wayneconrad.com/resources.html">Resources</a>
-        <a href="https://wayneconrad.com/faq.html">FAQ</a>
+        <a href="/growth.html">Advisory Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/faq.html">FAQ</a>
         <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
         <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
       </div>
     </div>
@@ -581,7 +595,8 @@ const resources = {
 
 async function submitGate(num) {
   const fn = document.getElementById('g' + num + 'fn').value.trim();
-  const ln = document.getElementById('g' + num + 'ln').value.trim();
+  const lnEl = document.getElementById('g' + num + 'ln');
+  const ln = lnEl ? lnEl.value.trim() : '';
   const em = document.getElementById('g' + num + 'em').value.trim();
   const errEl = document.getElementById('g' + num + 'err');
 
