@@ -1,30 +1,35 @@
 # Wayne Conrad Advisory
 
-> Operational automation advisory for SME and SMB owners (5 to 50 person service businesses). Helping founders remove themselves from the operational centre of their business through decision-rights redesign and AI implementation.
+> Fixed-scope AI workflow sprints for service businesses of 5 to 50 people. Wayne Conrad Advisory is a remote-first company run by Wayne Conrad, who ran two service businesses for 28 years and built and sold both. Everything is built inside the client's own accounts and owned by the client.
 
-## Founder & Leadership
+## What is offered
+- AI cleanup sprint: repairs failing automations, removes duplicate tool subscriptions, delivers a written map of live automations. From $1,500. Typical length 3 to 5 days, with 30 days of support.
+- Single workflow sprint: one pipeline built and live (usually enquiry triage or client onboarding), approval steps, training and a one-page runbook. From $2,900. Typical length 7 to 10 days, with 30 days of tuning.
+- End-to-end ops engine: sales, delivery and finance connected, with an exceptions-only owner dashboard. From $8,500. Typical length 14 to 21 days, with 90 days of tuning.
+- The final price is confirmed in writing before work starts.
+- Free 15-minute workflow call and a free 2-minute diagnostic that shows where a business depends on its owner.
 
-- Wayne Conrad: 28 years building service businesses, two exits in 2023, remote-first, operating with clients across the United States, United Kingdom, Australia, and Southeast Asia.
+## Key pages
+- [Home](https://wayneconrad.com/): offer, sprints, how it works
+- [Pricing](https://wayneconrad.com/pricing.html): the three sprints, what is not included, guarantee and data handling
+- [Diagnostic](https://wayneconrad.com/diagnostic.html): free 2-minute diagnostic for owners
+- [Resources](https://wayneconrad.com/resources.html): guides and articles
+- [Advisory services](https://wayneconrad.com/growth.html)
+- [FAQ](https://wayneconrad.com/faq.html)
+- [Hidden friction tax](https://wayneconrad.com/articles/hidden-friction-tax.html)
+- [Delegate decision rights](https://wayneconrad.com/articles/delegate-decision-rights.html)
+- [Headcount vs architecture](https://wayneconrad.com/articles/headcount-vs-architecture.html)
+- [AI trust gap](https://wayneconrad.com/ai-trust-gap.html)
+- [Privacy](https://wayneconrad.com/privacy.html)
+- [Terms of Service](https://wayneconrad.com/terms.html)
 
-## Core Services & Free Resources
-
-- [Operational Dependency Diagnostic](https://wayneconrad.com/diagnostic.html): A free 5-question AI readiness assessment identifying where a business depends on its founder to run.
-- [Founder Bottleneck Scorecard](https://wayneconrad.com/founder_bottleneck_scorecard.html): A free interactive self-assessment across five workstreams, client requests, project updates, approvals, billing, and hiring, naming the first concrete move for each bottleneck.
-- [Free Templates & Calculators for SME Owners](https://wayneconrad.com/resources.html): Decision Rights Mapping Template, What Manual Coordination Is Costing You (a coordination-cost calculator), and Client Health Scorecard.
-- [Advisory Services](https://wayneconrad.com/growth.html): Operational automation for SME service businesses, a three-stage engagement of diagnose, map, and build.
-
-## Key Articles & Insights
-
-- [The AI Trust Gap](https://wayneconrad.com/ai-trust-gap.html): Why 68% of small business owners believe AI will help their business, but only 22% trust it enough to run unsupervised, and what that gap actually means for a service business.
-- [The Hidden Friction Tax](https://wayneconrad.com/articles/hidden-friction-tax.html): Why manual coordination quietly eats 15 to 20 percent of payroll in a service business, and how to reclaim it.
-- [Why Adding Headcount Won't Fix an Architecture Problem](https://wayneconrad.com/articles/headcount-vs-architecture.html): Why hiring to absorb operational chaos multiplies complexity instead of solving it.
-- [How to Delegate Decision Rights](https://wayneconrad.com/articles/delegate-decision-rights.html): How to delegate authority without losing control, by defining explicit decision boundaries.
-
-## Frequently Asked Questions
-
-- [FAQ](https://wayneconrad.com/faq.html): Answers on founder dependency, the AI readiness assessment, engagement length, and how the process works.
+## Facts
+- Audience: owners of service businesses with 5 to 50 people.
+- Method: fix the process, then automate it. Approval steps stay with people.
+- Guarantee: written acceptance criteria before work starts; fixes at no charge for up to 10 working days from written notice; if still unmet, a refund of the fee paid for that sprint, as the only remedy for the work missing its criteria. Excludes problems caused by client changes, late access, incorrect data or third-party changes. Defects fixed during the support window.
+- Not claimed: no guarantee of revenue, savings or hours saved; no SOC 2 or ISO 27001 certification held by Wayne Conrad Advisory.
+- Data handling: an agreement is signed before data is shared; every tool that may handle client data is named in that agreement; business or API tiers only; minimum data; access is scoped and revocable; project copies are deleted when the support window ends, or earlier on request.
 
 ## Contact
-
-- Website: https://wayneconrad.com
-- LinkedIn: https://linkedin.com/in/wayneconrad
+- Book a call: https://meetings-na2.hubspot.com/wayne-conrad
+- LinkedIn: https://www.linkedin.com/company/ai-automation-wayne

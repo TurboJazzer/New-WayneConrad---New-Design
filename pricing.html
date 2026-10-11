@@ -32,7 +32,9 @@
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "description": "From {{FROM_PRICE_CLEANUP}}"
+     "minPrice": 1500,
+     "priceCurrency": "USD",
+     "description": "From $1,500"
     }
    }
   },
@@ -48,7 +50,9 @@
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "description": "From {{FROM_PRICE_WORKFLOW}}"
+     "minPrice": 2900,
+     "priceCurrency": "USD",
+     "description": "From $2,900"
     }
    }
   },
@@ -64,7 +68,9 @@
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "description": "From {{FROM_PRICE_ENGINE}}"
+     "minPrice": 8500,
+     "priceCurrency": "USD",
+     "description": "From $8,500"
     }
    }
   },
@@ -76,7 +82,7 @@
      "name": "How much does each sprint cost?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The three sprints start from {{FROM_PRICE_CLEANUP}}, {{FROM_PRICE_WORKFLOW}} and {{FROM_PRICE_ENGINE}}. The price depends on the number of systems, integrations and monthly volume. I confirm it in writing before work starts."
+      "text": "The three sprints start from $1,500, $2,900 and $8,500. The price depends on the number of systems, integrations and monthly volume. I confirm it in writing before work starts."
      }
     },
     {
@@ -92,7 +98,7 @@
      "name": "What does the guarantee cover?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "I guarantee the build, not your results. Written acceptance criteria are agreed before work starts. If the work misses them I keep fixing it at no charge, and if it still misses them I refund the fee for that workflow, capped at {{Wayne to confirm cap and terms}}."
+      "text": "I guarantee the build, not your results. Written acceptance criteria are agreed before work starts and change only by written agreement. If the work misses them I fix it at no charge for up to 10 working days from your written notice, and if it still misses them I refund the fee you paid for that sprint. That is your only remedy for the work missing its criteria. It does not cover problems caused by your changes, late access or approvals, incorrect data, or changes by third-party software or services."
      }
     },
     {
@@ -100,7 +106,7 @@
      "name": "What happens after the sprint?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "You get a {{30}} or {{90}} day window, depending on the sprint, where I fix anything that does not meet the agreed criteria. After that you keep it as it is or ask me to continue."
+      "text": "You get a 30 or 90 day window, depending on the sprint, where I fix anything that does not meet the agreed criteria. After that you keep it as it is or ask me to continue."
      }
     },
     {
@@ -124,7 +130,7 @@
      "name": "Is my data safe?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "I sign a data processing agreement before I see any client data. I use business or API accounts and send tools only the fields a workflow needs. Tools that may handle your data: {{list}}. Access is through credentials you grant and can revoke. When the project ends I remove my access and delete project copies within {{period}}. I do not hold a SOC 2 or ISO 27001 certificate; the vendors I use publish their own."
+      "text": "I sign a data processing agreement before I see any client data. I use business or API accounts and send tools only the fields a workflow needs. I name every tool that may handle your data in the written agreement before any data is shared. Access is through credentials you grant and can revoke. When the support window ends I remove my access and delete project copies, or earlier if you ask. Backups and records I am legally required to keep are the exception. I do not hold a SOC 2 or ISO 27001 certificate; the vendors I use publish their own."
      }
     },
     {
@@ -542,15 +548,15 @@ footer{padding:12px 0 56px}
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-nav">
   <div class="nav-in">
-    <a class="nav-logo" href="https://wayneconrad.com/" aria-label="Wayne Conrad Advisory, home"><picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32"></picture></a>
+    <a class="nav-logo" href="/" aria-label="Wayne Conrad Advisory, home"><picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32"></picture></a>
     <nav aria-label="Main" style="display:contents">
       <ul class="nav-links" id="site-links">
-        <li><a href="https://wayneconrad.com/#sprints">Sprints</a></li>
-        <li><a href="https://wayneconrad.com/#how-it-works">How it works</a></li>
-        <li><a href="https://wayneconrad.com/#results">Results</a></li>
-        <li><a href="https://wayneconrad.com/pricing.html">Pricing</a></li>
-        <li><a href="https://wayneconrad.com/resources.html">Resources</a></li>
-        <li><a href="https://wayneconrad.com/diagnostic.html">Diagnostic</a></li>
+        <li><a href="/#sprints">Sprints</a></li>
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#results">Results</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/diagnostic.html">Diagnostic</a></li>
       </ul>
     </nav>
     <a class="nav-book" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free call</a>
@@ -566,7 +572,7 @@ footer{padding:12px 0 56px}
       <p class="sub">Three fixed-scope sprints, a written price before work starts, and a guarantee on the build.</p>
       <div class="cta-stack">
         <a class="btn btn-primary" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free 15-minute workflow call</a>
-        <a class="btn btn-ghost" href="https://wayneconrad.com/diagnostic.html">Take the 2-minute diagnostic</a>
+        <a class="btn btn-ghost" href="/diagnostic.html">Take the 2-minute diagnostic</a>
       </div>
     </div>
   </div>
@@ -576,20 +582,20 @@ footer{padding:12px 0 56px}
     <div class="panel-head"><span class="label">Panel 01 &middot; The three sprints</span></div>
     <div class="panel-body">
 <h2 id="sprints-h" class="wide">Pick the size of the problem.</h2><div class="cards"><article class="pcard">
-  <h3>AI cleanup sprint</h3><span class="price">From <span class="ph">{{FROM_PRICE_CLEANUP}}</span></span><span class="len"><span class="ph">{{3 to 5 days}}</span></span>
-  <dl><dt>For</dt><dd>Automations that half work.</dd><dt>What is delivered</dt><dd>Failing flows repaired, duplicate tool subscriptions removed, a written map of every live automation, a priority list.</dd><dt>What follows</dt><dd>Support window <span class="ph">{{30}}</span> days.</dd></dl></article>
-<article class="pcard feat"><span class="badge" style="align-self:flex-start">Most booked</span>
-  <h3>Single workflow sprint</h3><span class="price">From <span class="ph">{{FROM_PRICE_WORKFLOW}}</span></span><span class="len"><span class="ph">{{7 to 10 days}}</span></span>
-  <dl><dt>For</dt><dd>One slow pipeline, usually enquiries or onboarding.</dd><dt>What is delivered</dt><dd>One workflow built and live in your CRM and inbox, approval steps where they matter, team training, a one-page runbook.</dd><dt>What follows</dt><dd><span class="ph">{{30}}</span> days of tuning.</dd></dl></article>
+  <h3>AI cleanup sprint</h3><span class="price">From $1,500</span><span class="len">3 to 5 days</span>
+  <dl><dt>For</dt><dd>Automations that half work.</dd><dt>What is delivered</dt><dd>Failing flows repaired, duplicate tool subscriptions removed, a written map of every live automation, a priority list.</dd><dt>What follows</dt><dd>30 days of support.</dd></dl></article>
+<article class="pcard feat">
+  <h3>Single workflow sprint</h3><span class="price">From $2,900</span><span class="len">7 to 10 days</span>
+  <dl><dt>For</dt><dd>One slow pipeline, usually enquiries or onboarding.</dd><dt>What is delivered</dt><dd>One workflow built and live in your CRM and inbox, approval steps where they matter, team training, a one-page runbook.</dd><dt>What follows</dt><dd>30 days of tuning.</dd></dl></article>
 <article class="pcard">
-  <h3>End-to-end ops engine</h3><span class="price">From <span class="ph">{{FROM_PRICE_ENGINE}}</span></span><span class="len"><span class="ph">{{14 to 21 days}}</span></span>
-  <dl><dt>For</dt><dd>Sales, delivery and finance still run through you.</dd><dt>What is delivered</dt><dd>Connected sales, delivery and finance on a shared data layer in your tools, an exceptions-only owner dashboard, full handover.</dd><dt>What follows</dt><dd><span class="ph">{{90}}</span> days of tuning.</dd></dl></article></div><p class="under mono-note" style="margin-top:16px"><em>The price depends on the number of systems, integrations and monthly volume. I confirm it in writing before work starts.</em></p>
+  <h3>End-to-end ops engine</h3><span class="price">From $8,500</span><span class="len">14 to 21 days</span>
+  <dl><dt>For</dt><dd>Sales, delivery and finance still run through you.</dd><dt>What is delivered</dt><dd>Connected sales, delivery and finance on a shared data layer in your tools, an exceptions-only owner dashboard, full handover.</dd><dt>What follows</dt><dd>90 days of tuning.</dd></dl></article></div><p class="under mono-note" style="margin-top:16px"><em>The price depends on the number of systems, integrations and monthly volume. I confirm it in writing before work starts.</em></p>
     </div>
   </section>
   <section class="panel " id="compare" aria-labelledby="compare-h">
     <div class="panel-head"><span class="label">Panel 02 &middot; Side by side</span></div>
     <div class="panel-body">
-<h2 id="compare-h" class="wide">The three sprints compared</h2><table class="stable"><caption class="sr-only">Comparison of the three sprints on the same rows</caption><thead><tr><td></td><th scope="col">AI cleanup sprint</th><th scope="col" class="mid">Single workflow sprint</th><th scope="col">End-to-end ops engine</th></tr></thead><tbody><tr><th scope="row">Time</th><td data-label="AI cleanup sprint"><span class="ph">{{3 to 5 days}}</span></td><td class="mid" data-label="Single workflow sprint"><span class="ph">{{7 to 10 days}}</span></td><td data-label="End-to-end ops engine"><span class="ph">{{14 to 21 days}}</span></td></tr><tr><th scope="row">From</th><td data-label="AI cleanup sprint"><span class="ph">{{FROM_PRICE_CLEANUP}}</span></td><td class="mid" data-label="Single workflow sprint"><span class="ph">{{FROM_PRICE_WORKFLOW}}</span></td><td data-label="End-to-end ops engine"><span class="ph">{{FROM_PRICE_ENGINE}}</span></td></tr><tr><th scope="row">For</th><td data-label="AI cleanup sprint">Automations that half work</td><td class="mid" data-label="Single workflow sprint">One slow pipeline, usually enquiries or onboarding</td><td data-label="End-to-end ops engine">Sales, delivery and finance still run through you</td></tr><tr><th scope="row">You get</th><td data-label="AI cleanup sprint">Failing flows repaired, duplicate tool subscriptions removed, a written map of every live automation, a priority list</td><td class="mid" data-label="Single workflow sprint">One workflow built and live in your CRM and inbox, approval steps, team training, a one-page runbook</td><td data-label="End-to-end ops engine">Connected sales, delivery and finance on a shared data layer in your tools, an exceptions-only owner dashboard, full handover</td></tr><tr><th scope="row">Acceptance criteria</th><td data-label="AI cleanup sprint">Written and agreed before work starts</td><td class="mid" data-label="Single workflow sprint">Written and agreed before work starts</td><td data-label="End-to-end ops engine">Written and agreed before work starts</td></tr><tr><th scope="row">After</th><td data-label="AI cleanup sprint">Support window <span class="ph">{{30}}</span> days</td><td class="mid" data-label="Single workflow sprint"><span class="ph">{{30}}</span> days of tuning</td><td data-label="End-to-end ops engine"><span class="ph">{{90}}</span> days of tuning</td></tr></tbody></table>
+<h2 id="compare-h" class="wide">The three sprints compared</h2><table class="stable"><caption class="sr-only">Comparison of the three sprints on the same rows</caption><thead><tr><td></td><th scope="col">AI cleanup sprint</th><th scope="col" class="mid">Single workflow sprint</th><th scope="col">End-to-end ops engine</th></tr></thead><tbody><tr><th scope="row">Time</th><td data-label="AI cleanup sprint">3 to 5 days</td><td class="mid" data-label="Single workflow sprint">7 to 10 days</td><td data-label="End-to-end ops engine">14 to 21 days</td></tr><tr><th scope="row">From</th><td data-label="AI cleanup sprint">$1,500</td><td class="mid" data-label="Single workflow sprint">$2,900</td><td data-label="End-to-end ops engine">$8,500</td></tr><tr><th scope="row">For</th><td data-label="AI cleanup sprint">Automations that half work</td><td class="mid" data-label="Single workflow sprint">One slow pipeline, usually enquiries or onboarding</td><td data-label="End-to-end ops engine">Sales, delivery and finance still run through you</td></tr><tr><th scope="row">You get</th><td data-label="AI cleanup sprint">Failing flows repaired, duplicate tool subscriptions removed, a written map of every live automation, a priority list</td><td class="mid" data-label="Single workflow sprint">One workflow built and live in your CRM and inbox, approval steps, team training, a one-page runbook</td><td data-label="End-to-end ops engine">Connected sales, delivery and finance on a shared data layer in your tools, an exceptions-only owner dashboard, full handover</td></tr><tr><th scope="row">Acceptance criteria</th><td data-label="AI cleanup sprint">Written and agreed before work starts</td><td class="mid" data-label="Single workflow sprint">Written and agreed before work starts</td><td data-label="End-to-end ops engine">Written and agreed before work starts</td></tr><tr><th scope="row">After</th><td data-label="AI cleanup sprint">30 days of support</td><td class="mid" data-label="Single workflow sprint">30 days of tuning</td><td data-label="End-to-end ops engine">90 days of tuning</td></tr></tbody></table>
     </div>
   </section>
   <section class="panel dark" id="excluded" aria-labelledby="excluded-h">
@@ -601,32 +607,32 @@ footer{padding:12px 0 56px}
   <section class="panel " id="guarantee" aria-labelledby="guarantee-h">
     <div class="panel-head"><span class="label">Panel 04 &middot; The guarantee</span></div>
     <div class="panel-body">
-<h2 id="guarantee-h">I guarantee the build, not your results.</h2><ul class="dlist"><li>Written acceptance criteria are agreed before work starts.</li><li>If the work misses them, I keep fixing it at no charge until they are met.</li><li>If it still misses them, I refund the fee for that workflow, capped at <span class="ph">{{Wayne to confirm cap and terms}}</span>.</li><li>I fix defects for the whole support window.</li><li>I do not promise revenue, savings or hours saved.</li></ul>
+<h2 id="guarantee-h">I guarantee the build, not your results.</h2><ul class="dlist"><li>Written acceptance criteria are agreed before work starts. They change only by written agreement.</li><li>If the delivered work does not meet them, I fix it at no charge for up to 10 working days from your written notice.</li><li>If it still does not meet them, I refund the fee you paid for that sprint. That fix or refund is your only remedy for the work missing its criteria.</li><li>This does not cover problems caused by your changes, late access or approvals, incorrect data, or changes by third-party software or services.</li><li>Tell me in writing, naming the criterion, within 14 days of handover. During the support window I also fix defects, meaning anything that does not meet an agreed criterion.</li><li>I do not promise revenue, savings or hours saved. AI tools can produce wrong output, which is why approval steps keep a person in control.</li></ul>
     </div>
   </section>
   <section class="panel dark" id="data" aria-labelledby="data-h">
     <div class="panel-head"><span class="label">Panel 05 &middot; Data handling</span></div>
     <div class="panel-body">
-<h2 id="data-h">How your data is handled</h2><ul class="dlist"><li>An agreement is signed before any data is shared.</li><li>Tools that may handle your data: <span class="ph">{{list}}</span>. Business or API tiers only.</li><li>I use the minimum data a workflow needs.</li><li>Access is scoped and you can revoke it at any time.</li><li>Project copies are deleted within <span class="ph">{{period}}</span> of handover.</li></ul><p class="mono-note" style="margin-top:16px">I hold no security certification. The vendors I use publish their own.</p>
+<h2 id="data-h">How your data is handled</h2><ul class="dlist"><li>An agreement is signed before any data is shared.</li><li>I name every tool that may handle your data in the written agreement before any data is shared. Business or API tiers only.</li><li>I use the minimum data a workflow needs.</li><li>Access is scoped and you can revoke it at any time.</li><li>Project copies are deleted when the support window ends, or earlier if you ask.</li></ul><p class="mono-note" style="margin-top:16px">I hold no security certification. The vendors I use publish their own.</p>
     </div>
   </section>
   <section class="panel " id="faq" aria-labelledby="faq-h">
     <div class="panel-head"><span class="label">Panel 06 &middot; Questions</span></div>
     <div class="panel-body">
-<h2 id="faq-h" class="wide">Questions about price and terms</h2><div class="faq"><details class="qa"><summary><h3>How much does each sprint cost?</h3></summary><p>The three sprints start from <span class="ph">{{FROM_PRICE_CLEANUP}}</span>, <span class="ph">{{FROM_PRICE_WORKFLOW}}</span> and <span class="ph">{{FROM_PRICE_ENGINE}}</span>. The price depends on the number of systems, integrations and monthly volume. I confirm it in writing before work starts.</p></details>
+<h2 id="faq-h" class="wide">Questions about price and terms</h2><div class="faq"><details class="qa"><summary><h3>How much does each sprint cost?</h3></summary><p>The three sprints start from $1,500, $2,900 and $8,500. The price depends on the number of systems, integrations and monthly volume. I confirm it in writing before work starts.</p></details>
 <details class="qa"><summary><h3>Are there ongoing fees?</h3></summary><p>No retainer is included. If you want me to keep going after a sprint, that is a separate written agreement. Software licences and usage charges are paid directly to the tool vendors.</p></details>
-<details class="qa"><summary><h3>What does the guarantee cover?</h3></summary><p>I guarantee the build, not your results. Written acceptance criteria are agreed before work starts. If the work misses them I keep fixing it at no charge, and if it still misses them I refund the fee for that workflow, capped at <span class="ph">{{Wayne to confirm cap and terms}}</span>.</p></details>
-<details class="qa"><summary><h3>What happens after the sprint?</h3></summary><p>You get a <span class="ph">{{30}}</span> or <span class="ph">{{90}}</span> day window, depending on the sprint, where I fix anything that does not meet the agreed criteria. After that you keep it as it is or ask me to continue.</p></details>
+<details class="qa"><summary><h3>What does the guarantee cover?</h3></summary><p>I guarantee the build, not your results. Written acceptance criteria are agreed before work starts and change only by written agreement. If the work misses them I fix it at no charge for up to 10 working days from your written notice, and if it still misses them I refund the fee you paid for that sprint. That is your only remedy for the work missing its criteria. It does not cover problems caused by your changes, late access or approvals, incorrect data, or changes by third-party software or services.</p></details>
+<details class="qa"><summary><h3>What happens after the sprint?</h3></summary><p>You get a 30 or 90 day window, depending on the sprint, where I fix anything that does not meet the agreed criteria. After that you keep it as it is or ask me to continue.</p></details>
 <details class="qa"><summary><h3>Who owns what you build?</h3></summary><p>You do. It is built in your accounts and ownership transfers at final payment.</p></details>
 <details class="qa"><summary><h3>Do I need to be technical?</h3></summary><p>No. You approve decisions and read a short report. I handle the build and the handover.</p></details>
-<details class="qa"><summary><h3>Is my data safe?</h3></summary><p>I sign a data processing agreement before I see any client data. I use business or API accounts and send tools only the fields a workflow needs. Tools that may handle your data: <span class="ph">{{list}}</span>. Access is through credentials you grant and can revoke. When the project ends I remove my access and delete project copies within <span class="ph">{{period}}</span>. I do not hold a SOC 2 or ISO 27001 certificate; the vendors I use publish their own.</p></details>
+<details class="qa"><summary><h3>Is my data safe?</h3></summary><p>I sign a data processing agreement before I see any client data. I use business or API accounts and send tools only the fields a workflow needs. I name every tool that may handle your data in the written agreement before any data is shared. Access is through credentials you grant and can revoke. When the support window ends I remove my access and delete project copies, or earlier if you ask. Backups and records I am legally required to keep are the exception. I do not hold a SOC 2 or ISO 27001 certificate; the vendors I use publish their own.</p></details>
 <details class="qa"><summary><h3>Can I start with something smaller?</h3></summary><p>Yes. Book a free 15-minute call or take the 2-minute diagnostic and I will tell you which sprint, if any, fits.</p></details></div><p class="updated">Last updated: 11 October 2026</p>
     </div>
   </section>
   <section class="panel final" id="start" aria-labelledby="start-h">
     <div class="panel-head"><span class="label">Panel 07 &middot; Start here</span></div>
     <div class="panel-body">
-<h2 id="final-h">Start with a 15-minute call.</h2><div class="final-ctas"><a class="btn btn-primary" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free 15-minute workflow call</a><a class="btn btn-ghost" href="https://wayneconrad.com/diagnostic.html">Take the 2-minute diagnostic</a></div>
+<h2 id="final-h">Start with a 15-minute call.</h2><div class="final-ctas"><a class="btn btn-primary" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free 15-minute workflow call</a><a class="btn btn-ghost" href="/diagnostic.html">Take the 2-minute diagnostic</a></div>
     </div>
   </section>
 </div>
@@ -636,11 +642,12 @@ footer{padding:12px 0 56px}
     <div>
       <p><strong>Wayne Conrad Advisory, a remote-first company.</strong></p>
       <div class="foot-links">
-        <a href="https://wayneconrad.com/growth.html">Advisory Services</a>
-        <a href="https://wayneconrad.com/pricing.html">Pricing</a>
-        <a href="https://wayneconrad.com/resources.html">Resources</a>
-        <a href="https://wayneconrad.com/faq.html">FAQ</a>
+        <a href="/growth.html">Advisory Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/faq.html">FAQ</a>
         <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
         <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
       </div>
     </div>

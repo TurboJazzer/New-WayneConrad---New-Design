@@ -108,7 +108,7 @@ exports.handler = async (event) => {
               </div>
             </div>
             <div style="padding: 20px 40px; background: #f8fafc; border-top: 1px solid #e2e8f0;">
-              <p style="font-size: 12px; color: #9ca3af; margin: 0;">Wayne Conrad Advisory &nbsp;·&nbsp; Bangkok &nbsp;·&nbsp; <a href="https://wayneconrad.com" style="color: #2563eb; text-decoration: none;">wayneconrad.com</a></p>
+              <p style="font-size: 12px; color: #9ca3af; margin: 0;">Wayne Conrad Advisory &nbsp;·&nbsp; <a href="https://wayneconrad.com" style="color: #2563eb; text-decoration: none;">wayneconrad.com</a></p>
             </div>
           </div>
         `

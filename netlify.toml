@@ -186,6 +186,85 @@
   status = 404
   force = true
 
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/growth"
+  to = "/growth.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/delegate-decision-rights"
+  to = "/articles/delegate-decision-rights.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/articles/headcount-vs-architecture"
+  to = "/articles/headcount-vs-architecture.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/articles/hidden-friction-tax"
+  to = "/articles/hidden-friction-tax.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/client-health-scorecard"
+  to = "/client-health-scorecard.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/decision-rights-template"
+  to = "/decision-rights-template.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/delegate-decision-rights"
+  to = "/articles/delegate-decision-rights.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/founder_bottleneck_scorecard"
+  to = "/founder_bottleneck_scorecard.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/googleb3dc76a2b38cd427"
+  to = "/googleb3dc76a2b38cd427.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/shadow-payroll-calculator"
+  to = "/shadow-payroll-calculator.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/delegate-decision-rights.html"
+  to = "/articles/delegate-decision-rights.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 301
+  force = true
+
 # STAGING ONLY: keep search engines out of the test site.
 [[headers]]
   for = "/*"
