@@ -7,6 +7,13 @@
 # Enforce .html as the single canonical URL form site-wide.
 # Netlify's built-in Pretty URLs feature is deprecated and documented as
 # unreliable when toggled off, so this is handled explicitly here instead.
+# Staff area password gate. Keep FIRST so nothing under /staff is served before the check.
+[[edge_functions]]
+  path = "/staff"
+  function = "staff-gate"
+[[edge_functions]]
+  path = "/staff/*"
+  function = "staff-gate"
 # Strip Range header for crawlers to ensure full 200 OK HTML responses
 [[edge_functions]]
   path = "/*.html"
@@ -270,3 +277,10 @@
   for = "/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+# Staff pages: never indexed or cached
+[[headers]]
+  for = "/staff/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store, private"
