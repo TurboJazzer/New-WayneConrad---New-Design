@@ -18,7 +18,7 @@ const baseHeaders = {
   "X-Robots-Tag": "noindex, nofollow, noarchive",
   "Cache-Control": "no-store, private",
   "X-Content-Type-Options": "nosniff",
-  "Referrer-Policy": "no-referrer",
+  "Referrer-Policy": "same-origin",
 };
 
 const env = (k) => {
@@ -141,8 +141,14 @@ export default async (request, context) => {
 
   // Login attempt.
   if (request.method === "POST") {
+    // CSRF guard. Browsers send "Origin: null" on same-origin form posts when the
+    // referrer policy is no-referrer, so only reject a real, different origin
+    // or an explicit cross-site fetch.
     const origin = request.headers.get("origin");
-    if (origin && origin !== url.origin) return new Response("Forbidden", { status: 403, headers: baseHeaders });
+    const site = request.headers.get("sec-fetch-site");
+    if ((origin && origin !== "null" && origin !== url.origin) || site === "cross-site") {
+      return new Response("Forbidden", { status: 403, headers: baseHeaders });
+    }
 
     const ip = context.ip || request.headers.get("x-nf-client-connection-ip") || "unknown";
     const key = await ipKey(ip, secret);
