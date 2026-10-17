@@ -87,12 +87,12 @@ exports.handler = async (event) => {
         from: 'Wayne Conrad <wayne@wayneconrad.com>',
         to: [email],
         reply_to: 'wayne@wayneconrad.com',
-        subject: 'Your Operational Dependency Report — Wayne Conrad Advisory',
+        subject: 'Your AI Automation Readiness Report — Wayne Conrad Advisory',
         html: `
           <div style="font-family: Inter, -apple-system, sans-serif; max-width: 620px; margin: 0 auto; color: #0f172a; line-height: 1.7;">
             <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); padding: 32px 40px; border-bottom: 3px solid #2563eb;">
               <p style="color: #93c5fd; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 8px;">Wayne Conrad Advisory</p>
-              <h1 style="color: #ffffff; font-size: 22px; font-weight: 400; margin: 0; font-family: Georgia, serif;">Your Operational Dependency Report</h1>
+              <h1 style="color: #ffffff; font-size: 22px; font-weight: 400; margin: 0; font-family: Georgia, serif;">Your AI Automation Readiness Report</h1>
             </div>
             <div style="padding: 40px; background: #ffffff; border: 1px solid #e2e8f0;">
               <p style="font-size: 16px; margin: 0 0 24px;">Hi ${firstName},</p>
@@ -149,7 +149,7 @@ exports.handler = async (event) => {
 
             <!-- REPLY BUTTON -->
             <div style="background: #f8fafc; padding: 20px 32px; border: 1px solid #e2e8f0; border-top: none; text-align: left;">
-              <a href="mailto:${email}?subject=Re: Your Operational Dependency Report" style="display: inline-block; background: #2563eb; color: #ffffff; font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 6px; text-decoration: none;">Reply to ${firstName}</a>
+              <a href="mailto:${email}?subject=Re: Your AI Automation Readiness Report" style="display: inline-block; background: #2563eb; color: #ffffff; font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 6px; text-decoration: none;">Reply to ${firstName}</a>
             </div>
 
             <!-- REPORT -->

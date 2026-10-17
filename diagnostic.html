@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.className='js';</script>
-<title>Operational Dependency Diagnostic | Wayne Conrad Advisory</title>
-<meta name="description" content="Free 5-question diagnostic, about 2 minutes. Get a personalised report showing where your business depends on you to run, and what to fix first.">
-<meta property="og:title" content="Operational Dependency Diagnostic | Wayne Conrad Advisory">
-<meta property="og:description" content="Free 5-question diagnostic, about 2 minutes. Get a personalised report showing where your business depends on you to run, and what to fix first.">
+<title>AI Automation Readiness Diagnostic | Wayne Conrad Advisory</title>
+<meta name="description" content="Free 5-question diagnostic, about 2 minutes. Get a personalised report showing which workflows to automate first, and what the manual work is costing you.">
+<meta property="og:title" content="AI Automation Readiness Diagnostic | Wayne Conrad Advisory">
+<meta property="og:description" content="Free 5-question diagnostic, about 2 minutes. Get a personalised report showing which workflows to automate first, and what the manual work is costing you.">
 <meta property="og:image" content="https://wayneconrad.com/wayne_featured_slot1.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wayneconrad.com/diagnostic.html">
@@ -182,9 +182,9 @@ p{margin:0 0 1em}
     {
       "@type": "WebApplication",
       "@id": "https://wayneconrad.com/diagnostic.html#app",
-      "name": "Operational Dependency Diagnostic",
+      "name": "AI Automation Readiness Diagnostic",
       "url": "https://wayneconrad.com/diagnostic.html",
-      "description": "Free 5-question diagnostic. Get a personalised report showing exactly where your business depends on you to run, and what to fix first.",
+      "description": "Free 5-question diagnostic. Get a personalised report showing which workflows to automate first, and what the manual work is costing you.",
       "applicationCategory": "BusinessApplication",
       "browserRequirements": "Requires JavaScript and a modern web browser.",
       "operatingSystem": "All",
@@ -260,8 +260,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <main id="main" tabindex="-1">
 <section class="hero" aria-labelledby="hero-h"><div class="hero-in">
   <p class="hero-badge"><span class="badge-dot" aria-hidden="true"></span>Free diagnostic &middot; about 2 minutes</p>
-  <h1 id="hero-h">Why is your business <em>still depending on you</em> to run?</h1>
-  <p class="hero-sub">5 questions. A personalised report that names where founder dependency is holding your business stuck, and what to fix first.</p>
+  <h1 id="hero-h">Which workflows should <em>AI automate first</em> in your business?</h1>
+  <p class="hero-sub">5 questions. A personalised report that names where manual work is costing you time and margin, and which workflow to automate first.</p>
   <div class="hero-btns">
     <a class="btn-hw" href="#start">Start the 2-minute diagnostic</a>
     <a class="btn-ho" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free 15-minute workflow call</a>
@@ -319,7 +319,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <p>Building a report specific to your situation</p>
       <div class="load-steps">
         <div class="lstep active" id="ls1"><span class="lsdot"></span>Reading your answers</div>
-        <div class="lstep" id="ls2"><span class="lsdot"></span>Identifying your dependency pattern</div>
+        <div class="lstep" id="ls2"><span class="lsdot"></span>Identifying your manual-work pattern</div>
         <div class="lstep" id="ls3"><span class="lsdot"></span>Writing your recommendations</div>
         <div class="lstep" id="ls4"><span class="lsdot"></span>Finalising your report</div>
       </div>
@@ -358,6 +358,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <a href="/faq.html">FAQ</a>
       <a href="/terms.html">Terms of Service</a>
       <a href="/privacy.html">Privacy Policy</a>
+      <a href="/trust.html">Trust and Data</a>
       <a href="/growth.html">Advisory Services</a>
       <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
       <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
@@ -366,7 +367,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
       <p>A remote-first company</p>
-      <p>Last updated: 11 October 2026</p>
+      <p>Last updated: 16 October 2026</p>
     </div>
   </div>
   <div class="foot-base"><p>&copy; 2026 Wayne Conrad Advisory. Available globally, remote-first.</p><p>Invoiced in USD &middot; Serving AU, SEA, UK and US teams</p></div>
@@ -379,51 +380,52 @@ if(mb&&ln){mb.addEventListener('click',function(){var o=ln.classList.toggle('ope
 <script>
 const Qs = [
   { num:'Question 01', id:'q1',
-    text:'When you are away from the business for two days, what happens?',
-    sub:'Think about the last time you were genuinely unavailable for a full working day.',
+    text:'How much of your routine admin (enquiries, onboarding, reporting, invoicing) is done by hand today?',
+    sub:'Think about last week, not how it is supposed to work.',
     opts:[
-      {v:'a', l:'The business runs without me needing to check in', h:'Clear processes and ownership mean things keep moving'},
-      {v:'b', l:'Things slow down but nothing critical breaks', h:'Some dependency on me but the team manages'},
-      {v:'c', l:'I get called or messaged about things that should not need me', h:'My availability is still the default for too many decisions'},
-      {v:'d', l:'I cannot really be away without something falling over', h:'The business depends on my presence to function normally'}
+      {v:'a', l:'Almost none. Most of it runs automatically', h:'Routine work is already automated'},
+      {v:'b', l:'Some of it. A few steps are still manual', h:'Partly automated, with manual gaps'},
+      {v:'c', l:'Most of it. People copy, paste and chase between tools', h:'Manual handoffs between tools are the norm'},
+      {v:'d', l:'Nearly all of it. It depends on people remembering to do it', h:'Routine work depends on manual effort'}
     ]},
   { num:'Question 02', id:'q2',
-    text:'How does work actually move through your business when you are not directly involved?',
+    text:'How does work move between your tools and your people?',
     sub:'Not how it is supposed to work. What you actually observe happening day to day.',
     opts:[
-      {v:'a', l:'Clear ownership and defined steps mean work moves without me', h:'Processes are documented and people know what to do next'},
-      {v:'b', l:'Most things move but some tasks stall waiting for my input', h:'Partial dependency — I am still in the loop more than I should be'},
-      {v:'c', l:'Work moves but people compensate manually for gaps in the process', h:'The team works hard to fill in what the system does not handle'},
-      {v:'d', l:'Most work routes through me at some point before it is complete', h:'I am the central coordination point for too much of what happens'}
+      {v:'a', l:'Each step triggers the next automatically', h:'Handoffs are defined and automatic'},
+      {v:'b', l:'Most handoffs work, but some stall until someone nudges them', h:'Partly automatic, with stalls'},
+      {v:'c', l:'People move information between tools by hand to fill the gaps', h:'The team works hard to fill what the system does not handle'},
+      {v:'d', l:'Most work waits on a message, a spreadsheet or someone\'s memory', h:'The process lives in people, not in the system'}
     ]},
   { num:'Question 03', id:'q3',
-    text:'When your business makes a pricing, discounting, or scope decision, who can actually make that call?',
-    sub:'Think about the last time a client asked for an exception or adjustment outside your standard terms.',
+    text:'When a quote, discount or scope exception comes in, how is it handled?',
+    sub:'Think about the last time a client asked for something outside your standard terms.',
     opts:[
-      {v:'a', l:'My team has clear boundaries within which they can decide', h:'Decision rights are defined and my team uses them confidently'},
-      {v:'b', l:'Some decisions my team can make, others always come to me', h:'Partial delegation — the line is not always clear'},
-      {v:'c', l:'Most non-standard decisions wait for me to be available', h:'I am the default sign-off for anything outside the routine'},
-      {v:'d', l:'Almost everything comes to me before it is confirmed', h:'The business cannot commit to a client without my involvement'}
+      {v:'a', l:'Written limits let the system handle it, and only larger exceptions need approval', h:'Decision limits are defined and applied automatically'},
+      {v:'b', l:'Some exceptions are handled by rule, the rest wait for a person', h:'Partly rule-based, partly manual'},
+      {v:'c', l:'Most exceptions wait for someone to be available to decide', h:'Exceptions queue up behind manual approval'},
+      {v:'d', l:'Every exception is handled one by one, by hand', h:'There are no written limits to automate against'}
     ]},
   { num:'Question 04', id:'q4',
-    text:'How clearly can you see the financial health of your business right now — without pulling anything together manually?',
+    text:'How clearly can you see the financial health of your business right now, without pulling anything together manually?',
     sub:'Not what you could find if you spent two hours on it. What you can see without doing that work.',
     opts:[
       {v:'a', l:'I can see cash position, outstanding invoices, and margin at any time', h:'Financial visibility is automatic and current'},
-      {v:'b', l:'I have a reasonable picture but it requires some manual checking', h:'Partial visibility — I can get there but it takes effort'},
+      {v:'b', l:'I have a reasonable picture but it requires some manual checking', h:'Partial visibility, it takes effort to get there'},
       {v:'c', l:'I know the rough numbers but the detail requires compiling from several places', h:'The numbers exist but nobody has connected them into a clear view'},
-      {v:'d', l:'My financial picture is always a few weeks behind what is actually happening', h:'Manual processes mean I am making decisions on outdated information'}
+      {v:'d', l:'My financial picture is always a few weeks behind what is actually happening', h:'Manual processes mean decisions are made on outdated information'}
     ]},
   { num:'Question 05', id:'q5',
-    text:'When your business last hired someone, what problem were you actually solving?',
-    sub:'Be honest about the real reason the hire happened, not the job description you wrote.',
+    text:'When work last piled up, what did you do about it?',
+    sub:'Be honest about what actually happened, not what you planned.',
     opts:[
-      {v:'a', l:'I had a clearly defined gap in a working process and hired into it', h:'The role was deliberate and the process was ready for a person'},
-      {v:'b', l:'I was growing and needed more capacity in an area that was working', h:'Scaling a functioning part of the business'},
-      {v:'c', l:'Things were getting busy and I needed someone to absorb the load', h:'Reactive hire driven by volume rather than process clarity'},
-      {v:'d', l:'I was exhausted and needed someone to take things off my plate', h:'The hire was an act of relief more than a strategic decision'}
+      {v:'a', l:'I fixed or automated the process, then added capacity only where needed', h:'The process was fixed before capacity was added'},
+      {v:'b', l:'I added capacity in an area that was already working well', h:'Scaling a functioning part of the business'},
+      {v:'c', l:'I added a person to absorb the extra volume', h:'Reactive capacity driven by volume rather than process clarity'},
+      {v:'d', l:'I took on the extra work myself to keep things moving', h:'Manual effort absorbed the load'}
     ]}
 ];
+
 let cur = 0;
 let furthestStep = 'landed';
 const ans = {};
@@ -519,7 +521,7 @@ function calcScore() {
   var keys = Object.keys(ans);
   for (var k=0; k<keys.length; k++) { total += (sm[ans[keys[k]]] || 0); }
   var pct = Math.round((total / 20) * 100);
-  var level = pct >= 80 ? 'Operationally Independent' : pct >= 55 ? 'Partially Systematised' : pct >= 30 ? 'Founder Dependent' : 'Critically Dependent';
+  var level = pct >= 80 ? 'Largely Automated' : pct >= 55 ? 'Partly Automated' : pct >= 30 ? 'Mostly Manual' : 'Heavily Manual';
   return { pct: pct, level: level };
 }
 function next() {
@@ -541,10 +543,10 @@ function showTeaser() {
   var s = calcScore();
   trackEvent('quiz_completed', { level: s.level, pct: s.pct });
   var teaserCopy = {
-    'Critically Dependent': 'That level usually means at least two or three daily decisions are still routing through you by default, not by design.',
-    'Founder Dependent': 'That level usually means the business runs day to day, but slows or stalls the moment you step back.',
-    'Partially Systematised': 'That level usually means the core of the business runs without you, with a few specific gaps still pulling you back in.',
-    'Operationally Independent': 'That level is rare. Most owners who score here still find one or two blind spots once they see the full breakdown.'
+    'Heavily Manual': 'That level usually means routine work in several areas depends on people remembering to do it, and a few workflows are good candidates to automate first.',
+    'Mostly Manual': 'That level usually means the business runs day to day, but a lot of coordination is done by hand and slows down whenever people are busy.',
+    'Partly Automated': 'That level usually means the core of the business runs well, with a few specific manual gaps still costing time and margin.',
+    'Largely Automated': 'That level is rare. Most owners who score here still find one or two workflows worth tightening once they see the full breakdown.'
   };
   document.getElementById('teaserCard').innerHTML =
     '<div class="rep-eye">Your Result</div>' +
@@ -606,23 +608,23 @@ async function generateReport() {
     }
     return 'No answer';
   }
-  var prompt = 'You are Wayne Conrad. You built and sold two service businesses over 28 years. You now advise SME owners on operational automation and process design. You write in first person, plainly, with calm authority. No hype. No corporate language. No em dashes. No semicolons. Short direct sentences. Write as someone who has run the exact problems you are describing.\n\n' +
-    'A business owner just completed your Operational Dependency Diagnostic. Here are their details:\n\n' +
+  var prompt = 'You are Wayne Conrad. You built and sold two service businesses over 28 years. You now build AI automation for SME service businesses. You write in first person, plainly, with calm authority. No hype. No corporate language. No em dashes. No semicolons. Short direct sentences. Write as someone who has run the exact problems you are describing.\n\n' +
+    'A business owner just completed your AI Automation Readiness Diagnostic. Here are their details:\n\n' +
     'Name: ' + fn + ' ' + ln + '\n' +
     'Company: ' + co + '\n' +
     'Team size: ' + (ts || 'not specified') + '\n' +
-    'Dependency score: ' + pct + '/100 — ' + level + '\n\n' +
+    'Automation readiness score: ' + pct + '/100 — ' + level + '\n\n' +
     'Their five answers:\n' +
-    '1. Business continuity without founder: "' + gl('q1') + '"\n' +
-    '2. How work moves without founder involvement: "' + gl('q2') + '"\n' +
-    '3. Decision-making authority in the team: "' + gl('q3') + '"\n' +
+    '1. Routine admin done by hand: "' + gl('q1') + '"\n' +
+    '2. How work moves between tools and people: "' + gl('q2') + '"\n' +
+    '3. How quotes, discounts and exceptions are handled: "' + gl('q3') + '"\n' +
     '4. Financial visibility without manual effort: "' + gl('q4') + '"\n' +
-    '5. Last hire motivation: "' + gl('q5') + '"\n\n' +
-    'Write a personalised operational dependency report for ' + fn + '. Use exactly these three section headers on their own lines:\n\n' +
+    '5. What they did when work last piled up: "' + gl('q5') + '"\n\n' +
+    'Write a personalised AI automation readiness report for ' + fn + '. Use exactly these three section headers on their own lines:\n\n' +
     'WHERE YOU STAND\nWHAT THIS MEANS FOR YOUR BUSINESS\nTHREE THINGS WORTH DOING NEXT\n\n' +
-    'Section 1 — WHERE YOU STAND: Two to three short paragraphs. Name their dependency pattern directly. Be honest, not harsh. Reference their specific answers. Do not mention the score number. Describe what the pattern means in operational terms for a service business their size.\n\n' +
-    'Section 2 — WHAT THIS MEANS FOR YOUR BUSINESS: Two paragraphs. Name the one or two structural issues their answers reveal. Be specific. Connect to real business risk — lost deals, margin erosion, staff retention, business value at exit. Not generic advice.\n\n' +
-    'Section 3 — THREE THINGS WORTH DOING NEXT: Three numbered actions. Each is one short paragraph. Practical, sequenced, and specific to their answers. Grounded in process design and operational clarity, not tool recommendations. Start with the highest-leverage change based on their pattern.\n\n' +
+    'Section 1 — WHERE YOU STAND: Two to three short paragraphs. Name their manual-work pattern directly. Be honest, not harsh. Reference their specific answers. Do not mention the score number. Describe what the pattern means in operational terms for a service business their size.\n\n' +
+    'Section 2 — WHAT THIS MEANS FOR YOUR BUSINESS: Two paragraphs. Name the one or two workflows their answers show are costing time and margin. Be specific. Connect to real business risk — slow replies, late invoices, errors, margin erosion. Not generic advice.\n\n' +
+    'Section 3 — THREE THINGS WORTH DOING NEXT: Three numbered actions. Each is one short paragraph. Practical, sequenced, and specific to their answers. Start with mapping the process, then say which workflow AI should take over first and where an approval step should stay. Do not recommend specific tools. Do not promise savings or results.\n\n' +
     'Write only the report content. No preamble. No sign-off. No explanation.';
   try {
     var res = await fetch('/.netlify/functions/generate', {
@@ -674,7 +676,7 @@ function renderReport(name, company, pct, level, text) {
   var C = 2 * Math.PI * 32;
   var offset = C - (pct / 100) * C;
   document.getElementById('repHeader').innerHTML =
-    '<div class="rep-eye">Operational Dependency Report</div>' +
+    '<div class="rep-eye">AI Automation Readiness Report</div>' +
     '<h2>' + name + ', here is where your business stands.</h2>' +
     '<div class="rep-co">' + company + '</div>' +
     '<div class="score-row">' +

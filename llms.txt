@@ -4,10 +4,10 @@
 
 ## What is offered
 - AI cleanup sprint: repairs failing automations, removes duplicate tool subscriptions, delivers a written map of live automations. From $1,500. Typical length 3 to 5 days, with 30 days of support.
-- Single workflow sprint: one pipeline built and live (usually enquiry triage or client onboarding), approval steps, training and a one-page runbook. From $2,900. Typical length 7 to 10 days, with 30 days of tuning.
-- End-to-end ops engine: sales, delivery and finance connected, with an exceptions-only owner dashboard. From $8,500. Typical length 14 to 21 days, with 90 days of tuning.
+- Single workflow sprint: one pipeline built and live (usually enquiry triage or client onboarding), approval steps, a recorded handover and a one-page runbook. From $2,900. Typical length 7 to 10 days, with 30 days of tuning.
+- End-to-end ops engine: sales, delivery and finance connected, with an exceptions-only dashboard. From $8,500. Typical length 14 to 21 days, with 90 days of tuning.
 - The final price is confirmed in writing before work starts.
-- Free 15-minute workflow call and a free 2-minute diagnostic that shows where a business depends on its owner.
+- Free 15-minute workflow call and a free 2-minute diagnostic that shows which workflows to automate first.
 
 ## Key pages
 - [Home](https://wayneconrad.com/): offer, sprints, how it works
