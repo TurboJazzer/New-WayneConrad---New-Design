@@ -7,13 +7,6 @@
 # Enforce .html as the single canonical URL form site-wide.
 # Netlify's built-in Pretty URLs feature is deprecated and documented as
 # unreliable when toggled off, so this is handled explicitly here instead.
-# Staff area password gate. Keep FIRST so nothing under /staff is served before the check.
-[[edge_functions]]
-  path = "/staff"
-  function = "staff-gate"
-[[edge_functions]]
-  path = "/staff/*"
-  function = "staff-gate"
 # Strip Range header for crawlers to ensure full 200 OK HTML responses
 [[edge_functions]]
   path = "/*.html"
@@ -230,11 +223,6 @@
   status = 301
   force = true
 [[redirects]]
-  from = "/ai-workflow-candidate-map"
-  to = "/ai-workflow-candidate-map.html"
-  status = 301
-  force = true
-[[redirects]]
   from = "/client-health-scorecard"
   to = "/client-health-scorecard.html"
   status = 301
@@ -251,7 +239,7 @@
   force = true
 [[redirects]]
   from = "/founder_bottleneck_scorecard"
-  to = "/founder_bottleneck_scorecard.html"
+  to = "/diagnostic.html"
   status = 301
   force = true
 [[redirects]]
@@ -261,7 +249,7 @@
   force = true
 [[redirects]]
   from = "/shadow-payroll-calculator"
-  to = "/shadow-payroll-calculator.html"
+  to = "/index.html#calculator"
   status = 301
   force = true
 
@@ -283,15 +271,32 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/ai-workflow-candidate-map"
+  to = "/ai-workflow-candidate-map.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trust"
+  to = "/trust.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/founder_bottleneck_scorecard.html"
+  to = "/diagnostic.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shadow-payroll-calculator.html"
+  to = "/index.html#calculator"
+  status = 301
+  force = true
+
 # STAGING ONLY: keep search engines out of the test site.
 [[headers]]
   for = "/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
-
-# Staff pages: never indexed or cached
-[[headers]]
-  for = "/staff/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow, noarchive"
-    Cache-Control = "no-store, private"

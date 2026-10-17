@@ -82,7 +82,7 @@
     '#cookie-consent.hidden{opacity:0;visibility:hidden;pointer-events:none;}' +
     '#cookie-consent-title{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 8px;}' +
     '#cookie-consent-text{font-size:13px;line-height:1.55;color:#6b7280;margin:0 0 16px;}' +
-    '#cookie-consent-text a{color:#2d5be3;text-decoration:underline;display:inline-block;padding:12px 2px;margin:-12px 0;}' +
+    '#cookie-consent-text a{color:#2d5be3;text-decoration:underline;}' +
     '#cookie-consent-buttons{display:flex;gap:8px;}' +
     '#cookie-consent-buttons button{font-size:13px;font-weight:600;padding:9px 14px;' +
     'border-radius:6px;border:none;cursor:pointer;flex:1;transition:background .2s,border-color .2s;}' +

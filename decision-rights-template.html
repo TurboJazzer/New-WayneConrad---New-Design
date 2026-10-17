@@ -1,5 +1,667 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex"><link rel="canonical" href="https://wayneconrad.com/ai-workflow-candidate-map.html"><title>AI Workflow Candidate Map | Wayne Conrad Advisory</title>
-<script>location.replace('/ai-workflow-candidate-map.html'+location.search+location.hash);</script>
-</head><body><p><a href="/ai-workflow-candidate-map.html">Open the AI Workflow Candidate Map</a></p></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decision Rights Mapping Template | Wayne Conrad Advisory</title>
+<link rel="stylesheet" href="/shell.css">
+<style>*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --navy:     #0f172a;
+  --navy-mid: #1e3a8a;
+  --blue:     #2563eb;
+  --blue-lt:  #eff6ff;
+  --border:   #e2e8f0;
+  --mid-grey: #6b7280;
+  --off-white:#f8fafc;
+  --white:    #ffffff;
+  --text:     #0f172a;
+  --text-soft:#374151;
+}
+html{ font-size: 16px; }
+body{
+  font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  background: var(--off-white);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+/* NAV */
+nav{
+  background: var(--navy);
+  padding: 0 5%;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-link{ font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; }
+.nav-link:hover{ color: var(--white); }
+/* HEADER */
+.page-header{
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  padding: 52px 5% 48px;
+  position: relative; overflow: hidden;
+}
+.page-header::after{
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue) 0%, #93c5fd 100%);
+}
+.page-header h1{
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 700; color: var(--white);
+  line-height: 1.2; margin-bottom: 12px;
+}
+.page-header p{
+  font-size: 16px; color: rgba(255,255,255,0.65);
+  max-width: 560px; line-height: 1.7;
+}
+.header-meta{
+  display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap;
+}
+.header-meta span{
+  font-size: 12px; color: #94a3b8;
+  display: flex; align-items: center; gap: 6px;
+}
+.header-meta span::before{
+  content: ''; width: 4px; height: 4px;
+  border-radius: 50%; background: #93c5fd;
+}
+/* WRAP */
+.wrap{ max-width: 900px; margin: 0 auto; padding: 40px 5% 80px; }
+/* HOW TO USE */
+.how-to{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 4px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+}
+.how-to h2{ font-size: 13px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+.how-to ol{ padding-left: 18px; }
+.how-to li{ font-size: 14px; color: var(--text-soft); line-height: 1.7; margin-bottom: 4px; }
+/* BUSINESS DETAILS */
+.details-card{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+}
+.details-card h2{
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--mid-grey); margin-bottom: 20px;
+}
+.fields-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px){.fields-row{ grid-template-columns: 1fr; }}
+.field{ display: flex; flex-direction: column; gap: 6px; }
+.field label{ font-size:12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--mid-grey); }
+.field input, .field select{
+  font-family: inherit; font-size: 14px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px; color: var(--text);
+  background: var(--off-white);
+  outline: none; transition: border-color 0.15s;
+}
+.field input:focus, .field select:focus{ border-color: var(--blue); background: var(--white); }
+.field input::placeholder{ color: #6b7280; }
+/* SECTION LABEL */
+.section-label{
+  font-size:12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--blue); margin: 32px 0 14px;
+}
+/* DECISION CATEGORY CARD */
+.category-card{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.category-header{
+  background: var(--navy);
+  padding: 14px 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.category-num{
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: #93c5fd;
+  flex-shrink: 0;
+}
+.category-title{ font-size: 15px; font-weight: 600; color: var(--white); }
+.category-body{ padding: 24px; }
+.grid-2{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+@media (max-width: 600px){.grid-2{ grid-template-columns: 1fr; }}
+.field-full{ margin-bottom: 14px; }
+.field-full:last-child{ margin-bottom: 0; }
+textarea{
+  font-family: inherit; font-size: 14px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px; color: var(--text);
+  background: var(--off-white);
+  outline: none; transition: border-color 0.15s;
+  width: 100%; resize: vertical; min-height: 68px;
+  line-height: 1.6;
+}
+textarea:focus{ border-color: var(--blue); background: var(--white); }
+textarea::placeholder{ color: #6b7280; }
+/* ESCALATION TOGGLE */
+.escalation-row{
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px;
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+}
+.escalation-row label{ font-size: 13px; color: var(--text-soft); flex: 1; }
+.toggle-group{ display: flex; gap: 8px; }
+.toggle-btn{
+  font-family: inherit; font-size: 12px; font-weight: 600;
+  padding: 5px 14px; border-radius: 4px;
+  border: 1.5px solid var(--border);
+  background: var(--white); color: var(--mid-grey);
+  cursor: pointer; transition: all 0.15s;
+}
+.toggle-btn.active-yes{ background: #dcfce7; border-color: #16a34a; color: #15803d; }
+.toggle-btn.active-no{ background: #fee2e2; border-color: #dc2626; color: #dc2626; }
+/* SUMMARY */
+.summary-card{
+  background: var(--navy);
+  border-radius: 6px;
+  padding: 32px;
+  margin-top: 32px;
+}
+.summary-card h2{ font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 24px; }
+.summary-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.summary-box{
+  background: rgba(255,255,255,0.07);
+  border-radius: 6px; padding: 18px 20px;
+}
+.summary-box label{ font-size:12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; display: block; margin-bottom: 8px; }
+.summary-box input{
+  font-family: inherit; font-size: 22px; font-weight: 700;
+  color: #93c5fd; background: transparent;
+  border: none; outline: none; width: 100%;
+}
+.summary-field{ margin-bottom: 16px; }
+.summary-field label{ font-size:12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; display: block; margin-bottom: 8px; }
+.summary-field textarea{
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.12);
+  color: var(--white); min-height: 60px;
+}
+.summary-field textarea::placeholder{ color: rgba(255,255,255,0.3); }
+.summary-field textarea:focus{ border-color: #93c5fd; background: rgba(255,255,255,0.1); }
+/* ACTIONS */
+.actions{
+  display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+}
+.btn-print{
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  background: var(--blue); color: var(--white);
+  padding: 13px 28px; border-radius: 4px;
+  border: none; cursor: pointer; transition: background 0.2s;
+}
+.btn-print:hover{ background: #1d4ed8; }
+.btn-clear{
+  font-family: inherit; font-size: 14px; font-weight: 500;
+  background: transparent; color: var(--mid-grey);
+  padding: 13px 28px; border-radius: 4px;
+  border: 1.5px solid var(--border); cursor: pointer; transition: all 0.2s;
+}
+.btn-clear:hover{ border-color: var(--text); color: var(--text); }
+.save-note{ font-size: 12px; color: var(--mid-grey); margin-top: 10px; line-height: 1.6; }
+/* FOOTER */
+footer{
+  background: var(--navy); padding: 24px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+/* PRINT STYLES */
+@media print{
+  nav, .how-to, .actions, footer { display: none !important; }
+  body { background: white; }
+  .page-header { padding: 24px 0; }
+  .page-header::after { display: none; }
+  .wrap { padding: 20px 0; }
+  .category-card, .details-card, .summary-card { break-inside: avoid; }
+  .toggle-btn { border: 1px solid #ccc; }
+  .toggle-btn.active-yes { background: #f0fdf4; }
+  .toggle-btn.active-no  { background: #fef2f2; }
+}
+
+</style>
+
+<style>/* tap targets: at least 44px */
+.sig-btn,.toggle-btn,.remove-client-btn,.remove-btn,.add-client-btn,.add-btn,.btn-print,.btn-clear{min-height:44px;min-width:44px}
+input.text,input.number,select.select-one{min-height:44px}
+</style>
+<style>/* footer v2 */
+footer.site-foot{background:#0f172a;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
+footer.site-foot .foot-in{width:100%;max-width:1232px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:640px){footer.site-foot .foot-in{grid-template-columns:1fr 1fr;padding:0 32px}}
+@media(min-width:1000px){footer.site-foot .foot-in{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}}
+footer.site-foot .fcol{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+footer.site-foot .fh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 10px}
+footer.site-foot p{margin:0 0 6px;color:#cbd5e1;line-height:1.6}
+footer.site-foot .ftag{max-width:30ch;margin:14px 0 16px}
+footer.site-foot .flogo{display:inline-block;line-height:0}
+footer.site-foot .flogo img{display:block;height:44px;width:auto;border-radius:6px}
+footer.site-foot a,footer.site-foot button{display:inline-flex;align-items:center;min-height:44px;padding:0;color:#e2e8f0;background:none;border:0;font:inherit;font-size:15px;text-decoration:none;cursor:pointer}
+footer.site-foot .fcol a:hover,footer.site-foot button:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+footer.site-foot :focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
+footer.site-foot .social{display:flex;gap:8px;flex-wrap:wrap}
+footer.site-foot .social a{width:44px;height:44px;justify-content:center;border:0;border-radius:8px;background:#1e293b;color:#e2e8f0}
+footer.site-foot .social a:hover{background:#334155;text-decoration:none}
+footer.site-foot .social svg{width:18px;height:18px;fill:currentColor}
+footer.site-foot .foot-base{max-width:1232px;margin:32px auto 0;padding:20px 16px 0;border-top:1px solid #334155}
+@media(min-width:640px){footer.site-foot .foot-base{padding:20px 32px 0}}
+footer.site-foot .foot-base p{font-size:13px;color:#94a3b8;margin:0}
+footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
+/* end footer v2 */</style>
+</head>
+<body>
+<div id="gateOverlay" style="
+  position: fixed; inset: 0; z-index: 9999;
+  background: #f8fafc;
+  display: flex; align-items: center; justify-content: center;
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+">
+  <div id="gateMessage" style="text-align: center; max-width: 420px; padding: 32px;">
+    <p style="font-size: 14px; color: #6b7280;">Checking your access link…</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var token = params.get('token');
+  var overlay = document.getElementById('gateOverlay');
+  var messageEl = document.getElementById('gateMessage');
+
+  function showBlocked(reason) {
+    var text = 'This link is no longer valid.';
+    if (reason === 'expired') text = 'This link has expired. Links are valid for 7 days.';
+    if (reason === 'missing_token') text = 'This page requires an access link.';
+    messageEl.innerHTML =
+      '<p style="font-size: 15px; color: #0f172a; font-weight: 600; margin-bottom: 12px;">' + text + '</p>' +
+      '<p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">Request a fresh link from the resources page and it will arrive by email in a moment.</p>' +
+      '<a href="/resources.html" style="display: inline-block; background: #1d4ed8; color: #ffffff; font-size: 14px; font-weight: 600; padding: 10px 24px; border-radius: 4px; text-decoration: none;">Go to Resources</a>';
+  }
+
+  if (!token) {
+    showBlocked('missing_token');
+    return;
+  }
+
+  fetch('/.netlify/functions/verify-token?token=' + encodeURIComponent(token))
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (data.valid) {
+        overlay.remove();
+      } else {
+        showBlocked(data.reason);
+      }
+    })
+    .catch(function () {
+      showBlocked('error');
+    });
+})();
+</script>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="/" aria-label="Wayne Conrad Advisory, home"><picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32"></picture></a>
+    <nav aria-label="Main" style="display:contents">
+      <ul class="nav-links" id="site-links">
+        <li><a href="/#sprints">Sprints</a></li>
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#results">Results</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/diagnostic.html">Diagnostic</a></li>
+      </ul>
+    </nav>
+    <a class="nav-book" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free call</a>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-links">Menu</button>
+  </div>
+</header>
+<div class="page-header">
+  <h1>Decision Rights Mapping Template</h1>
+  <p>Map the decisions that currently wait for one person, and write down where each limit sits. Those written limits are what an AI workflow needs, so it can approve what is inside them and send only the rest to a person.</p>
+  <div class="header-meta">
+    <span>Wayne Conrad Advisory</span>
+    <span>Fill in on screen then print to PDF</span>
+    <span>Share with your leadership team</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="how-to">
+    <h2>How to use this template</h2>
+    <ol>
+      <li>Fill in your business details at the top.</li>
+      <li>Work through each of the five decision categories. For each one, record who currently owns the decision, who should own it, what the boundary of their authority is, and whether escalation to you is currently defined.</li>
+      <li>Complete the summary section at the bottom. This gives you the single most important change to make first.</li>
+      <li>Print to PDF using your browser (File → Print → Save as PDF) and share with your leadership team.</li>
+    </ol>
+  </div>
+
+  <!-- BUSINESS DETAILS -->
+  <div class="details-card">
+    <h2>Business Details</h2>
+    <div class="fields-row">
+      <div class="field">
+        <label>Business name</label>
+        <input type="text" id="bizName" placeholder="Your company name" />
+      </div>
+      <div class="field">
+        <label>Date completed</label>
+        <input type="text" id="bizDate" placeholder="27 June 2026" />
+      </div>
+      <div class="field">
+        <label>Founder / Owner name</label>
+        <input type="text" id="founderName" placeholder="Your name" />
+      </div>
+      <div class="field">
+        <label>Team size</label>
+        <select id="teamSize">
+          <option value="">Select...</option>
+          <option>1 to 10 people</option>
+          <option>11 to 20 people</option>
+          <option>21 to 35 people</option>
+          <option>36 to 50 people</option>
+          <option>50 or more</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Decision Categories</p>
+
+  <!-- CATEGORY 1 -->
+  <div class="category-card">
+    <div class="category-header">
+      <div class="category-num">1</div>
+      <div class="category-title">Client Exceptions and Non-Standard Requests</div>
+    </div>
+    <div class="category-body">
+      <div class="grid-2">
+        <div class="field">
+          <label>Who currently makes this decision</label>
+          <input type="text" placeholder="e.g. Always comes to me" />
+        </div>
+        <div class="field">
+          <label>Who should own this decision</label>
+          <input type="text" placeholder="e.g. Account Manager" />
+        </div>
+      </div>
+      <div class="field-full field">
+        <label>Boundary of their authority (what they can decide without you)</label>
+        <textarea placeholder="e.g. Can approve any exception up to 10% of project value without escalation. Anything above requires founder sign-off."></textarea>
+      </div>
+      <div class="field-full field">
+        <label>What triggers escalation to the founder</label>
+        <textarea placeholder="e.g. Client threatening to leave. Exception above 10% of project value. Any change that affects delivery timeline by more than one week."></textarea>
+      </div>
+      <div class="escalation-row">
+        <label>Is this escalation path currently documented and communicated to the team?</label>
+        <div class="toggle-group">
+          <button class="toggle-btn" onclick="toggle(this,'yes')">Yes</button>
+          <button class="toggle-btn" onclick="toggle(this,'no')">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 2 -->
+  <div class="category-card">
+    <div class="category-header">
+      <div class="category-num">2</div>
+      <div class="category-title">Pricing, Discounting and Scope Changes</div>
+    </div>
+    <div class="category-body">
+      <div class="grid-2">
+        <div class="field">
+          <label>Who currently makes this decision</label>
+          <input type="text" placeholder="e.g. Always comes to me" />
+        </div>
+        <div class="field">
+          <label>Who should own this decision</label>
+          <input type="text" placeholder="e.g. Senior Consultant" />
+        </div>
+      </div>
+      <div class="field-full field">
+        <label>Boundary of their authority</label>
+        <textarea placeholder="e.g. Can apply standard discounts up to 15%. Can agree to scope additions worth less than $500 without a change order."></textarea>
+      </div>
+      <div class="field-full field">
+        <label>What triggers escalation to the founder</label>
+        <textarea placeholder="e.g. Any discount above 15%. Any scope change requiring a formal change order. Any pricing exception for a new client."></textarea>
+      </div>
+      <div class="escalation-row">
+        <label>Is this escalation path currently documented and communicated to the team?</label>
+        <div class="toggle-group">
+          <button class="toggle-btn" onclick="toggle(this,'yes')">Yes</button>
+          <button class="toggle-btn" onclick="toggle(this,'no')">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 3 -->
+  <div class="category-card">
+    <div class="category-header">
+      <div class="category-num">3</div>
+      <div class="category-title">Hiring and Team Changes</div>
+    </div>
+    <div class="category-body">
+      <div class="grid-2">
+        <div class="field">
+          <label>Who currently makes this decision</label>
+          <input type="text" placeholder="e.g. Always comes to me" />
+        </div>
+        <div class="field">
+          <label>Who should own this decision</label>
+          <input type="text" placeholder="e.g. Operations Manager" />
+        </div>
+      </div>
+      <div class="field-full field">
+        <label>Boundary of their authority</label>
+        <textarea placeholder="e.g. Can interview and shortlist candidates. Can extend offers for roles with a defined budget already approved. Cannot create new roles or change reporting structures without founder involvement."></textarea>
+      </div>
+      <div class="field-full field">
+        <label>What triggers escalation to the founder</label>
+        <textarea placeholder="e.g. Any new role not already in the approved headcount plan. Any offer above the approved salary band. Any performance management that may result in termination."></textarea>
+      </div>
+      <div class="escalation-row">
+        <label>Is this escalation path currently documented and communicated to the team?</label>
+        <div class="toggle-group">
+          <button class="toggle-btn" onclick="toggle(this,'yes')">Yes</button>
+          <button class="toggle-btn" onclick="toggle(this,'no')">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 4 -->
+  <div class="category-card">
+    <div class="category-header">
+      <div class="category-num">4</div>
+      <div class="category-title">Financial Commitments and Supplier Decisions</div>
+    </div>
+    <div class="category-body">
+      <div class="grid-2">
+        <div class="field">
+          <label>Who currently makes this decision</label>
+          <input type="text" placeholder="e.g. Always comes to me" />
+        </div>
+        <div class="field">
+          <label>Who should own this decision</label>
+          <input type="text" placeholder="e.g. Finance Manager" />
+        </div>
+      </div>
+      <div class="field-full field">
+        <label>Boundary of their authority</label>
+        <textarea placeholder="e.g. Can approve recurring supplier invoices within approved budget. Can commit to one-off purchases up to $1,000 without approval. Cannot sign new supplier contracts or renew existing ones without founder sign-off."></textarea>
+      </div>
+      <div class="field-full field">
+        <label>What triggers escalation to the founder</label>
+        <textarea placeholder="e.g. Any new supplier relationship. Any commitment above $1,000. Any invoice outside the approved budget line."></textarea>
+      </div>
+      <div class="escalation-row">
+        <label>Is this escalation path currently documented and communicated to the team?</label>
+        <div class="toggle-group">
+          <button class="toggle-btn" onclick="toggle(this,'yes')">Yes</button>
+          <button class="toggle-btn" onclick="toggle(this,'no')">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 5 -->
+  <div class="category-card">
+    <div class="category-header">
+      <div class="category-num">5</div>
+      <div class="category-title">Client Communication and Relationship Management</div>
+    </div>
+    <div class="category-body">
+      <div class="grid-2">
+        <div class="field">
+          <label>Who currently makes this decision</label>
+          <input type="text" placeholder="e.g. Always comes to me" />
+        </div>
+        <div class="field">
+          <label>Who should own this decision</label>
+          <input type="text" placeholder="e.g. Account Manager" />
+        </div>
+      </div>
+      <div class="field-full field">
+        <label>Boundary of their authority</label>
+        <textarea placeholder="e.g. Can handle all routine client communication. Can send status updates, meeting notes, and standard reports without review. Cannot make commitments about future work or respond to complaints without involving the founder."></textarea>
+      </div>
+      <div class="field-full field">
+        <label>What triggers escalation to the founder</label>
+        <textarea placeholder="e.g. Client expresses dissatisfaction with delivery. Client asks about future work or expanded engagement. Any communication relating to a dispute or formal complaint."></textarea>
+      </div>
+      <div class="escalation-row">
+        <label>Is this escalation path currently documented and communicated to the team?</label>
+        <div class="toggle-group">
+          <button class="toggle-btn" onclick="toggle(this,'yes')">Yes</button>
+          <button class="toggle-btn" onclick="toggle(this,'no')">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-card">
+    <h2>Summary and Next Steps</h2>
+    <div class="summary-grid">
+      <div class="summary-box">
+        <label>Decisions currently requiring founder</label>
+        <input type="number" placeholder="0" min="0" max="5" />
+      </div>
+      <div class="summary-box">
+        <label>Decisions with no escalation path defined</label>
+        <input type="number" placeholder="0" min="0" max="5" />
+      </div>
+      <div class="summary-box">
+        <label>Target after redesign</label>
+        <input type="number" placeholder="0" min="0" max="5" />
+      </div>
+    </div>
+    <div class="summary-field">
+      <label>The single decision to redesign first (highest daily cost to the founder)</label>
+      <textarea placeholder="Name the one decision that currently routes through you most frequently and would have the most immediate impact if ownership were transferred to the team."></textarea>
+    </div>
+    <div class="summary-field">
+      <label>Who will own the redesign of that decision, and by when</label>
+      <textarea placeholder="Name a person and a date. Without both, this stays on the founder's list."></textarea>
+    </div>
+    <div class="summary-field">
+      <label>What needs to be communicated to the team before this takes effect</label>
+      <textarea placeholder="What does the team need to know, and who needs to tell them?"></textarea>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn-print" onclick="window.print()">Print to PDF</button>
+    <button class="btn-clear" onclick="clearAll()">Clear all fields</button>
+  </div>
+  <p class="save-note">To save as PDF: click Print to PDF, then in the print dialog select Save as PDF as your printer. On mobile, use Share → Print.</p>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <div class="fcol fbrand">
+      <a href="/" class="flogo" aria-label="Wayne Conrad Advisory home"><img src="/assets/wayne_logo_full.webp" alt="Wayne Conrad Advisory" width="120" height="44" loading="lazy"></a>
+      <p class="ftag">Done-for-you AI workflow implementation for service teams of 5 to 50. Fixed scope, prices shown up front, no lock-in.</p>
+      <div class="social"><a href="https://www.linkedin.com/company/ai-automation-wayne" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://x.com/RealWayneConrad" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61574427795984" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.tiktok.com/@wayne.ai.automati" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></div>
+    </div>
+    <nav class="fcol" aria-label="Sprints">
+      <h2 class="fh">Sprints</h2>
+      <a href="/pricing.html">AI Cleanup Sprint</a>
+      <a href="/pricing.html">Single AI Workflow Sprint</a>
+      <a href="/pricing.html">End-to-End AI Ops Engine</a>
+      <a href="/diagnostic.html">Free Diagnostic</a>
+      <a href="/resources.html">Free Tools and Templates</a>
+    </nav>
+    <nav class="fcol" aria-label="Company">
+      <h2 class="fh">Company</h2>
+      <a href="/faq.html">FAQ</a>
+      <a href="/trust.html">Trust and Data</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/growth.html">Advisory Services</a>
+      <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
+      <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
+    </nav>
+    <div class="fcol">
+      <h2 class="fh">Who runs it</h2>
+      <p>Wayne Conrad Advisory</p>
+      <p>A remote-first company, based in South Africa</p>
+      <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
+      <p>Last updated: 11 October 2026</p>
+    </div>
+  </div>
+  <div class="foot-base"><p>&copy; 2026 Wayne Conrad Advisory. Available globally, remote-first.</p><p>Invoiced in USD &middot; Serving AU, SEA, UK and US teams</p></div>
+</footer>
+
+<script>(function(){document.documentElement.classList.add('js');var mb=document.querySelector('.menu-btn'),ln=document.getElementById('site-links');if(mb&&ln){mb.addEventListener('click',function(){var o=ln.classList.toggle('open');mb.setAttribute('aria-expanded',o?'true':'false');});}})();</script>
+<script src="/cookie-consent.js" defer></script>
+
+<script>
+// Set today's date
+document.getElementById('bizDate').value = new Date().toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+
+function toggle(btn, val) {
+  const group = btn.closest('.toggle-group');
+  group.querySelectorAll('.toggle-btn').forEach(b => {
+    b.classList.remove('active-yes', 'active-no');
+  });
+  btn.classList.add(val === 'yes' ? 'active-yes' : 'active-no');
+}
+
+function clearAll() {
+  if (!confirm('Clear all fields? This cannot be undone.')) return;
+  document.querySelectorAll('input[type="text"], input[type="number"], textarea').forEach(el => el.value = '');
+  document.querySelectorAll('select').forEach(el => el.selectedIndex = 0);
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.classList.remove('active-yes', 'active-no');
+  });
+  document.getElementById('bizDate').value = new Date().toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+}
+</script>
+</body>
+</html>

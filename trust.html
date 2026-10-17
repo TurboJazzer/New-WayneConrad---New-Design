@@ -1,163 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>document.documentElement.className='js';</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trust and Data | Wayne Conrad Advisory</title>
-  <meta name="description" content="How Wayne Conrad Advisory handles your data, the AI tools it uses, approvals and the build guarantee. Written commitments from a new, solo, remote-first practice.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://wayneconrad.com/trust.html">
-  <style>
-    :root {
-      --navy:     #0f172a;
-      --navy-mid: #1e3a8a;
-      --blue:     #2563eb;
-      --blue-lt:  #3b82f6;
-      --off-white:#f8fafc;
-      --mid-grey: #6b7280;
-      --border:   #e2e8f0;
-      --white:    #ffffff;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--sys);
-      background: var(--off-white);
-      color: var(--navy);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      margin: 0;
-    }
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 5% 80px;
-    }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-    .updated {
-      color: var(--mid-grey);
-      font-size: 14px;
-      margin-bottom: 40px;
-    }
-    h2 {
-      font-size: 20px;
-      margin-top: 40px;
-      margin-bottom: 12px;
-      color: var(--navy-mid);
-    }
-    p, li {
-      font-size: 15px;
-      color: #334155;
-    }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
-    a { color: var(--blue); }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 14px;
-    }
-    th, td {
-      text-align: left;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-    }
-    th {
-      background: var(--off-white);
-      font-weight: 600;
-    }
-    .manage-btn {
-      background: var(--blue);
-      color: var(--white);
-      border: none;
-      padding: 10px 18px;
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 8px;
-    }
-    .manage-btn:hover { background: var(--blue-lt); }
-  </style>
-<style>
-/* ===== shared site chrome: tokens, nav, footer, cookie bar ===== */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust and Data | Wayne Conrad Advisory</title>
+<meta name="description" content="How Wayne Conrad Advisory handles your data, keeps a person in the approval loop, and what it does and does not claim: agreements, named tools, scoped access, deletion, ownership and certifications.">
+<meta property="og:title" content="Trust and Data | Wayne Conrad Advisory">
+<meta property="og:description" content="How Wayne Conrad Advisory handles your data, keeps a person in the approval loop, and what it does and does not claim: agreements, named tools, scoped access, deletion, ownership and certifications.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wayneconrad.com/trust.html">
+<link rel="canonical" href="https://wayneconrad.com/trust.html">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/shell.css">
+<style>*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
 :root{
-  --navy:#0f172a;--navy2:#1e3a8a;--btn:#1d4ed8;--btn-hover:#2563eb;--route:#2563eb;--route-dk:#3b82f6;
-  --accent-dk:#93c5fd;--field:#64748b;--bd:#e2e8f0;
-  --border:#e2e8f0;--mid-grey:#374151;--blue:#2563eb;--blue-cta:#1d4ed8;--white:#ffffff;--off-white:#f8fafc;--navy-mid:#1e3a8a;
-  --sys:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --navy:     #0f172a;
+  --navy-mid: #1e3a8a;
+  --blue:     #2563eb;
+  --blue-lt:  #3b82f6;
+  --blue-cta: #1d4ed8;
+  --off-white:#f8fafc;
+  --mid-grey: #6b7280;
+  --border:   #e2e8f0;
+  --white:    #ffffff;
 }
-.skip{position:absolute;left:12px;top:-100px;z-index:100;background:#1d4ed8;color:#fff;padding:12px 18px;font-weight:700;text-decoration:none;border-radius:4px}
-.skip:focus{top:12px}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.site-nav{background:#0f172a;color:#fff;position:relative;z-index:20;font-family:var(--sys)}
-.nav-in{display:flex;align-items:center;gap:16px;min-height:68px;width:100%;max-width:1232px;margin:0 auto;padding:0 16px}
-.nav-logo{display:flex;align-items:center;min-height:44px;flex:none;line-height:0}
-.nav-logo img{width:88px;height:32px;border-radius:2px}
-.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
-.nav-links a{display:flex;align-items:center;min-height:44px;padding:0 11px;color:#fff;text-decoration:none;font-size:15px;font-weight:500;border-radius:4px}
-.nav-links a:hover{background:rgba(255,255,255,.12)}
-.nav-book{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 18px;border-radius:5px;background:#1d4ed8;color:#fff;border:2px solid #3b82f6;font-weight:700;font-size:15px;text-decoration:none;line-height:1.2;text-align:center}
-.nav-book:hover{background:#2563eb}
-.site-nav :focus-visible{outline:3px solid #93c5fd;outline-offset:3px;border-radius:3px}
-.menu-btn{display:none;min-height:44px;min-width:44px;background:transparent;color:#fff;border:2px solid #64748b;border-radius:5px;font:inherit;font-weight:500;font-size:15px;padding:0 14px;cursor:pointer}
-@media(min-width:760px){.nav-in{padding:0 32px}}
-@media(max-width:899px){
-  .nav-in{flex-wrap:wrap;gap:8px 10px;padding-top:8px;padding-bottom:8px}
-  .nav-book{margin-left:auto;padding:8px 14px;font-size:14px}
-  .js .menu-btn{display:inline-flex;align-items:center}
-  .nav-links{order:5;flex:1 0 100%;margin:0;flex-wrap:wrap}
-  .js .nav-links{display:none}
-  .js .nav-links.open{display:flex}
+html{ scroll-behavior: smooth; }
+body{
+  font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  background: var(--off-white);
+  color: var(--navy);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
-.site-foot{background:transparent;padding:24px 0 56px;font-family:var(--sys);color:#374151;font-size:15px}
-.foot-in{width:100%;max-width:1232px;margin:0 auto;padding:0 16px;display:grid;gap:18px}
-@media(min-width:760px){.foot-in{padding:0 32px}}
-.site-foot p{margin:0}
-.foot-links{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
-.foot-links a,.foot-links button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 10px;color:#0f172a;background:none;border:0;font:inherit;font-size:15px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;border-radius:4px}
-.foot-links a:hover,.foot-links button:hover{background:#e2e8f0}
-.site-foot :focus-visible{outline:3px solid #0f172a;outline-offset:3px}
-.social{display:flex;gap:8px;flex-wrap:wrap}
-.social a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid #64748b;border-radius:5px;color:#0f172a;text-decoration:none}
-.social a:hover{background:#e2e8f0}
-.social svg{width:19px;height:19px;fill:currentColor}
-@media(min-width:900px){.foot-in{grid-template-columns:1fr auto;align-items:start}}
-/* cookie notice: slim bar at the bottom edge (overrides the injected card styles; script untouched) */
-#cookie-consent{left:0!important;right:0!important;bottom:0!important;width:auto!important;max-width:none!important;border-radius:0!important;border-width:1px 0 0!important;padding:10px 16px!important;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;box-shadow:0 -4px 16px rgba(15,23,42,.12)!important}
-#cookie-consent.hidden{display:none!important}
-#cookie-consent-title{display:none}
-#cookie-consent-text{flex:1 1 280px;margin:0!important;font-size:13px!important;line-height:1.45!important;color:#374151!important}
-#cookie-consent-text a{color:#1d4ed8!important}
-#cookie-consent-buttons{flex:0 0 auto;display:flex;gap:8px;width:auto}
-#cookie-consent-buttons button{flex:0 0 auto!important;min-height:44px;min-width:96px;padding:0 20px!important;font-size:14px!important}
-#cookie-accept{background:#1d4ed8!important}
-#cookie-accept:hover{background:#2563eb!important}
-#cookie-decline{border:1px solid #64748b!important;background:#fff!important}
-@media(max-width:600px){#cookie-consent-buttons{width:100%}#cookie-consent-buttons button{flex:1 1 0!important}#cookie-consent-text{font-size:12.5px!important}}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}
+.article-header{
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  padding: 72px 5% 60px; text-align: center; color: var(--white);
+  position: relative; overflow: hidden;
+}
+.article-header::after{
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 4px; background: linear-gradient(90deg, var(--blue) 0%, var(--blue-lt) 100%);
+}
+.article-eyebrow{
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #93c5fd; margin-bottom: 16px;
+}
+.article-header h1{
+  font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size: clamp(28px, 4.5vw, 48px);
+  line-height: 1.2; max-width: 780px; margin: 0 auto 20px;
+}
+.article-meta{ font-size: 13px; color: rgba(255,255,255,0.65); }
+.article-body{ max-width: 720px; margin: 0 auto; padding: 56px 5% 80px; }
+.article-body h2{
+  font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size: clamp(22px, 3vw, 28px);
+  color: var(--navy); margin: 36px 0 16px; line-height: 1.3;
+}
+.article-body p{ font-size: 16.5px; color: #374151; margin-bottom: 22px; line-height: 1.75; }
+.article-body ol, .article-body ul{ margin: 0 0 24px 20px; color: #374151; font-size: 16px; }
+.article-body li{ margin-bottom: 10px; line-height: 1.65; }
+.cta-box{
+  background: var(--white); border: 1px solid var(--border);
+  border-left: 4px solid var(--blue-cta); border-radius: 6px;
+  padding: 28px; margin: 40px 0; box-shadow: 0 4px 12px rgba(15,23,42,0.05);
+}
+.cta-box h3{ font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+.cta-box p{ font-size: 14.5px; color: var(--mid-grey); margin-bottom: 18px; }
+.btn-cta{
+  display: inline-block; font-size: 14px; font-weight: 600;
+  color: var(--white); background: var(--blue-cta);
+  padding: 10px 22px; border-radius: 4px; text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-cta:hover{ background: var(--blue); }
+.author-block{
+  border-top: 1px solid var(--border); padding-top: 36px; margin-top: 48px;
+  display: flex; align-items: center; gap: 20px;
+}
+.author-avatar img{ width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+.author-text p.author-name{ font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.author-text p.author-desc{ font-size: 13.5px; color: var(--mid-grey); line-height: 1.5; margin-bottom: 0; }
+.author-text a{ color: var(--blue); text-decoration: none; }
+.author-text a:hover{ text-decoration: underline; }
 
-/* ===== round 3 compat: system fonts, shared chrome, contrast, focus, targets ===== */
-*,*::before,*::after{box-sizing:border-box}
-body{font-family:var(--sys)!important;background:#f1f5f9!important;color:#0f172a}
-h1,h2,h3{font-family:var(--sys);font-weight:700;letter-spacing:-.02em}
-a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #1d4ed8!important;outline-offset:3px}
-.page-header :focus-visible,.hero :focus-visible,.cta-banner :focus-visible{outline-color:#93c5fd!important}
-.gate-fields input,.gate-form input[type="email"],.gate-form input{min-height:44px;font-size:15px!important;border-color:#64748b!important}
-.gate-fields input::placeholder,.gate-form input::placeholder{color:#64748b!important}
-.gate-note{color:#475569!important;font-size:13px!important}
-.btn-download,.btn-cta,.btn-primary,.manage-btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-.btn-download{display:flex}
-.btn-cta,.btn-primary{text-align:center}
-.faq-item summary{min-height:44px}
-.page-header p.sub,.hero p.sub{color:#e2e8f0!important}
+
+.sa{background:#fff;border:1px solid var(--border);border-left:4px solid var(--blue-cta);border-radius:6px;padding:18px 22px;margin:0 0 28px}
+.q{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;margin:0 0 26px}
+.q .n{grid-row:1/3;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+.q h2{margin:2px 0 6px !important;font-size:clamp(19px,2.6vw,23px) !important}
+.q p{margin:0 0 10px !important}
+.tw{overflow-x:auto;margin:0 0 28px;border:1px solid var(--border);border-radius:6px;background:#fff}
+.tw table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+.tw th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600;vertical-align:bottom}
+.tw td{border-top:1px solid var(--border);padding:0 12px;height:54px;color:#374151}
+.tw td.ex{color:#6b7280;font-size:13.5px;line-height:1.4;padding:8px 12px}
+.rule{font-size:18px;font-weight:600;color:var(--navy);margin:30px 0 24px;line-height:1.45}
+@media print{.site-nav,.skip,.site-foot,.cta-box,.author-block,.menu-btn{display:none !important}.article-header{background:#fff !important;color:#0f172a !important;padding:0 0 12px !important}.article-header h1{color:#0f172a}.article-header::after{display:none}.article-eyebrow,.article-meta{color:#374151 !important}.tw{break-inside:avoid}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://wayneconrad.com/trust.html#article",
+      "headline": "Trust and Data",
+      "description": "How Wayne Conrad Advisory handles your data, keeps a person in the approval loop, and what it does and does not claim: agreements, named tools, scoped access, deletion, ownership and certifications.",
+      "url": "https://wayneconrad.com/trust.html",
+      "datePublished": "2026-10-17",
+      "dateModified": "2026-10-17",
+      "author": {
+        "@type": "Person",
+        "@id": "https://wayneconrad.com/#wayne-conrad",
+        "name": "Wayne Conrad",
+        "url": "https://wayneconrad.com",
+        "sameAs": ["https://linkedin.com/in/wayneconrad", "https://x.com/RealWayneConrad"]
+      },
+      "publisher": {
+        "@type": "ProfessionalService",
+        "@id": "https://wayneconrad.com/#business",
+        "name": "Wayne Conrad Advisory",
+        "url": "https://wayneconrad.com"
+      }
+    }
+  ]
+}
+</script>
 <style>/* footer v2 */
-footer.site-foot{background:#01183f;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
+footer.site-foot{background:#0f172a;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
 footer.site-foot .foot-in{width:100%;max-width:1232px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:28px}
 @media(min-width:640px){footer.site-foot .foot-in{grid-template-columns:1fr 1fr;padding:0 32px}}
 @media(min-width:1000px){footer.site-foot .foot-in{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}}
@@ -165,8 +136,8 @@ footer.site-foot .fcol{display:flex;flex-direction:column;align-items:flex-start
 footer.site-foot .fh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 10px}
 footer.site-foot p{margin:0 0 6px;color:#cbd5e1;line-height:1.6}
 footer.site-foot .ftag{max-width:30ch;margin:14px 0 16px}
-footer.site-foot .flogo{display:inline-block;background:none;padding:0}
-footer.site-foot .flogo img{display:block;height:36px;width:auto}
+footer.site-foot .flogo{display:inline-block;line-height:0}
+footer.site-foot .flogo img{display:block;height:44px;width:auto;border-radius:6px}
 footer.site-foot a,footer.site-foot button{display:inline-flex;align-items:center;min-height:44px;padding:0;color:#e2e8f0;background:none;border:0;font:inherit;font-size:15px;text-decoration:none;cursor:pointer}
 footer.site-foot .fcol a:hover,footer.site-foot button:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
 footer.site-foot :focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
@@ -179,9 +150,9 @@ footer.site-foot .foot-base{max-width:1232px;margin:32px auto 0;padding:20px 16p
 footer.site-foot .foot-base p{font-size:13px;color:#94a3b8;margin:0}
 footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
 /* end footer v2 */</style>
+<style></style>
 </head>
 <body>
-
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-nav">
   <div class="nav-in">
@@ -200,47 +171,72 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-links">Menu</button>
   </div>
 </header>
+<header class="article-header">
+  <p class="article-eyebrow">Trust and data</p>
+  <h1>How your data is handled and who stays in control</h1>
+  <p class="article-meta">By Wayne Conrad &nbsp;·&nbsp; October 17, 2026 &nbsp;·&nbsp; 3 min read</p>
+</header>
 
-<main id="main" tabindex="-1">
-  <h1>Trust and Data</h1>
-  <p>Last updated: 16 October 2026</p>
-  <p>Wayne Conrad Advisory is a solo, remote-first practice. I would rather show you how I work than ask you to take it on trust. This page collects the commitments I make about your data, the AI tools I use and what happens if something does not work. The binding terms are in the <a href="/terms.html">terms of service</a> and the written agreement for each project.</p>
+<main id="main" class="article-body">
+  <div class="sa"><p style="margin:0"><strong>Short answer:</strong> an agreement is signed before I see any client data, every tool that may handle it is named in writing, AI workflows keep a person in the approval loop, and you own what is built. I hold no security certification, and this page says so plainly.</p></div>
 
-  <h2>Your data stays in your accounts</h2>
+  <h2>How your data is handled</h2>
   <ul>
-    <li>Everything is built in your own accounts, through credentials you grant and can revoke at any time.</li>
-    <li>Ownership of what I deliver passes to you on final payment.</li>
-    <li>I send AI tools only the fields a workflow needs.</li>
+    <li>I sign a data processing agreement before I see any client data.</li>
+    <li>I name every tool that may handle your data in the written agreement before any data is shared.</li>
+    <li>I use business or API accounts, which do not train on your content by default, and send tools only the fields a workflow needs.</li>
+    <li>Access is through credentials you grant and can revoke, and it is scoped to the workflow.</li>
+    <li>When the support window ends I remove my access and delete project copies, or earlier if you ask. Backups and records I am legally required to keep are the exception.</li>
+    <li>Ask for my sub-processor list at any time.</li>
   </ul>
 
-  <h2>Before any data is shared</h2>
+  <h2>Where a person stays in control</h2>
   <ul>
-    <li>A data processing agreement is signed before I see any client data.</li>
-    <li>The written agreement names every tool that may handle your data. Ask for my sub-processor list at any time.</li>
-    <li>I use business or API accounts only, which do not train on your content by default.</li>
-    <li>I keep your information confidential.</li>
+    <li>Approval steps sit where your judgement matters. The workflow drafts, checks the limits and routes the work, and a person approves the steps that cannot be undone.</li>
+    <li>Decision limits are written down first. Only what is above them is routed to a person.</li>
+    <li>AI tools can produce wrong output. That is why approval steps keep a person in control, and why I do not promise revenue, savings or hours saved.</li>
+    <li>The free <a href="/ai-handoff-checklist.html">AI hand-off checklist</a> shows the five questions to answer before any process is handed to AI.</li>
   </ul>
 
-  <h2>When the project ends</h2>
-  <p>When the support window ends I remove my access and delete project copies, or earlier if you ask. Backups and records I am legally required to keep are the exception.</p>
+  <h2>Who owns what</h2>
+  <ul>
+    <li>Everything is built in your own accounts. Ownership transfers at final payment.</li>
+    <li>You pay the tool vendors directly. Typical monthly running costs are estimated on the <a href="/pricing.html#running-costs">pricing page</a>.</li>
+    <li>A sprint ends at handover with a recorded walkthrough and a one-page runbook. Anything after that is a separate written agreement.</li>
+  </ul>
 
-  <h2>A person stays in control</h2>
-  <p>AI output can be wrong, so tests and approval steps are built in. You set the limits. The automation handles what falls inside them and routes only the larger decisions to you for sign-off. Approvals and judgement stay with people.</p>
-
-  <h2>What the guarantee covers</h2>
-  <p>I guarantee the build, not your results. Written acceptance criteria are agreed before work starts. If the delivered work does not meet them, I fix it at no charge for up to 10 working days from your written notice, given within 14 days of handover. If it still does not meet them, I refund the fee you paid for that sprint. The guarantee does not cover problems caused by your changes, late access or approvals, incorrect data, or changes by third-party software or services. I do not promise revenue, savings or hours saved. My total liability for a project is limited to the fees you paid for it.</p>
+  <h2>What happens to your diagnostic answers</h2>
+  <ul>
+    <li>They are used only to write your report, which is shown on the page and emailed to you.</li>
+    <li>They are not shared with anyone else, and I delete them if you ask.</li>
+    <li>A software service writes the report text from your answers.</li>
+  </ul>
 
   <h2>What I do not claim</h2>
   <ul>
     <li>I do not hold a SOC 2 or ISO 27001 certificate. The vendors I use publish their own.</li>
-    <li>I am a sole practitioner, not a large firm.</li>
+    <li>I guarantee the build, not your results. The guarantee, its limits and the refund terms are on the <a href="/pricing.html#guarantee">pricing page</a>.</li>
   </ul>
+  <p>Read the <a href="/privacy.html">privacy policy</a> and the <a href="/terms.html">terms of service</a> for the full legal wording.</p>
 
-  <h2>Data collected on this website</h2>
-  <p>Your diagnostic answers and email address are processed through Anthropic's API to write your report. I use API access, not a consumer chat product. Analytics cookies are not set until you accept them. The <a href="/privacy.html">privacy policy</a> lists every service provider and your rights.</p>
+  <div class="cta-box">
+    <h3>Questions about data before you book?</h3>
+    <p>Ask on the free 15-minute call. I will walk through exactly which tools would touch your data for the workflow you have in mind.</p>
+    <a href="https://meetings-na2.hubspot.com/wayne-conrad" class="btn-cta">Book a free 15-minute workflow call</a>
+  </div>
 
-  <h2>Questions</h2>
-  <p>Ask on the free <a href="https://meetings-na2.hubspot.com/wayne-conrad">15-minute call</a>, or contact me on <a href="https://linkedin.com/in/wayneconrad">LinkedIn</a>.</p>
+  <div class="author-block">
+    <div class="author-avatar">
+      <picture>
+        <source srcset="/wayne-headshot.webp" type="image/webp">
+        <img src="/wayne-headshot.webp" alt="Wayne Conrad">
+      </picture>
+    </div>
+    <div class="author-text">
+      <p class="author-name">Written by Wayne Conrad</p>
+      <p class="author-desc">28 years building and selling two service businesses. Builds fixed-scope AI workflows for service businesses of 5 to 50 people. <a href="/#story">More about Wayne</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/wayneconrad">LinkedIn</a></p>
+    </div>
+  </div>
 </main>
 
 <footer class="site-foot">
@@ -253,37 +249,33 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
     <nav class="fcol" aria-label="Sprints">
       <h2 class="fh">Sprints</h2>
       <a href="/pricing.html">AI Cleanup Sprint</a>
-      <a href="/pricing.html">Single AI workflow sprint</a>
-      <a href="/pricing.html">End-to-end AI ops engine</a>
+      <a href="/pricing.html">Single AI Workflow Sprint</a>
+      <a href="/pricing.html">End-to-End AI Ops Engine</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
     <nav class="fcol" aria-label="Company">
       <h2 class="fh">Company</h2>
       <a href="/faq.html">FAQ</a>
+      <a href="/trust.html">Trust and Data</a>
       <a href="/terms.html">Terms of Service</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="/trust.html">Trust and Data</a>
       <a href="/growth.html">Advisory Services</a>
       <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
       <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
-      <a href="/staff/index.html" rel="nofollow">Staff</a>
     </nav>
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
       <p>A remote-first company, based in South Africa</p>
       <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
-      <p>Last updated: 16 October 2026</p>
+      <p>Last updated: 17 October 2026</p>
     </div>
   </div>
   <div class="foot-base"><p>&copy; 2026 Wayne Conrad Advisory. Available globally, remote-first.</p><p>Invoiced in USD &middot; Serving AU, SEA, UK and US teams</p></div>
 </footer>
 
-<script>
-(function(){var mb=document.querySelector('.menu-btn'),ln=document.getElementById('site-links');
-if(mb&&ln){mb.addEventListener('click',function(){var o=ln.classList.toggle('open');mb.setAttribute('aria-expanded',o?'true':'false');});}})();
-</script>
+<script>(function(){document.documentElement.classList.add('js');var mb=document.querySelector('.menu-btn'),ln=document.getElementById('site-links');if(mb&&ln){mb.addEventListener('click',function(){var o=ln.classList.toggle('open');mb.setAttribute('aria-expanded',o?'true':'false');});}})();</script>
 <script src="/cookie-consent.js" defer></script>
 
 </body>

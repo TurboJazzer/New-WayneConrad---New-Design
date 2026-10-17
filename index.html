@@ -51,8 +51,8 @@
       "knowsAbout": [
         "AI automation for service businesses",
         "AI workflow automation",
-        "Manual workflow automation",
-        "Approval rules for AI automation",
+        "AI workflow readiness",
+        "Approval rules for AI workflows",
         "HubSpot automation",
         "Make and n8n workflows"
       ],
@@ -99,7 +99,7 @@
       "provider": {
         "@id": "https://wayneconrad.com/#business"
       },
-      "description": "One workflow built and live in your CRM and inbox, with approval steps where they matter, a recorded handover and a one-page runbook."
+      "description": "One workflow built and live in your CRM and inbox, with approval steps where they matter, handover and runbook and a one-page runbook."
     },
     {
       "@type": "Service",
@@ -108,7 +108,7 @@
       "provider": {
         "@id": "https://wayneconrad.com/#business"
       },
-      "description": "Sales, delivery and finance connected on a shared data layer in your own tools, with an exceptions-only dashboard and full handover."
+      "description": "Sales, delivery and finance connected on a shared data layer in your own tools, with an exceptions report and full handover."
     },
     {
       "@type": "Person",
@@ -122,8 +122,8 @@
       },
       "knowsAbout": [
         "AI automation for service businesses",
-        "Manual workflow automation",
-        "Approval rules for automation",
+        "AI workflow readiness",
+        "AI approval rules",
         "Service business operations"
       ],
       "sameAs": [
@@ -139,18 +139,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Isn't AI expensive?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sprints are fixed price from $1,500, confirmed in writing before work starts. Software licences and usage charges are paid directly to the tool vendors, and I name every tool in writing before we begin. You own what is built and there is no lock-in."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "How much does an AI workflow sprint cost?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The three sprints start from $1,500, $2,900 and $8,500. The price depends on the number of systems and how much runs through them. I confirm it in writing before work starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Isn't AI expensive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sprints are fixed price from $1,500, confirmed in writing before work starts. Software licences and usage charges are paid directly to the vendors, and every tool is named in writing before we start. You own what is built and there is no lock-in. Typical running costs are on the pricing page."
           }
         },
         {
@@ -182,7 +182,7 @@
           "name": "Do I need to be technical?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. I handle the build and the handover. The automation asks for sign-off only above limits you set, and sends a short report."
+            "text": "No. I map the workflow, build it in your accounts and hand over a recorded walkthrough and a one-page runbook. The automation asks for sign-off only above limits you set, and sends a short report."
           }
         },
         {
@@ -602,6 +602,7 @@ footer{padding:12px 0 56px}
 @media(max-width:600px){#cookie-consent-buttons{width:100%}#cookie-consent-buttons button{flex:1 1 0!important}#cookie-consent-text{font-size:12.5px!important}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}
 
+.mailbox{margin-top:16px;padding-top:14px;border-top:1px dashed #cbd5e1}.mailbox .field{margin:0 0 10px}.mailbox input{width:100%;min-height:44px}.mailbox[hidden]{display:none}
 </style>
 <style>/* polish: single results tile, after row, focus */
 .meters:has(.meter:only-child){grid-template-columns:1fr}
@@ -610,7 +611,7 @@ footer{padding:12px 0 56px}
 .stable tbody tr:last-child td{font-weight:600;color:var(--ink)}
 </style>
 <style>/* footer v2 */
-footer.site-foot{background:#01183f;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
+footer.site-foot{background:#0f172a;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
 footer.site-foot .foot-in{width:100%;max-width:1232px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:28px}
 @media(min-width:640px){footer.site-foot .foot-in{grid-template-columns:1fr 1fr;padding:0 32px}}
 @media(min-width:1000px){footer.site-foot .foot-in{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}}
@@ -618,8 +619,8 @@ footer.site-foot .fcol{display:flex;flex-direction:column;align-items:flex-start
 footer.site-foot .fh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 10px}
 footer.site-foot p{margin:0 0 6px;color:#cbd5e1;line-height:1.6}
 footer.site-foot .ftag{max-width:30ch;margin:14px 0 16px}
-footer.site-foot .flogo{display:inline-block;background:none;padding:0}
-footer.site-foot .flogo img{display:block;height:36px;width:auto}
+footer.site-foot .flogo{display:inline-block;line-height:0}
+footer.site-foot .flogo img{display:block;height:44px;width:auto;border-radius:6px}
 footer.site-foot a,footer.site-foot button{display:inline-flex;align-items:center;min-height:44px;padding:0;color:#e2e8f0;background:none;border:0;font:inherit;font-size:15px;text-decoration:none;cursor:pointer}
 footer.site-foot .fcol a:hover,footer.site-foot button:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
 footer.site-foot :focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
@@ -632,13 +633,6 @@ footer.site-foot .foot-base{max-width:1232px;margin:32px auto 0;padding:20px 16p
 footer.site-foot .foot-base p{font-size:13px;color:#94a3b8;margin:0}
 footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
 /* end footer v2 */</style>
-<style id="final-polish">
-/* final polish: contrast, 44px targets, visible focus, placeholders */
-:root{--mid-grey:#475569}
-::placeholder{color:#64748b!important;opacity:1}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #1d4ed8!important;outline-offset:2px;box-shadow:0 0 0 6px #fff}
-.hero a:focus-visible,.page-header a:focus-visible,.cta-block a:focus-visible,.cta-block button:focus-visible,.cta-block input:focus-visible,.final a:focus-visible,.final button:focus-visible{outline-color:#93c5fd!important;box-shadow:none}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -649,7 +643,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <ul class="nav-links" id="site-links">
         <li><a href="#sprints">Sprints</a></li>
         <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#results">Everyday jobs</a></li>
+        <li><a href="#results">Results</a></li>
         <li><a href="/pricing.html">Pricing</a></li>
         <li><a href="/resources.html">Resources</a></li>
         <li><a href="/diagnostic.html">Diagnostic</a></li>
@@ -667,7 +661,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <p class="eyebrow label"><span class="lamp-s" aria-hidden="true"></span>Wayne Conrad Advisory &middot; AI automation for SME and SMB service businesses</p>
     <h1 id="hero-h">AI automation that runs your enquiries, onboarding, reporting and payments.</h1>
     <div class="hero-row">
-      <p class="sub">Fixed-scope AI workflow sprints for service businesses of 5 to 50 people, built inside the tools you already use, with approval steps built in where they matter. The work keeps moving without anyone chasing it.</p>
+      <p class="sub">Fixed-scope AI workflow sprints for service businesses of 5 to 50 people, built inside the tools you already use, with approval steps built in where they matter. The aim: the business keeps running while you step back.</p>
       <div class="cta-stack">
         <a class="btn btn-primary" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free 15-minute workflow call</a>
         <a class="btn btn-ghost" href="/diagnostic.html">Take the 2-minute AI readiness diagnostic</a>
@@ -677,11 +671,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <section class="panel dark strip-panel" aria-labelledby="strip-h">
       <div class="panel-head"><span class="label" id="strip-h">Routing panel &middot; workflows running</span></div>
       <div class="strip-body">
-        <div class="lane" style="--l:0"><p class="lane-name"><span>Route 01</span>Enquiry</p><ol class="track"><li class="node" style="--i:0"><span class="lamp" aria-hidden="true"></span><span class="nt">New enquiry arrives</span></li><li class="node" style="--i:1"><span class="lamp" aria-hidden="true"></span><span class="nt">Enriched and scored</span></li><li class="node" style="--i:2"><span class="lamp" aria-hidden="true"></span><span class="nt">Reply and quote drafted</span></li><li class="node owner" style="--i:3"><button type="button" class="jack set" aria-pressed="true" data-on="You approve in Slack" data-off="Runs automatically"><span class="socket" aria-hidden="true"></span><span class="nt">You approve in Slack</span></button></li><li class="node" style="--i:4"><span class="lamp" aria-hidden="true"></span><span class="nt">Project and onboarding start</span></li><li class="node done" style="--i:5"><span class="lamp" aria-hidden="true"></span><span class="nt">Done</span></li></ol></div>
-<div class="lane" style="--l:1"><p class="lane-name"><span>Route 02</span>Onboarding</p><ol class="track"><li class="node" style="--i:0"><span class="lamp" aria-hidden="true"></span><span class="nt">Client signs</span></li><li class="node" style="--i:1"><span class="lamp" aria-hidden="true"></span><span class="nt">Accounts and folders created</span></li><li class="node" style="--i:2"><span class="lamp" aria-hidden="true"></span><span class="nt">Welcome pack sent</span></li><li class="node owner" style="--i:3"><button type="button" class="jack" aria-pressed="false" data-on="You approve here" data-off="Runs automatically"><span class="socket" aria-hidden="true"></span><span class="nt">Runs automatically</span></button></li><li class="node" style="--i:4"><span class="lamp" aria-hidden="true"></span><span class="nt">Kick-off booked</span></li><li class="node done" style="--i:5"><span class="lamp" aria-hidden="true"></span><span class="nt">Done</span></li></ol></div>
-<div class="lane" style="--l:2"><p class="lane-name"><span>Route 03</span>Reporting</p><ol class="track"><li class="node" style="--i:0"><span class="lamp" aria-hidden="true"></span><span class="nt">Week closes</span></li><li class="node" style="--i:1"><span class="lamp" aria-hidden="true"></span><span class="nt">Figures pulled together</span></li><li class="node" style="--i:2"><span class="lamp" aria-hidden="true"></span><span class="nt">Exceptions flagged</span></li><li class="node owner" style="--i:3"><button type="button" class="jack" aria-pressed="false" data-on="You approve here" data-off="Runs automatically"><span class="socket" aria-hidden="true"></span><span class="nt">Runs automatically</span></button></li><li class="node" style="--i:4"><span class="lamp" aria-hidden="true"></span><span class="nt">Report sent</span></li><li class="node done" style="--i:5"><span class="lamp" aria-hidden="true"></span><span class="nt">Done</span></li></ol></div>
-<div class="lane" style="--l:3"><p class="lane-name"><span>Route 04</span>Payments</p><ol class="track"><li class="node" style="--i:0"><span class="lamp" aria-hidden="true"></span><span class="nt">Work marked complete</span></li><li class="node" style="--i:1"><span class="lamp" aria-hidden="true"></span><span class="nt">Invoice raised</span></li><li class="node" style="--i:2"><span class="lamp" aria-hidden="true"></span><span class="nt">Reminder scheduled</span></li><li class="node owner" style="--i:3"><button type="button" class="jack" aria-pressed="false" data-on="You approve here" data-off="Runs automatically"><span class="socket" aria-hidden="true"></span><span class="nt">Runs automatically</span></button></li><li class="node" style="--i:4"><span class="lamp" aria-hidden="true"></span><span class="nt">Payment received</span></li><li class="node done" style="--i:5"><span class="lamp" aria-hidden="true"></span><span class="nt">Done</span></li></ol></div>
-        <p class="hint">Tap an empty jack to add an approval step to that route.</p>
+        <div class="lane" style="--l:0"><p class="lane-name"><span>Route 01</span>Enquiry</p><ol class="track"><li class="node" style="--i:0"><span class="lamp" aria-hidden="true"></span><span class="nt">New enquiry arrives</span></li><li class="node" style="--i:1"><span class="lamp" aria-hidden="true"></span><span class="nt">Enriched and scored</span></li><li class="node" style="--i:2"><span class="lamp" aria-hidden="true"></span><span class="nt">Reply and quote drafted</span></li><li class="node owner" style="--i:3"><button type="button" class="jack set" aria-pressed="true" data-on="Sign-off above your limit" data-off="Runs automatically"><span class="socket" aria-hidden="true"></span><span class="nt">Sign-off above your limit</span></button></li><li class="node" style="--i:4"><span class="lamp" aria-hidden="true"></span><span class="nt">Project and onboarding start</span></li><li class="node done" style="--i:5"><span class="lamp" aria-hidden="true"></span><span class="nt">Done</span></li></ol></div>
+<div class="lane" style="--l:1"><p class="lane-name"><span>Route 02</span>Onboarding</p><ol class="track"><li class="node" style="--i:0"><span class="lamp" aria-hidden="true"></span><span class="nt">Client signs</span></li><li class="node" style="--i:1"><span class="lamp" aria-hidden="true"></span><span class="nt">Accounts and folders created</span></li><li class="node" style="--i:2"><span class="lamp" aria-hidden="true"></span><span class="nt">Welcome pack sent</span></li><li class="node owner" style="--i:3"><button type="button" class="jack" aria-pressed="false" data-on="Sign-off above your limit" data-off="Runs automatically"><span class="socket" aria-hidden="true"></span><span class="nt">Runs automatically</span></button></li><li class="node" style="--i:4"><span class="lamp" aria-hidden="true"></span><span class="nt">Kick-off booked</span></li><li class="node done" style="--i:5"><span class="lamp" aria-hidden="true"></span><span class="nt">Done</span></li></ol></div>
+<div class="lane" style="--l:2"><p class="lane-name"><span>Route 03</span>Reporting</p><ol class="track"><li class="node" style="--i:0"><span class="lamp" aria-hidden="true"></span><span class="nt">Week closes</span></li><li class="node" style="--i:1"><span class="lamp" aria-hidden="true"></span><span class="nt">Figures pulled together</span></li><li class="node" style="--i:2"><span class="lamp" aria-hidden="true"></span><span class="nt">Exceptions flagged</span></li><li class="node owner" style="--i:3"><button type="button" class="jack" aria-pressed="false" data-on="Sign-off above your limit" data-off="Runs automatically"><span class="socket" aria-hidden="true"></span><span class="nt">Runs automatically</span></button></li><li class="node" style="--i:4"><span class="lamp" aria-hidden="true"></span><span class="nt">Report sent</span></li><li class="node done" style="--i:5"><span class="lamp" aria-hidden="true"></span><span class="nt">Done</span></li></ol></div>
+<div class="lane" style="--l:3"><p class="lane-name"><span>Route 04</span>Payments</p><ol class="track"><li class="node" style="--i:0"><span class="lamp" aria-hidden="true"></span><span class="nt">Work marked complete</span></li><li class="node" style="--i:1"><span class="lamp" aria-hidden="true"></span><span class="nt">Invoice raised</span></li><li class="node" style="--i:2"><span class="lamp" aria-hidden="true"></span><span class="nt">Reminder scheduled</span></li><li class="node owner" style="--i:3"><button type="button" class="jack" aria-pressed="false" data-on="Sign-off above your limit" data-off="Runs automatically"><span class="socket" aria-hidden="true"></span><span class="nt">Runs automatically</span></button></li><li class="node" style="--i:4"><span class="lamp" aria-hidden="true"></span><span class="nt">Payment received</span></li><li class="node done" style="--i:5"><span class="lamp" aria-hidden="true"></span><span class="nt">Done</span></li></ol></div>
+        <p class="hint">Tap an empty Owner jack to set an approval step on that route.</p>
       </div>
     </section>
   </div>
@@ -700,34 +694,34 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="panel-head"><span class="label">Panel 01 &middot; The pattern</span></div>
     <div class="panel-body pattern">
       <div>
-        <h2 id="pattern-h">Four manual workflows AI can take over</h2>
+        <h2 id="pattern-h">Four workflows still run by hand</h2>
         <figure class="figure">
-          <picture><source srcset="/assets/wayne_hero_manual_work.webp" type="image/webp"><img src="/assets/wayne_hero_manual_work.webp" width="560" height="680" loading="lazy" alt="A person reaching across two desks at once in a busy open-plan office, covering work that only moves when someone pushes it"></picture>
-          <figcaption>Work that only moves when someone pushes it.</figcaption>
+          <picture><source srcset="/assets/wayne_hero_manual_work.webp" type="image/webp"><img src="/assets/wayne_hero_manual_work.webp" width="560" height="680" loading="lazy" alt="A person reaching across two desks at once in a busy open-plan office, covering manual work that an automated workflow could handle"></picture>
+          <figcaption>Manual work covering three desks.</figcaption>
         </figure>
       </div>
       <ol class="rows">
         <li><span class="n" aria-hidden="true">1</span>
-          <div><strong>Chasing payments by hand.</strong><p>Work is delivered, the invoice goes out late and nobody owns the follow-up.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>The invoice is raised when work is marked complete, reminders run on a schedule, and each overdue client gets a drafted message.</p></div></li>
+          <div><strong>Payments: invoices go out late and reminders depend on someone remembering.</strong><p>The manual workflow: raise, send, chase.</p></div>
+          <div class="fix"><span class="label">What the AI does</span><p>Sends invoices when work completes, schedules reminders and drafts the overdue messages.</p></div></li>
         <li><span class="n" aria-hidden="true">2</span>
-          <div><strong>Checking back-office work line by line.</strong><p>Someone reviews every record each evening to protect quality.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>AI checks each record and sends one exceptions-only report, so people review only what looks wrong.</p></div></li>
+          <div><strong>Reporting: someone checks back-office work every evening.</strong><p>The manual workflow: check every item, then summarise.</p></div>
+          <div class="fix"><span class="label">What the AI does</span><p>Checks each item and reports only the exceptions.</p></div></li>
         <li><span class="n" aria-hidden="true">3</span>
-          <div><strong>Quotes and discounts waiting for a reply.</strong><p>Requests queue up because every exception needs a manual yes.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>Limits are written down first. AI handles requests inside them and routes only the larger ones for approval.</p></div></li>
+          <div><strong>Enquiries: discounts and exceptions wait for a reply.</strong><p>The manual workflow: each one stalls until someone says yes.</p></div>
+          <div class="fix"><span class="label">What the AI does</span><p>Routes each one against written limits and asks for sign-off only above them.</p></div></li>
         <li><span class="n" aria-hidden="true">4</span>
-          <div><strong>Work that stops when one person is away.</strong><p>Key steps live in one inbox or one head, so a buyer asking about continuity has no easy answer.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>The workflows keep running on their own and approvals arrive on your phone.</p></div></li>
+          <div><strong>Continuity: nobody can say what happens when work stops for two weeks.</strong><p>The manual workflow: it lives in people's heads.</p></div>
+          <div class="fix"><span class="label">What the AI does</span><p>The workflows keep running, and anything needing sign-off reaches your phone.</p></div></li>
       </ol>
     </div>
   </section>
 
   <section class="panel" id="calculator" aria-labelledby="calc-h">
-    <div class="panel-head"><span class="label">Panel 02 &middot; Cost calculator</span></div>
+    <div class="panel-head"><span class="label">Panel 02 &middot; Manual work cost</span></div>
     <div class="panel-body">
       <h2 id="calc-h" class="wide">What does the manual work cost you?</h2>
-      <p class="lead">Pick where the work piles up, your team size, and what an hour costs. The result is an estimate based on the middle of each range. It starts empty.</p>
+      <p class="lead">Pick where the work piles up, your team size, and what an hour costs. The result is an estimate based on the middle of each range. It starts empty, and you can email the result to yourself.</p>
       <div class="calc" id="calc">
         <div class="fields">
           <div class="field"><label for="c-type">Where the work piles up</label>
@@ -748,9 +742,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
               <div><dt>Payroll value of those hours, per year</dt><dd id="o-cost">0</dd></div>
             </dl>
           </div>
+          <form class="mailbox" id="c-mail" hidden novalidate>
+            <p class="mono-note"><strong>Want this by email?</strong> I will send you this breakdown. I will not add you to a list.</p>
+            <div class="field"><label for="m-fn">First name</label><input id="m-fn" type="text" autocomplete="given-name"></div>
+            <div class="field"><label for="m-em">Business email</label><input id="m-em" type="email" autocomplete="email"></div>
+            <button class="btn btn-primary" type="submit" id="m-btn">Email me this breakdown</button>
+            <p class="mono-note" id="m-msg" role="status" aria-live="polite"></p>
+          </form>
           <p class="mono-note" style="margin-top:12px"><strong>This is an estimate based on the numbers you enter.</strong> It uses the middle of the team-size range. Results vary.</p>
           <p style="margin-top:16px"><a class="btn btn-ghost" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-minute call</a></p>
-          <p class="mono-note" style="margin-top:12px">Want the full version by role and pay? Use the <a href="/resources.html" style="display:inline-block;padding:12px 0">Manual Work Cost Calculator</a>.</p>
         </div>
       </div>
     </div>
@@ -778,23 +778,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
             <td class="mid" data-label="Single AI workflow sprint"><span class="price">$2,900</span></td>
             <td data-label="End-to-end AI ops engine"><span class="price">$8,500</span></td></tr>
           <tr><th scope="row">For</th>
-            <td data-label="AI cleanup sprint">Automations that half work. Start by cutting what you already pay for</td>
+            <td data-label="AI cleanup sprint">Automations that half work</td>
             <td class="mid" data-label="Single AI workflow sprint">One slow pipeline, usually enquiries or onboarding</td>
-            <td data-label="End-to-end AI ops engine">Sales, delivery and finance still run on manual steps</td></tr>
+            <td data-label="End-to-end AI ops engine">Sales, delivery and finance still run through you</td></tr>
           <tr><th scope="row">You get</th>
-            <td data-label="AI cleanup sprint">Repairs failing AI automations, removes duplicate tool subscriptions, a written map of every live automation, a priority list</td>
-            <td class="mid" data-label="Single AI workflow sprint">One workflow built and live in your CRM and inbox, approval steps where they matter, a recorded handover for your team, a one-page runbook</td>
-            <td data-label="End-to-end AI ops engine">Connected sales, delivery and finance on a shared data layer in your tools, an exceptions-only dashboard, full handover</td></tr>
+            <td data-label="AI cleanup sprint">Failing flows repaired, duplicate tool subscriptions removed, a written map of every live automation, a priority list</td>
+            <td class="mid" data-label="Single AI workflow sprint">One workflow built and live in your CRM and inbox, approval steps where they matter, handover and runbook, a one-page runbook</td>
+            <td data-label="End-to-end AI ops engine">Connected sales, delivery and finance on a shared data layer in your tools, an exceptions report, full handover</td></tr>
           <tr><th scope="row">After</th>
             <td class="after" data-label="AI cleanup sprint">30 days of support</td>
             <td class="mid after" data-label="Single AI workflow sprint">30 days of tuning</td>
-            <td class="after" data-label="End-to-end AI ops engine">90 days of tuning</td></tr><tr><th scope="row">Typical running cost</th>
-            <td class="after" data-label="AI cleanup sprint">No new subscriptions by default. Removing duplicate tools lowers what you pay today.</td>
-            <td class="mid after" data-label="Single AI workflow sprint">About $40 to $150 a month in tools and usage, paid to the vendors.</td>
-            <td class="after" data-label="End-to-end AI ops engine">About $150 to $500 a month in tools and usage, paid to the vendors.</td></tr>
-        </tbody>
+            <td class="after" data-label="End-to-end AI ops engine">90 days of tuning</td></tr>
+        <tr><th scope="row">Typical monthly running cost</th>
+            <td data-label="AI cleanup sprint">Usually no new software</td>
+            <td class="mid" data-label="Single AI workflow sprint">About $40 to $150 a month</td>
+            <td data-label="End-to-end AI ops engine">About $150 to $500 a month</td></tr>
+</tbody>
       </table>
-      <p class="under mono-note"><em>The price depends on the number of systems, integrations and monthly volume. I confirm it in writing before work starts.</em></p>
+      <p class="under mono-note"><em>The price depends on the number of systems, integrations and monthly volume. I confirm it in writing before work starts. Running costs are paid to the tool vendors and are estimated on the <a href="/pricing.html#running-costs">pricing page</a>.</em></p>
 
       <div class="guarantee">
         <span class="label">Guarantee, short form</span>
@@ -802,10 +803,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </div>
 
       <div class="lead-mag">
-        <p><strong>AI Workflow Candidate Map</strong><br>A template you fill in on screen and print to PDF, to pick the first workflow to automate and set where sign-off is needed. Free, link sent by email.</p>
-        <a class="btn btn-ghost" href="/resources.html#candidate-map">Get the map</a>
+        <p><strong>AI Workflow Candidate Map</strong><br>A free worksheet that ranks up to five manual workflows and shows which to automate first. Runs in your browser, nothing is sent.</p>
+        <a class="btn btn-ghost" href="/ai-workflow-candidate-map.html">Open the candidate map</a>
       </div>
-      <p class="updated">Last updated: 16 October 2026</p>
+      <p class="updated">Last updated: 17 October 2026</p>
     </div>
   </section>
 
@@ -814,11 +815,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="panel-body">
       <h2 id="how-h">What happens, in order</h2>
       <ol class="stages">
-        <li><span class="when">Step 1</span><h3>Mapping</h3><p>A 2-hour session where I walk through the process as it really runs. You leave with the map whether or not anything gets built. I fix the process before I automate it, because automating an undecided approval just sends the same exception to you faster.</p></li>
+        <li><span class="when">Step 1</span><h3>Mapping</h3><p>A 2-hour session where I walk through the process as it really runs. You leave with the map whether or not anything gets built.</p></li>
         <li><span class="when">Step 2</span><h3>Set-up</h3><p>Everything is provisioned in your own accounts. Credentials stay on your side.</p></li>
         <li><span class="when">Step 3</span><h3>Build</h3><p>The workflow is built, tested against the written acceptance criteria, and shown to you.</p></li>
         <li><span class="when">Step 4</span><h3>Handover</h3><p>A recorded walkthrough, a one-page runbook, and ownership transferred.</p></li>
       </ol>
+      <p class="promise">I fix the process before I automate it.</p>
+      <p class="promise-sub">Automating an undecided approval just sends the same exception to you faster.</p>
       <div class="previews">
         <div class="prev">
           <span class="label">Illustrative model, not a client</span>
@@ -828,51 +831,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="prev">
           <span class="label">Illustrative model, not a client</span>
           <h3>Workflow map</h3>
-          <div class="mini"><span>Trigger</span><i></i><span>Step</span><i></i><span class="set">Sign-off above your limit</span><i></i><span>Done</span></div>
-        </div>
-        <div class="prev">
-          <span class="label">Illustrative model, not a client</span>
-          <h3>Approval message, on your phone</h3>
-          <ol><li>What the automation wants to do</li><li>Why it is above your limit</li><li>The context you need to decide</li><li>Approve, decline or ask for detail</li></ol>
-          <p>Nothing above your limit goes out without your yes. If a step fails, the workflow stops and tells you, and the runbook says what to do next.</p>
-        </div>
-        <div class="prev">
-          <span class="label">Illustrative model, not a client</span>
-          <h3>Audit log</h3>
-          <ol><li>Enquiry reply sent: inside your limit, automatic</li><li>Discount request: above your limit, waited for you</li><li>Invoice reminder sent: scheduled, automatic</li><li>Report exception: flagged for one person to check</li></ol>
-          <p>Every action is logged, so you can review what the automation did.</p>
+          <div class="mini"><span>Trigger</span><i></i><span>Step</span><i></i><span class="set">Owner approves</span><i></i><span>Done</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="panel" id="results" aria-labelledby="results-h">
-    <div class="panel-head"><span class="label">Panel 05 &middot; Everyday jobs</span></div>
+    <div class="panel-head"><span class="label">Panel 05 &middot; Results</span></div>
     <div class="panel-body">
-      <h2 id="results-h">Six everyday jobs AI can take off your team</h2>
-      <p class="lead">These are the jobs that commonly eat the week of a 5 to 50 person service business. Each one is built inside the tools you already use, with an approval step wherever a mistake would cost you.</p>
-      <ol class="rows">
-        <li><span class="n" aria-hidden="true">1</span>
-          <div><strong>Enquiries that sit unanswered.</strong><p>Leads arrive by email, web form and phone, and whoever sees them first replies, sometimes days later.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>Every enquiry is logged, answered with a drafted reply in your voice, and routed to the right person. Anything unusual comes to you to approve.</p></div></li>
-        <li><span class="n" aria-hidden="true">2</span>
-          <div><strong>New clients onboarded from a blank page.</strong><p>Every new client means the same emails, forms and set-up steps, rebuilt from memory.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>Once a deal is marked won, the welcome email, forms, folders and task list are created for you, and the client is chased if something is missing.</p></div></li>
-        <li><span class="n" aria-hidden="true">3</span>
-          <div><strong>Weekly reports built by hand.</strong><p>Someone copies numbers from three tools into a document every Friday.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>AI pulls the numbers, writes the summary in plain language, and sends a draft for one person to check before it goes to the client.</p></div></li>
-        <li><span class="n" aria-hidden="true">4</span>
-          <div><strong>Proposals written from scratch.</strong><p>Each proposal starts with a copy of the last one and an hour of editing.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>AI drafts the proposal from your call notes and your own past work. You review, adjust and send.</p></div></li>
-        <li><span class="n" aria-hidden="true">5</span>
-          <div><strong>Scheduling and no-shows.</strong><p>Back-and-forth emails to find a time, then clients who forget.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>Booking links, confirmations and reminders run automatically, and a reschedule updates every calendar and task.</p></div></li>
-        <li><span class="n" aria-hidden="true">6</span>
-          <div><strong>Month-end admin that eats a day.</strong><p>Chasing timesheets, matching invoices and answering the same finance questions.</p></div>
-          <div class="fix"><span class="label">The AI automation</span><p>AI collects what is missing, flags mismatches, and gives you one exceptions list instead of a day of checking.</p></div></li>
-      </ol>
-      <p class="lead" style="margin-top:24px">I run my own practice on the same kind of workflows, across three time zones, without daily involvement from me.</p>
-      <p style="margin-top:16px"><a class="btn btn-ghost" href="/pricing.html">See the sprints and prices</a></p>
+      <h2 id="results-h">What I built for my own practice</h2>
+      <p class="tag-own">My own practice, not a client</p>
+      <div class="meters">
+        <div class="meter"><b>3</b><span>time zones, with the practice's own workflows running automatically</span></div>
+      </div>
+      <p class="lead">I run this practice with the same workflows I build for others: client reporting, onboarding, proposals, scheduling and invoicing run automatically, across three time zones.</p>
+      <p class="lead">You can see one of them working now. The <a href="/diagnostic.html">2-minute diagnostic</a> on this site is a workflow I run: AI writes your report from your answers and emails it to you, with no manual step.</p>
     </div>
   </section>
 
@@ -881,8 +855,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="panel-body story">
       <picture><source srcset="/wayne-headshot.webp" type="image/webp"><img src="/wayne-headshot.webp" width="638" height="525" loading="lazy" alt="Wayne Conrad, founder of Wayne Conrad Advisory"></picture>
       <div>
-        <h2 id="story-h" class="wide">I ran service businesses for twenty-eight years.</h2>
-        <p class="lead">I started my first business in 1995. In 2017 I started a second while still running the first. I sold both in 2023, then built this practice around AI automation so it runs without my daily involvement. I now build the same workflows for owners of 5 to 50 person businesses.</p>
+        <h2 id="story-h" class="wide">I ran this problem for twenty-eight years.</h2>
+        <p class="lead">I started my first business in 1995. In 2017 I started a second while still running the first. I sold both in 2023, then built this practice on the same automation I now build for owners of 5 to 50 person businesses.</p>
       </div>
     </div>
   </section>
@@ -892,19 +866,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="panel-body">
       <h2 id="faq-h" class="wide">Questions owners ask before they book</h2>
       <div class="faq">
-<details class="qa"><summary><h3>Isn't AI expensive?</h3></summary><p>Sprints are fixed price from $1,500, confirmed in writing before work starts. Software licences and usage charges are paid directly to the tool vendors, and I name every tool in writing before we begin. You own what is built and there is no lock-in.</p></details>
 <details class="qa"><summary><h3>How much does an AI workflow sprint cost?</h3></summary><p>The three sprints start from $1,500, $2,900 and $8,500. The price depends on the number of systems and how much runs through them. I confirm it in writing before work starts.</p></details>
-<details class="qa"><summary><h3>What does it cost to run after the sprint?</h3></summary><p>Software licences and usage charges are not part of the sprint price. You pay the tool vendors directly, in your own accounts. Typical tool and usage cost after handover is no new subscriptions for the AI cleanup sprint, about $40 to $150 a month for a single AI workflow, and about $150 to $500 a month for the end-to-end AI ops engine. For scale, the workflow platforms I build on start around $12 to $20 a month, and AI usage is billed per use, so it rises with volume, and a September 2026 <a href="https://www.joinhomebase.com/blog/small-business-ai-gap-report" rel="noopener">Homebase survey</a> of 750 US small businesses found $41 to $150 a month was the most common AI spend. These are typical figures, not a quote. I give you your own figure for your workflow on the free call, before you commit.</p></details>
+<details class="qa"><summary><h3>Isn't AI expensive?</h3></summary><p>Sprints are fixed price from $1,500, confirmed in writing before work starts. Software licences and usage charges are paid directly to the vendors, and every tool is named in writing before we start. You own what is built and there is no lock-in. Typical running costs are on the pricing page.</p></details>
 <details class="qa"><summary><h3>Which tools do you work with?</h3></summary><p>HubSpot, Asana, Microsoft 365, Google Workspace, Slack, Make, n8n, Xero and Salesforce. If you use something else, ask on the free call.</p></details>
 <details class="qa"><summary><h3>Who owns what you build?</h3></summary><p>You do. It is built in your accounts and ownership transfers at final payment.</p></details>
 <details class="qa"><summary><h3>What happens after the sprint?</h3></summary><p>You have a tuning window of 30 days (90 days for the end-to-end AI ops engine) where I fix anything that does not meet the agreed criteria. After that you keep it as it is or ask me to continue.</p></details>
-<details class="qa"><summary><h3>Do I need to be technical?</h3></summary><p>No. I handle the build and the handover. The automation asks for sign-off only above limits you set, and sends a short report.</p></details>
+<details class="qa"><summary><h3>Do I need to be technical?</h3></summary><p>No. I map the workflow, build it in your accounts and hand over a recorded walkthrough and a one-page runbook. You read a short report and approve anything above your limits.</p></details>
 <details class="qa"><summary><h3>Will this replace my staff?</h3></summary><p>It removes copy-and-paste coordination. Approvals and judgement stay with people.</p></details>
-<details class="qa"><summary><h3>Is my data safe?</h3></summary><p>I sign a data processing agreement before I see any client data. I use business or API accounts, which do not train on your content by default, and send tools only the fields a workflow needs. I name every tool that may handle your data in the written agreement before any data is shared. Access is through credentials you grant and can revoke. When the support window ends I remove my access and delete project copies, or earlier if you ask. Backups and records I am legally required to keep are the exception. I do not hold a SOC 2 or ISO 27001 certificate; the vendors I use publish their own. Ask for my sub-processor list at any time. <a href="/trust.html">Read the Trust and Data page.</a></p></details>
+<details class="qa"><summary><h3>Is my data safe?</h3></summary><p>I sign a data processing agreement before I see any client data. I use business or API accounts, which do not train on your content by default, and send tools only the fields a workflow needs. I name every tool that may handle your data in the written agreement before any data is shared. Access is through credentials you grant and can revoke. When the support window ends I remove my access and delete project copies, or earlier if you ask. Backups and records I am legally required to keep are the exception. I do not hold a SOC 2 or ISO 27001 certificate; the vendors I use publish their own. Ask for my sub-processor list at any time.</p></details>
 <details class="qa"><summary><h3>What happens after the diagnostic?</h3></summary><p>You get a report straight away. No sales call is needed.</p></details>
 <details class="qa"><summary><h3>Do you work outside the USA, UK and Australia?</h3></summary><p>Yes, including Southeast Asia. I work remotely.</p></details>
       </div>
-      <p class="updated">Last updated: 16 October 2026</p>
+      <p class="updated">Last updated: 17 October 2026</p>
     </div>
   </section>
 
@@ -914,7 +887,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <h2 id="final-h">See what AI can automate in your business.</h2>
       <div class="final-ctas">
         <a class="btn btn-primary" href="https://meetings-na2.hubspot.com/wayne-conrad">Book a free 15-minute workflow call</a>
-        <a class="btn btn-ghost" href="/diagnostic.html">Take the 2-minute diagnostic</a>
+        <a class="btn btn-ghost" href="/diagnostic.html">Take the 2-minute AI readiness diagnostic</a>
       </div>
     </div>
   </section>
@@ -931,28 +904,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <nav class="fcol" aria-label="Sprints">
       <h2 class="fh">Sprints</h2>
       <a href="/pricing.html">AI Cleanup Sprint</a>
-      <a href="/pricing.html">Single AI workflow sprint</a>
-      <a href="/pricing.html">End-to-end AI ops engine</a>
+      <a href="/pricing.html">Single AI Workflow Sprint</a>
+      <a href="/pricing.html">End-to-End AI Ops Engine</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
     <nav class="fcol" aria-label="Company">
       <h2 class="fh">Company</h2>
       <a href="/faq.html">FAQ</a>
+      <a href="/trust.html">Trust and Data</a>
       <a href="/terms.html">Terms of Service</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="/trust.html">Trust and Data</a>
       <a href="/growth.html">Advisory Services</a>
       <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
       <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
-      <a href="/staff/index.html" rel="nofollow">Staff</a>
     </nav>
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
       <p>A remote-first company, based in South Africa</p>
       <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
-      <p>Last updated: 16 October 2026</p>
+      <p>Last updated: 17 October 2026</p>
     </div>
   </div>
   <div class="foot-base"><p>&copy; 2026 Wayne Conrad Advisory. Available globally, remote-first.</p><p>Invoiced in USD &middot; Serving AU, SEA, UK and US teams</p></div>
@@ -974,20 +946,30 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   });}
   /* friction calculator: starts empty, estimate only */
   var f=['c-type','c-team','c-hrs','c-rate'].map(function(id){return document.getElementById(id);});
-  var out=document.getElementById('c-out'),emp=document.getElementById('c-empty');
+  var out=document.getElementById('c-out'),emp=document.getElementById('c-empty'),mail=document.getElementById('c-mail');
   function fmt(n){return Math.round(n).toLocaleString('en-US');}
   function calc(){
     var ok=f[0].value&&f[1].value&&f[2].value!==''&&f[3].value!=='';
     var team=parseFloat(f[1].value),h=parseFloat(f[2].value),r=parseFloat(f[3].value);
-    if(!ok||isNaN(team)||isNaN(h)||isNaN(r)||h<0||r<0){out.hidden=true;emp.hidden=false;return;}
+    if(!ok||isNaN(team)||isNaN(h)||isNaN(r)||h<0||r<0){out.hidden=true;emp.hidden=false;mail.hidden=true;return;}
     var wk=team*h,yr=wk*46;
     document.getElementById('o-week').textContent=fmt(wk);
     document.getElementById('o-year').textContent=fmt(yr);
     document.getElementById('o-cost').textContent=fmt(yr*r);
-    out.hidden=false;emp.hidden=true;
+    out.hidden=false;emp.hidden=true;mail.hidden=false;
   }
   f.forEach(function(el){el.addEventListener('input',calc);el.addEventListener('change',calc);});
-  
+  /* email the estimate */
+  mail.addEventListener('submit',function(e){
+    e.preventDefault();
+    var fn=document.getElementById('m-fn').value.trim(),em=document.getElementById('m-em').value.trim(),msg=document.getElementById('m-msg'),btn=document.getElementById('m-btn');
+    if(!fn||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Please enter your first name and a valid email.';return;}
+    btn.disabled=true;msg.textContent='Sending...';
+    var rows=[{label:'Where the work piles up',value:f[0].value},{label:'People in the business',value:f[1].options[f[1].selectedIndex].text},{label:'Hours a week per person',value:f[2].value},{label:'Blended cost of an hour',value:f[3].value},{label:'Hours a week on this work',value:document.getElementById('o-week').textContent},{label:'Hours a year (46 working weeks)',value:document.getElementById('o-year').textContent},{label:'Payroll value of those hours, per year',value:document.getElementById('o-cost').textContent}];
+    fetch('/.netlify/functions/resource-gate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:fn,lastName:'',email:em,resource:'manual-work-cost-estimate',resourceName:'Manual work cost estimate',summary:rows})})
+      .then(function(r){if(!r.ok)throw new Error('x');msg.textContent='Sent. Check your inbox, and your spam folder if it does not arrive in a few minutes.';mail.querySelectorAll('input,button').forEach(function(x){x.disabled=true;});})
+      .catch(function(){btn.disabled=false;msg.textContent='Something went wrong. Please try again.';});
+  });
 })();
 </script>
 

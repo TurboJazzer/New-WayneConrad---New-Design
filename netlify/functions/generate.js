@@ -96,14 +96,14 @@ exports.handler = async (event) => {
             </div>
             <div style="padding: 40px; background: #ffffff; border: 1px solid #e2e8f0;">
               <p style="font-size: 16px; margin: 0 0 24px;">Hi ${firstName},</p>
-              <p style="font-size: 15px; color: #374151; margin: 0 0 32px;">Here is your personalised report based on your five answers. It names the operational gap most relevant to where your business sits right now and what to address first.</p>
+              <p style="font-size: 15px; color: #374151; margin: 0 0 32px;">Here is your personalised report based on your five answers. It covers how ready your busiest manual workflow is for AI automation, what to fix before building, and which sprint fits.</p>
               <div style="background: #f8fafc; border-left: 3px solid #2563eb; padding: 28px 32px; margin: 0 0 32px; font-size: 15px; color: #0f172a;">
                 <p>${reportHtml}</p>
               </div>
               <div style="border-top: 1px solid #e2e8f0; padding-top: 28px; margin-top: 8px;">
                 <p style="font-size: 15px; color: #374151; margin: 0 0 16px;">If something in this report resonates or raises a question, reply directly to this email. I read every reply personally.</p>
-                <p style="font-size: 15px; color: #374151; margin: 0 0 16px;">While you are thinking through what came up, the <a href="https://wayneconrad.com/resources.html#candidate-map" style="color: #2563eb; text-decoration: none; font-weight: 500;">AI Workflow Candidate Map</a> on my resources page is a practical first step. It lists the workflows that take the most manual hours and helps you pick which to automate first.</p>
-                <p style="font-size: 15px; color: #374151; margin: 0 0 24px;">If you want to talk through what this means for ${company} specifically, reply with a time that works and we will set up a call.</p>
+                <p style="font-size: 15px; color: #374151; margin: 0 0 16px;">While you are thinking through what came up, the <a href="https://wayneconrad.com/ai-handoff-checklist.html" style="color: #2563eb; text-decoration: none; font-weight: 500;">AI hand-off checklist</a> on my site is a practical next step. It is five questions to answer for any process before AI takes it over, with a worksheet you can fill in for each one.</p>
+                <p style="font-size: 15px; color: #374151; margin: 0 0 24px;">If you want to talk through what this means for ${company} specifically, reply with a time that works, or book the free 15-minute workflow call at https://meetings-na2.hubspot.com/wayne-conrad.</p>
                 <p style="font-size: 15px; color: #374151; margin: 0;">Wayne Conrad<br><span style="color: #6b7280; font-size: 13px;">AI Automation Advisor for SME Owners<br>wayne@wayneconrad.com</span></p>
               </div>
             </div>

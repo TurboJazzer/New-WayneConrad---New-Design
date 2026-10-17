@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, follow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Client Health Scorecard | Wayne Conrad Advisory</title>
-<meta name="description" content="A one-page scorecard to rate how healthy each client relationship is. Fill it in on screen, then print it or save it as a PDF.">
-<link rel="canonical" href="https://wayneconrad.com/client-health-scorecard.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Client Health Scorecard | Wayne Conrad Advisory">
-<meta property="og:description" content="A one-page scorecard to rate how healthy each client relationship is. Fill it in on screen, then print it or save it as a PDF.">
-<meta property="og:url" content="https://wayneconrad.com/client-health-scorecard.html">
-<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="/shell.css">
 <style>*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
 :root{
@@ -178,7 +171,7 @@ body{
 input.text,input.number,select.select-one{min-height:44px}
 </style>
 <style>/* footer v2 */
-footer.site-foot{background:#01183f;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
+footer.site-foot{background:#0f172a;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
 footer.site-foot .foot-in{width:100%;max-width:1232px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:28px}
 @media(min-width:640px){footer.site-foot .foot-in{grid-template-columns:1fr 1fr;padding:0 32px}}
 @media(min-width:1000px){footer.site-foot .foot-in{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}}
@@ -186,8 +179,8 @@ footer.site-foot .fcol{display:flex;flex-direction:column;align-items:flex-start
 footer.site-foot .fh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 10px}
 footer.site-foot p{margin:0 0 6px;color:#cbd5e1;line-height:1.6}
 footer.site-foot .ftag{max-width:30ch;margin:14px 0 16px}
-footer.site-foot .flogo{display:inline-block;background:none;padding:0}
-footer.site-foot .flogo img{display:block;height:36px;width:auto}
+footer.site-foot .flogo{display:inline-block;line-height:0}
+footer.site-foot .flogo img{display:block;height:44px;width:auto;border-radius:6px}
 footer.site-foot a,footer.site-foot button{display:inline-flex;align-items:center;min-height:44px;padding:0;color:#e2e8f0;background:none;border:0;font:inherit;font-size:15px;text-decoration:none;cursor:pointer}
 footer.site-foot .fcol a:hover,footer.site-foot button:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
 footer.site-foot :focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
@@ -200,19 +193,6 @@ footer.site-foot .foot-base{max-width:1232px;margin:32px auto 0;padding:20px 16p
 footer.site-foot .foot-base p{font-size:13px;color:#94a3b8;margin:0}
 footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
 /* end footer v2 */</style>
-<style id="final-polish">
-a[href="/resources.html"]{min-height:44px;display:inline-flex;align-items:center}
-/* final polish: contrast, 44px targets, visible focus, placeholders */
-:root{--mid-grey:#475569}
-::placeholder{color:#64748b!important;opacity:1}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #1d4ed8!important;outline-offset:2px;box-shadow:0 0 0 6px #fff}
-.hero a:focus-visible,.page-header a:focus-visible,.cta-block a:focus-visible,.cta-block button:focus-visible,.cta-block input:focus-visible,.final a:focus-visible,.final button:focus-visible{outline-color:#93c5fd!important;box-shadow:none}
-input:not([type=checkbox]):not([type=radio]):not([type=hidden]),select,textarea{min-height:44px}
-button,.btn-clear,.opt,.cta-btn,.cta-input{min-height:44px}
-input[type=checkbox],input[type=radio]{width:24px;height:24px}
-.btn-clear{color:#475569}
-.header-meta,.header-meta span,.header .sub,.page-header p.sub{color:#e2e8f0}
-</style>
 </head>
 <body>
 <div id="gateOverlay" style="
@@ -281,7 +261,6 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-links">Menu</button>
   </div>
 </header>
-<main id="main" tabindex="-1">
 <div class="page-header">
   <h1>Client Health Scorecard</h1>
   <p>Surface the early warning signals of client disengagement before a relationship is lost. Score each client weekly across six signals that predict churn before it happens.</p>
@@ -324,7 +303,6 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
 
 </div>
 
-</main>
 <footer class="site-foot">
   <div class="foot-in">
     <div class="fcol fbrand">
@@ -335,28 +313,27 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <nav class="fcol" aria-label="Sprints">
       <h2 class="fh">Sprints</h2>
       <a href="/pricing.html">AI Cleanup Sprint</a>
-      <a href="/pricing.html">Single AI workflow sprint</a>
-      <a href="/pricing.html">End-to-end AI ops engine</a>
+      <a href="/pricing.html">Single AI Workflow Sprint</a>
+      <a href="/pricing.html">End-to-End AI Ops Engine</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
     <nav class="fcol" aria-label="Company">
       <h2 class="fh">Company</h2>
       <a href="/faq.html">FAQ</a>
+      <a href="/trust.html">Trust and Data</a>
       <a href="/terms.html">Terms of Service</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="/trust.html">Trust and Data</a>
       <a href="/growth.html">Advisory Services</a>
       <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
       <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
-      <a href="/staff/index.html" rel="nofollow">Staff</a>
     </nav>
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
       <p>A remote-first company, based in South Africa</p>
       <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
-      <p>Last updated: 16 October 2026</p>
+      <p>Last updated: 11 October 2026</p>
     </div>
   </div>
   <div class="foot-base"><p>&copy; 2026 Wayne Conrad Advisory. Available globally, remote-first.</p><p>Invoiced in USD &middot; Serving AU, SEA, UK and US teams</p></div>
@@ -535,6 +512,5 @@ function clearAll() {
 addClient();
 addClient();
 </script>
-<script src="/a11y-labels.js" defer></script>
 </body>
 </html>

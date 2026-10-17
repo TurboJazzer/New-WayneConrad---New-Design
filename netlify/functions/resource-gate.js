@@ -38,18 +38,6 @@ function generateToken(email, resource, secret) {
 // Unknown resources fall back to the generic wording, so a new gated
 // resource never gets another resource's instructions.
 const COPY = {
-  'ai-workflow-candidate-map': {
-    intro: 'Fill it in on screen, then use your browser\'s Print to PDF function to save a copy.',
-    button: 'Open the Map',
-    how: 'Work through the five common workflows. Use real hours, not hopeful ones. Set the sign-off limits where a person should approve the work, then check the summary for the workflow to automate first. Print to PDF and bring it to your free workflow call.',
-    close: 'which workflow comes out on top'
-  },
-  'manual-work-cost-calculator': {
-    intro: 'Enter your own numbers on screen, then use your browser\'s Print to PDF function to save a copy.',
-    button: 'Open the Calculator',
-    how: 'Use your real figures for hours, people and pay, not estimates you would like to be true. Run it once for the whole team, then once for the work that goes through you. Print to PDF and keep the result to compare against in three months.',
-    close: 'what the numbers show for your business'
-  },
   'decision-rights-mapping-template': {
     intro: 'Fill it in on screen, then use your browser\'s Print to PDF function to save a copy for your team.',
     button: 'Open the Template',
@@ -76,6 +64,8 @@ const DEFAULT_COPY = {
   close: 'what comes up when you use this in your business'
 };
 
+function esc(v){ return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
 exports.handler = async (event) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -101,33 +91,58 @@ exports.handler = async (event) => {
   try {
     const payload = JSON.parse(event.body);
     const { firstName, lastName, email, resource, resourceName, resourceUrl } = payload;
+    const isEstimate = resource === 'manual-work-cost-estimate';
+    const rows = (isEstimate && Array.isArray(payload.summary) ? payload.summary : []).slice(0, 10)
+      .map(r => ({ label: String(r && r.label || '').slice(0, 80), value: String(r && r.value || '').slice(0, 120) }))
+      .filter(r => r.label && r.value);
+    const fnH = esc(firstName), lnH = esc(lastName), rnH = esc(resourceName), emailH = esc(email);
 
-    if (!firstName || !email || !resource || !resourceUrl) {
+    if (!firstName || !email || !resource || (!isEstimate && !resourceUrl) || (isEstimate && !rows.length)) {
       return { statusCode: 400, headers, body: JSON.stringify({ error: 'Missing required fields' }) };
     }
 
     // ── Build the token-protected link ─────────────────────────────────────
-    const token = generateToken(email, resource, tokenSecret);
-    const separator = resourceUrl.includes('?') ? '&' : '?';
-    const protectedUrl = `${resourceUrl}${separator}token=${token}`;
+    let protectedUrl = '';
+    if (!isEstimate) {
+      const token = generateToken(email, resource, tokenSecret);
+      const separator = resourceUrl.includes('?') ? '&' : '?';
+      protectedUrl = `${resourceUrl}${separator}token=${token}`;
+    }
 
     const copy = COPY[resource] || DEFAULT_COPY;
+
+    const rowsHtml = rows.map(r => `<tr><td style="color:#6b7280;padding:8px 0;border-bottom:1px solid #f1f5f9;">${esc(r.label)}</td><td style="color:#0f172a;font-weight:600;padding:8px 0;border-bottom:1px solid #f1f5f9;text-align:right;">${esc(r.value)}</td></tr>`).join('');
+    const estimateHtml = `
+        <div style="font-family: Inter, -apple-system, sans-serif; max-width: 620px; margin: 0 auto; color: #0f172a; line-height: 1.7;">
+          <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); padding: 32px 40px; border-bottom: 3px solid #2563eb;">
+            <p style="color: #93c5fd; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 8px;">Wayne Conrad Advisory</p>
+            <h1 style="color: #ffffff; font-size: 22px; font-weight: 400; margin: 0; font-family: Georgia, serif;">Your manual work cost estimate</h1>
+          </div>
+          <div style="padding: 40px; background: #ffffff; border: 1px solid #e2e8f0;">
+            <p style="font-size: 16px; margin: 0 0 20px;">Hi ${fnH},</p>
+            <p style="font-size: 15px; color: #374151; margin: 0 0 20px;">Here is the estimate you asked for, on the numbers you entered.</p>
+            <table style="width:100%;font-size:14px;border-collapse:collapse;margin:0 0 20px;">${rowsHtml}</table>
+            <p style="font-size: 13px; color: #6b7280; margin: 0 0 28px;">This is an estimate on your own numbers, not a benchmark or a quote, and it promises no saving. It uses the middle of the team-size range.</p>
+            <p style="font-size: 15px; color: #374151; margin: 0 0 20px;">To see which workflow to automate first, take the <a href="https://wayneconrad.com/diagnostic.html" style="color:#2563eb;">free 2-minute AI readiness diagnostic</a>, or <a href="https://meetings-na2.hubspot.com/wayne-conrad" style="color:#2563eb;">book a free 15-minute call</a>. If you reply to this email I read it personally.</p>
+            <p style="font-size: 15px; color: #374151; margin: 0;">Wayne Conrad<br><span style="color: #6b7280; font-size: 13px;">AI Automation Advisor for SME Owners<br>wayne@wayneconrad.com</span></p>
+          </div>
+        </div>`;
 
     // Email to founder with template link
     const founderEmail = JSON.stringify({
       from: 'Wayne Conrad <wayne@wayneconrad.com>',
       to: [email],
       reply_to: 'wayne@wayneconrad.com',
-      subject: resourceName + ' — Wayne Conrad Advisory',
-      html: `
+      subject: isEstimate ? 'Your manual work cost estimate — Wayne Conrad Advisory' : resourceName + ' — Wayne Conrad Advisory',
+      html: isEstimate ? estimateHtml : `
         <div style="font-family: Inter, -apple-system, sans-serif; max-width: 620px; margin: 0 auto; color: #0f172a; line-height: 1.7;">
           <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); padding: 32px 40px; border-bottom: 3px solid #2563eb;">
             <p style="color: #93c5fd; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 8px;">Wayne Conrad Advisory</p>
-            <h1 style="color: #ffffff; font-size: 22px; font-weight: 400; margin: 0; font-family: Georgia, serif;">${resourceName}</h1>
+            <h1 style="color: #ffffff; font-size: 22px; font-weight: 400; margin: 0; font-family: Georgia, serif;">${rnH}</h1>
           </div>
           <div style="padding: 40px; background: #ffffff; border: 1px solid #e2e8f0;">
-            <p style="font-size: 16px; margin: 0 0 20px;">Hi ${firstName},</p>
-            <p style="font-size: 15px; color: #374151; margin: 0 0 28px; line-height: 1.7;">Here is your link to the ${resourceName}. ${copy.intro}</p>
+            <p style="font-size: 16px; margin: 0 0 20px;">Hi ${fnH},</p>
+            <p style="font-size: 15px; color: #374151; margin: 0 0 28px; line-height: 1.7;">Here is your link to the ${rnH}. ${copy.intro}</p>
             <div style="text-align: center; margin: 0 0 32px;">
               <a href="${protectedUrl}" style="display: inline-block; background: #1d4ed8; color: #ffffff; font-size: 15px; font-weight: 600; padding: 14px 32px; border-radius: 4px; text-decoration: none;">${copy.button}</a>
             </div>
@@ -157,16 +172,16 @@ exports.handler = async (event) => {
         <div style="font-family: Inter, -apple-system, sans-serif; max-width: 620px; margin: 0 auto; color: #0f172a;">
           <div style="background: #0f172a; padding: 20px 28px; border-radius: 6px 6px 0 0;">
             <p style="color: #93c5fd; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 4px;">Resource Download</p>
-            <p style="color: #ffffff; font-size: 16px; font-weight: 600; margin: 0;">${resourceName}</p>
+            <p style="color: #ffffff; font-size: 16px; font-weight: 600; margin: 0;">${rnH}</p>
           </div>
           <div style="background: #ffffff; padding: 24px 28px; border: 1px solid #e2e8f0;">
             <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
-              <tr style="border-bottom: 1px solid #f1f5f9;"><td style="color: #6b7280; padding: 8px 0; width: 100px;">Name</td><td style="color: #0f172a; font-weight: 600; padding: 8px 0;">${firstName} ${lastName}</td></tr>
-              <tr style="border-bottom: 1px solid #f1f5f9;"><td style="color: #6b7280; padding: 8px 0;">Email</td><td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #2563eb;">${email}</a></td></tr>
-              <tr><td style="color: #6b7280; padding: 8px 0;">Resource</td><td style="color: #0f172a; padding: 8px 0;">${resourceName}</td></tr>
+              <tr style="border-bottom: 1px solid #f1f5f9;"><td style="color: #6b7280; padding: 8px 0; width: 100px;">Name</td><td style="color: #0f172a; font-weight: 600; padding: 8px 0;">${fnH} ${lnH}</td></tr>
+              <tr style="border-bottom: 1px solid #f1f5f9;"><td style="color: #6b7280; padding: 8px 0;">Email</td><td style="padding: 8px 0;"><a href="mailto:${emailH}" style="color: #2563eb;">${emailH}</a></td></tr>
+              <tr><td style="color: #6b7280; padding: 8px 0;">Resource</td><td style="color: #0f172a; padding: 8px 0;">${rnH}</td></tr>${rowsHtml}
             </table>
             <div style="margin-top: 20px;">
-              <a href="mailto:${email}?subject=Re: ${resourceName}" style="display: inline-block; background: #2563eb; color: #ffffff; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Reply to ${firstName}</a>
+              <a href="mailto:${emailH}?subject=Re: ${rnH}" style="display: inline-block; background: #2563eb; color: #ffffff; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Reply to ${fnH}</a>
             </div>
           </div>
         </div>

@@ -157,7 +157,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .page-header p.sub,.hero p.sub{color:#e2e8f0!important}
 </style>
 <style>/* footer v2 */
-footer.site-foot{background:#01183f;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
+footer.site-foot{background:#0f172a;color:#e2e8f0;padding:48px 0 28px;font-family:var(--sys,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);font-size:15px}
 footer.site-foot .foot-in{width:100%;max-width:1232px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:28px}
 @media(min-width:640px){footer.site-foot .foot-in{grid-template-columns:1fr 1fr;padding:0 32px}}
 @media(min-width:1000px){footer.site-foot .foot-in{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}}
@@ -165,8 +165,8 @@ footer.site-foot .fcol{display:flex;flex-direction:column;align-items:flex-start
 footer.site-foot .fh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#93c5fd;margin:0 0 10px}
 footer.site-foot p{margin:0 0 6px;color:#cbd5e1;line-height:1.6}
 footer.site-foot .ftag{max-width:30ch;margin:14px 0 16px}
-footer.site-foot .flogo{display:inline-block;background:none;padding:0}
-footer.site-foot .flogo img{display:block;height:36px;width:auto}
+footer.site-foot .flogo{display:inline-block;line-height:0}
+footer.site-foot .flogo img{display:block;height:44px;width:auto;border-radius:6px}
 footer.site-foot a,footer.site-foot button{display:inline-flex;align-items:center;min-height:44px;padding:0;color:#e2e8f0;background:none;border:0;font:inherit;font-size:15px;text-decoration:none;cursor:pointer}
 footer.site-foot .fcol a:hover,footer.site-foot button:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
 footer.site-foot :focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
@@ -203,13 +203,13 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
 
 <main id="main" tabindex="-1">
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 16 October 2026</p>
+  <p class="updated">Last updated: 17 October 2026</p>
 
   <p>This policy explains what data wayneconrad.com collects, why, and the choices you have. Wayne Conrad Advisory is a solo, remote-first consultancy serving SME owners in the USA, UK, Australia, and Southeast Asia.</p>
 
   <h2>What I collect</h2>
   <ul>
-    <li><strong>Information you submit directly</strong>, such as your name and email address when you complete the AI Automation Readiness Diagnostic, subscribe to updates, or book a call.</li>
+    <li><strong>Information you submit directly</strong>, such as your name and email address when you complete the AI Automation Readiness Diagnostic, ask for your manual work cost estimate by email (the figures you entered are included in that email), subscribe to updates, or book a call.</li>
     <li><strong>Usage data</strong> collected automatically through Google Analytics and Google Tag Manager, such as pages visited, time on site, and general location (country/city level, derived from IP address).</li>
   </ul>
 
@@ -260,9 +260,6 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
     <li><strong>Calendly</strong> — call scheduling</li>
   </ul>
 
-  <h2>Data you share for a project</h2>
-  <p>Data you share with me to deliver a sprint is covered by the written agreement and a data processing agreement signed before any data is shared, not by this policy. For AI model providers used on business or API accounts, the provider's own commercial terms apply. Anthropic's Commercial Terms, read on 17 October 2026, state that it may not train models on Customer Content from its services. The written agreement names every tool that may handle your data, and each tool's terms are checked before use. The <a href="/trust.html">Trust and Data page</a> explains how project data is handled.</p>
-
   <h2>Who is responsible for your data</h2>
   <p>Wayne Conrad Advisory, run by Wayne Conrad, decides how and why your personal data is used on this site. The legal entity and contact details are given in the written agreement for any project.</p>
 
@@ -284,8 +281,11 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
   <h2>Security and changes</h2>
   <p>I limit access to personal data and use business-grade accounts for the services above. If a breach affects your data in a way that puts you at risk, I will tell you. I will update this page if how I use data changes, and the date at the top will change.</p>
 
+  <h2>AI providers and client data</h2>
+  <p>The diagnostic report and the workflows I build use Anthropic's API under its commercial terms, which state that Anthropic may not train models on Customer Content from Services (Commercial Terms of Service, effective 17 June 2025, read on 17 October 2026). Where a sprint uses another AI provider, I name it in the written agreement before any data is shared and I only use business or API accounts. I send tools only the fields a workflow needs. Check the provider's current terms before relying on this, as they can change.</p>
+
   <h2>Contact</h2>
-  <p>For any privacy questions or requests, email <a href="mailto:wayne@wayneconrad.com">wayne@wayneconrad.com</a> or reach out via <a href="https://linkedin.com/in/wayneconrad">LinkedIn</a> or through the contact details on the <a href="/growth.html">Advisory Services</a> page.</p>
+  <p>For any privacy questions or requests, email <a href="mailto:wayne@wayneconrad.com">wayne@wayneconrad.com</a> or reach out via <a href="https://linkedin.com/in/wayneconrad">LinkedIn</a>.</p>
 </main>
 
 <footer class="site-foot">
@@ -298,28 +298,27 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
     <nav class="fcol" aria-label="Sprints">
       <h2 class="fh">Sprints</h2>
       <a href="/pricing.html">AI Cleanup Sprint</a>
-      <a href="/pricing.html">Single AI workflow sprint</a>
-      <a href="/pricing.html">End-to-end AI ops engine</a>
+      <a href="/pricing.html">Single AI Workflow Sprint</a>
+      <a href="/pricing.html">End-to-End AI Ops Engine</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
     <nav class="fcol" aria-label="Company">
       <h2 class="fh">Company</h2>
       <a href="/faq.html">FAQ</a>
+      <a href="/trust.html">Trust and Data</a>
       <a href="/terms.html">Terms of Service</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="/trust.html">Trust and Data</a>
       <a href="/growth.html">Advisory Services</a>
       <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
       <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
-      <a href="/staff/index.html" rel="nofollow">Staff</a>
     </nav>
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
       <p>A remote-first company, based in South Africa</p>
       <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
-      <p>Last updated: 16 October 2026</p>
+      <p>Last updated: 17 October 2026</p>
     </div>
   </div>
   <div class="foot-base"><p>&copy; 2026 Wayne Conrad Advisory. Available globally, remote-first.</p><p>Invoiced in USD &middot; Serving AU, SEA, UK and US teams</p></div>
