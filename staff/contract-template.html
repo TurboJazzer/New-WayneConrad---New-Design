@@ -1,42 +1,254 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<title>Sprint Agreement template | Staff | Wayne Conrad Advisory</title>
-<link rel="stylesheet" href="/staff/staff.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contract template | Wayne Conrad Advisory</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/shell.css">
+<style>
+:root{--navy:#0f172a;--navy2:#1e3a8a;--btn:#1d4ed8;--bd:#e2e8f0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#a9b8cd!important;color:#111827;font-family:var(--sys);font-size:17px;line-height:1.65}
+@media(min-width:1200px){body{font-size:18px}}
+.wrap{width:100%;max-width:1232px;margin:0 auto;padding:0 16px}
+@media(min-width:760px){.wrap{padding:0 32px}}
+.page-header{background:#0f172a;color:#fff;padding:36px 0 32px}
+.page-header .eyebrow{margin:0 0 8px;color:#93c5fd;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.page-header h1{margin:0 0 10px;font-size:clamp(28px,5vw,40px);line-height:1.15;color:#fff}
+.page-header p.sub{margin:0;max-width:62ch;color:#e2e8f0}
+main{padding:32px 0 56px}
+h2{color:#0f172a;font-size:22px;line-height:1.25;margin:0 0 10px}
+h3{color:#0f172a;font-size:17px;margin:0 0 6px}
+.cards{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:#f8fafc;border:1px solid #94a3b8;border-radius:10px;padding:24px}
+.card p{margin:0 0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:6px;background:#1d4ed8;color:#fff;border:2px solid #1d4ed8;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+.btn:hover{background:#2563eb;border-color:#2563eb}
+.btn.alt{background:#f8fafc;color:#1d4ed8}
+.btn.alt:hover{background:#e2e8f0}
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 20px}
+.note{margin:0 0 20px;padding:12px 16px;background:#f8fafc;border:1px solid #1d4ed8;border-left-width:6px;border-radius:6px;color:#0f172a;font-weight:600}
+a{color:#1d4ed8}
+:focus-visible{outline:3px solid #1d4ed8;outline-offset:3px;border-radius:3px}
+.page-header :focus-visible,.site-foot :focus-visible{outline-color:#93c5fd}
+.status{min-height:24px;color:#0f172a;font-weight:600;margin:0 0 12px}
+.doc{background:#dfe7f1;border:1px solid #94a3b8;border-radius:10px;padding:24px 20px;max-width:860px}
+@media(min-width:760px){.doc{padding:40px 48px}}
+.doc td{background:#e9eff6}
+.doc th{background:#c9d6e6}
+.doc h2{margin-top:28px;padding-top:4px}
+.doc h2:first-child{margin-top:0}
+.doc p,.doc li{margin:0 0 10px}
+.doc ol,.doc ul{padding-left:22px;margin:0 0 12px}
+.fill{background:#c3d2e6;border-bottom:2px solid #2563eb;padding:0 3px;color:#0f172a}
+.tblw{overflow-x:auto;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td{background:#f8fafc}
+th,td{border:1px solid #64748b;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#e2e8f0;color:#0f172a}
+.sign{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:640px){.sign{grid-template-columns:1fr 1fr}}
+.sign div{border:1px solid #94a3b8;border-radius:6px;padding:12px 14px}
+/* stepper */
+.rail{display:none;list-style:none;margin:0 0 28px;padding:0;position:relative;justify-content:space-between}
+.rail:before{content:"";position:absolute;left:22px;right:22px;top:50%;height:3px;background:#94a3b8;transform:translateY(-50%)}
+.rail li{position:relative}
+.rail a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#f8fafc;border:3px solid #1e3a8a;color:#0f172a;font-weight:700;text-decoration:none}
+.rail a.done{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
+@media(min-width:900px){.rail{display:flex}}
+.steps{list-style:none;margin:0 0 32px;padding:0;display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:#f8fafc;border:1px solid #94a3b8;border-radius:10px;padding:18px 18px 14px;position:relative}
+.step.done{border-color:#1d4ed8;background:#e8effc}
+.step .n{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#1e3a8a;color:#fff;font-weight:700;margin-bottom:8px}
+.step dl{margin:0 0 10px;font-size:15px}
+.step dt{font-weight:700;color:#0f172a;margin-top:6px}
+.step dd{margin:0}
+.chk{display:flex;align-items:center;gap:10px;min-height:44px;font-weight:700;color:#0f172a;cursor:pointer}
+.chk input{width:24px;height:24px;accent-color:#1d4ed8;flex:none}
+@media(max-width:899px){.steps{border-left:3px solid #1e3a8a;padding-left:14px;margin-left:12px}.step:before{content:"";position:absolute;left:-23px;top:26px;width:12px;height:12px;border-radius:50%;background:#1e3a8a}}
+.rules{background:#f8fafc;border:2px solid #1e3a8a;border-radius:10px;padding:18px 22px;margin-top:20px}
+.rules ul{margin:0;padding-left:22px}
+@media print{
+ .site-nav,.page-header,.site-foot,.bar,.status,.skip,.note-screen{display:none!important}
+ body{background:#fff;color:#000;font-size:12pt}
+ main{padding:0}.doc{border:0;padding:0;max-width:none}
+ .doc h2{break-after:avoid}.doc table,.sign div{break-inside:avoid}
+ .fill{background:none}
+ .doc,.doc td,.doc th{background:#fff!important}
+}
+
+/* dark theme */
+body{background:#000!important;color:#fff!important}
+.page-header{background:#000;border-bottom:1px solid #334155}
+h2,h3,.doc h2,.doc h3,.step dt,.chk,label{color:#fff}
+a{color:#93c5fd}
+.btn{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
+.btn:hover{background:#2563eb;border-color:#2563eb}
+.btn.alt{background:#000;color:#fff;border-color:#93c5fd}
+.btn.alt:hover{background:#1e293b}
+.card,.doc,.step,.rules,.note{background:#0b0f19;border-color:#64748b;color:#fff}
+.note{border-left-color:#93c5fd}
+.step.done{background:#0c1d44;border-color:#93c5fd}
+.step dd,.card p,.doc p,.doc li{color:#fff}
+.rules{border-color:#93c5fd}
+.status{color:#bfdbfe}
+.fill{background:#1e293b;color:#fff;border-bottom-color:#93c5fd}
+th{background:#1e293b;color:#fff}
+td{background:#0b0f19;color:#fff}
+.doc td{background:#0b0f19}.doc th{background:#1e293b}
+th,td{border-color:#64748b}
+.sign div{border-color:#64748b}
+.rail:before{background:#64748b}
+.rail a{background:#000;border-color:#93c5fd;color:#fff}
+.rail a.done{background:#1d4ed8;border-color:#93c5fd}
+.step .n{background:#1d4ed8}
+:focus-visible{outline-color:#93c5fd}
+@media(max-width:899px){.steps{border-left-color:#93c5fd}.step:before{background:#93c5fd}}
+@media print{
+ body{background:#fff!important;color:#000!important}
+ .doc,.doc *{color:#000!important}
+ .doc,.doc td,.doc th{background:#fff!important;border-color:#999}
+ .doc th{background:#eee!important}
+ .fill{background:none!important;border-bottom:1px solid #000}
+}
+</style>
 </head>
-<body class="staff">
-<header class="topbar"><div class="topbar-in">
-<span class="ttl">Sprint Agreement template</span>
-<a class="home" href="/staff/">Staff home</a>
-<button class="btn" id="copy" type="button">Copy text</button><button class="btn pri" id="print" type="button">Print / Save PDF</button><a class="btn" href="/staff/logout.html">Log out</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="/staff/index.html" aria-label="Wayne Conrad Advisory, staff home"><picture><source srcset="/assets/wayne_logo_full.webp" type="image/webp"><img src="/assets/wayne_logo_full.png" alt="Wayne Conrad Advisory" width="88" height="32"></picture></a>
+    <nav aria-label="Staff" style="display:contents">
+      <ul class="nav-links">
+        <li><a href="/staff/index.html">Staff home</a></li>
+        <li><a href="/staff/contract-template.html">Contract template</a></li>
+        <li><a href="/staff/workflow.html">Sprint workflow</a></li>
+        <li><a href="/staff/logout.html">Log out</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<header class="page-header"><div class="wrap">
+  <p class="eyebrow">Staff area</p>
+  <h1>Sprint Agreement template</h1>
+  <p class="sub">A clean draft you can copy or print. Fields in square brackets are fill-ins.</p>
 </div></header>
-<main id="main" class="layout has-toc"><nav class="toc" aria-label="Contract sections"><h2>Sections</h2><a href="#s1">1. Parties</a><a href="#s2">2. Sprint and scope</a><a href="#s3">3. Acceptance criteria</a><a href="#s4">4. Fees and payment schedule</a><a href="#s5">5. Milestones and dates</a><a href="#s6">6. Client responsibilities</a><a href="#s7">7. Guarantee</a><a href="#s8">8. Support window</a><a href="#s9">9. Data handling</a><a href="#s10">10. Ownership</a><a href="#s11">11. Cancellation and termination</a><a href="#s12">12. Late payment and suspension</a><a href="#s13">13. Liability</a><a href="#s14">14. Confidentiality, AI output and general terms</a><a href="#s15">15. Signatures</a><a href="#schedules">Schedules A to D</a></nav><div id="contract">
-<h1>Sprint Agreement</h1><div class="banner">Draft template. Have a lawyer review before use. Not legal advice.</div>
-<section class="card" id="s1"><div class="read"><h2><span class="num">1.</span>Parties</h2><p>Wayne Conrad Advisory ("I") and <span class="fill">[Client legal name]</span> ("you"). Address: <span class="fill">[address]</span>. Contact: <span class="fill">[name, email, phone]</span>. Legal entity name: <span class="fill">[to be supplied by Wayne]</span>.</p></div></section>
-<section class="card" id="s2"><div class="read"><h2><span class="num">2.</span>Sprint and scope</h2><p>Sprint: <span class="fill">[AI cleanup / single workflow / end-to-end ops engine]</span>.</p><h3>In scope</h3><p><span class="fill">[list]</span></p><h3>Out of scope</h3><p><span class="fill">[list]</span></p><h3>Systems and tools involved</h3><p><span class="fill">[list]</span></p><h3>What you must provide, and by when</h3><p><span class="fill">[list and dates]</span></p></div></section>
-<section class="card" id="s3"><div class="read"><h2><span class="num">3.</span>Acceptance criteria</h2><p>The criteria are numbered, measurable and set out in Schedule A, each with how it is tested. They change only by written agreement.</p></div></section>
-<section class="card" id="s4"><div class="read"><h2><span class="num">4.</span>Fees and payment schedule</h2><p>Fee: <span class="fill">[$]</span>, in USD. It excludes taxes and software costs that you pay directly to the vendors. 50% is due on signing and 50% on handover, unless the schedule says otherwise. Work starts when the first payment clears.</p></div></section>
-<section class="card" id="s5"><div class="read"><h2><span class="num">5.</span>Milestones and dates</h2><p>The milestones and dates are set out in Schedule B.</p></div></section>
-<section class="card" id="s6"><div class="read"><h2><span class="num">6.</span>Client responsibilities</h2><p>You give timely access, approve drafts within <span class="fill">[3]</span> working days and supply accurate data. Delays move the dates and sit outside the guarantee.</p></div></section>
-<section class="card" id="s7"><div class="read"><h2><span class="num">7.</span>Guarantee</h2><p>If the delivered work misses an agreed criterion, I fix it free for up to 10 working days from your written notice. If it still misses, I refund the fee you paid for that sprint. That fix or refund is the only remedy. Give written notice naming the criterion within 14 days of handover.</p><p>Not covered: your changes, late access or approvals, incorrect data, and changes by third parties. I do not promise revenue, savings or hours saved.</p></div></section>
-<section class="card" id="s8"><div class="read"><h2><span class="num">8.</span>Support window</h2><p><span class="fill">[30 / 30 / 90]</span> days. Defects are fixed free.</p></div></section>
-<section class="card" id="s9"><div class="read"><h2><span class="num">9.</span>Data handling</h2><p>Tools that may handle your data are named in Schedule C. Project copies are deleted when the support window ends, or earlier on request. Backups and records the law requires me to keep are the exception.</p></div></section>
-<section class="card" id="s10"><div class="read"><h2><span class="num">10.</span>Ownership</h2><p>The work is built in your accounts. Ownership of the deliverables passes to you on final payment. I keep my methods and tools. Third-party software stays under its own licence.</p></div></section>
-<section class="card" id="s11"><div class="read"><h2><span class="num">11.</span>Cancellation and termination</h2><p>Either of us can cancel at any time by written notice. You pay for work done up to the notice date and for third-party costs already committed. The first payment is not refundable once work has started, unless I cancel without cause or the guarantee applies. Either party may end this agreement for a material breach that is not fixed within 10 working days of written notice.</p></div></section>
-<section class="card" id="s12"><div class="read"><h2><span class="num">12.</span>Late payment and suspension</h2><p>If an undisputed invoice is more than 14 days overdue I may pause work and hold handover until it is paid. The guarantee clock stops while payment is overdue. Interest is 1.5% a month, or the legal maximum if lower. <span class="fill">[Lawyer to confirm]</span>.</p></div></section>
-<section class="card" id="s13"><div class="read"><h2><span class="num">13.</span>Liability</h2><p>My total liability is limited to the fees you paid for the project. I am not liable for indirect or consequential loss, to the extent the law allows. Nothing here limits liability that the law does not allow to be limited.</p></div></section>
-<section class="card" id="s14"><div class="read"><h2><span class="num">14.</span>Confidentiality, AI output and general terms</h2><p>Each of us keeps the other's confidential information private. A person checks AI output before it goes live, and results vary. Governing law: <span class="fill">[to be set by lawyer]</span>. This is the entire agreement. Changes must be in writing.</p></div></section>
-<section class="card" id="s15"><div class="read"><h2><span class="num">15.</span>Signatures</h2><table><thead><tr><th></th><th>Wayne Conrad Advisory</th><th>Client</th></tr></thead><tbody><tr><th scope="row">Name</th><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row">Title</th><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row">Date</th><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></div></section>
-<section class="card sched" id="schedules"><div class="read"><h2>Schedules</h2><h3>Schedule A. Acceptance criteria</h3><table><thead><tr><th>#</th><th>Criterion</th><th>How it is tested</th></tr></thead><tbody><tr><td>1</td><td><span class="fill">[one line]</span></td><td><span class="fill">[test]</span></td></tr><tr><td>2</td><td><span class="fill">[one line]</span></td><td><span class="fill">[test]</span></td></tr></tbody></table><h3>Schedule B. Milestones and dates</h3><p>Copy the table from the Sprint workflow page, then add dates.</p><table><thead><tr><th>#</th><th>Milestone</th><th>Date</th></tr></thead><tbody><tr><td>1</td><td><span class="fill">[milestone]</span></td><td><span class="fill">[date]</span></td></tr></tbody></table><h3>Schedule C. Tools that may handle your data</h3><p><span class="fill">[name every tool]</span></p><h3>Schedule D. Contacts</h3><p><span class="fill">[names, emails, phones for both parties]</span></p></div></section>
-</div></main><script>
-(function(){var b=document.getElementById('copy');if(b)b.addEventListener('click',function(){var t=document.getElementById('contract').innerText;try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},function(){b.textContent='Copy failed'})}catch(e){b.textContent='Copy failed'}});
-var p=document.getElementById('print');if(p)p.addEventListener('click',function(){window.print()});
-var links=[].slice.call(document.querySelectorAll('.toc a'));
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-20% 0px -70% 0px'});
-links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t)})}})();
+<main id="main" tabindex="-1"><div class="wrap">
+
+<p class="note note-screen" role="note">Draft template. Have a lawyer review before use. Not legal advice.</p>
+<div class="bar"><button class="btn" type="button" id="copy">Copy text</button><button class="btn alt" type="button" id="print">Print / Save as PDF</button></div>
+<p class="status" id="st" role="status" aria-live="polite"></p>
+<article class="doc" id="contract">
+<h2 style="font-size:26px;margin:0 0 6px">Sprint Agreement</h2>
+<p><strong>Draft template. Have a lawyer review before use. Not legal advice.</strong></p>
+
+<h2>1. Parties</h2>
+<p>Wayne Conrad Advisory ("I") and <span class="fill">[Client legal name]</span> ("you").</p>
+<p>My legal entity name: <span class="fill">[Legal entity name to be supplied by Wayne]</span>.</p>
+<p>Your address: <span class="fill">[Client address]</span>. Your contact: <span class="fill">[Client contact name, email, phone]</span>.</p>
+<p>My contact: <span class="fill">[Wayne email and phone]</span>.</p>
+
+<h2>2. Sprint and scope</h2>
+<p>Sprint: <span class="fill">[AI Cleanup Sprint / Single Workflow Sprint / End-to-End Ops Engine]</span>.</p>
+<p>In scope:</p>
+<ol><li><span class="fill">[In-scope item]</span></li><li><span class="fill">[In-scope item]</span></li><li><span class="fill">[In-scope item]</span></li></ol>
+<p>Out of scope:</p>
+<ol><li><span class="fill">[Out-of-scope item]</span></li><li><span class="fill">[Out-of-scope item]</span></li></ol>
+<p>Systems and tools involved: <span class="fill">[list systems and tools]</span>.</p>
+<p>What you must provide, and by when: <span class="fill">[item and date]</span>; <span class="fill">[item and date]</span>.</p>
+
+<h2>3. Acceptance criteria (Schedule A)</h2>
+<p>The agreed criteria are listed in Schedule A. Each is numbered, measurable, one line, with the way it is tested. They change only by written agreement.</p>
+
+<h2>4. Fees and payment schedule</h2>
+<p>Fee: <span class="fill">[$ amount]</span>, in USD. The fee excludes taxes and software costs you pay direct to vendors.</p>
+<p>Payment: 50% on signing and 50% on handover, unless this schedule says otherwise: <span class="fill">[any different split]</span>.</p>
+<p>Work starts when the first payment clears.</p>
+
+<h2>5. Milestones and dates (Schedule B)</h2>
+<p>The milestones and their dates are in Schedule B.</p>
+
+<h2>6. Client responsibilities</h2>
+<p>You give timely access to the systems and people I need, approve drafts within <span class="fill">[3]</span> working days, and supply accurate data. Delays on your side move the dates and fall outside the guarantee.</p>
+
+<h2>7. Guarantee</h2>
+<p>If delivered work misses an agreed criterion, I fix it free for up to 10 working days from your written notice. If it still misses, I refund the fee you paid for that sprint. That fix or refund is the only remedy.</p>
+<p>You must give written notice naming the criterion within 14 days of handover.</p>
+<p>Not covered: your changes, late access or approvals, incorrect data, and third-party changes. I make no promise of revenue, savings or hours.</p>
+
+<h2>8. Support window</h2>
+<p>Support window: <span class="fill">[30 / 30 / 90]</span> days from handover. I fix defects free during this time.</p>
+
+<h2>9. Data handling</h2>
+<p>The tools that may handle your data are named in Schedule C. I delete my copies when the support window ends, or earlier on your request. Backups and records the law requires me to keep are excepted.</p>
+
+<h2>10. Ownership</h2>
+<p>I build the work in your accounts. Ownership of the deliverables passes to you on final payment. I keep my methods and tools. Third-party software stays under its own licence.</p>
+
+<h2>11. Cancellation and termination</h2>
+<p>Either of us may cancel at any time by written notice. You pay for work done up to the notice date and for third-party costs already committed. The first payment is not refundable once work has started, unless I cancel without cause or the guarantee applies. Either of us may end this agreement for a material breach that is not fixed within 10 working days of written notice.</p>
+
+<h2>12. Late payment and suspension</h2>
+<p>If an undisputed invoice is more than 14 days overdue, I may pause work and hold handover until it is paid. The guarantee clock stops while payment is overdue. Interest runs at 1.5% a month, or the legal maximum if lower. <span class="fill">[Lawyer to confirm]</span></p>
+
+<h2>13. Liability</h2>
+<p>My total liability is limited to the fees you paid for the project. I am not liable for indirect or consequential loss, to the extent the law allows. Nothing in this agreement limits liability that the law does not allow to be limited.</p>
+
+<h2>14. General terms</h2>
+<p><strong>Confidentiality.</strong> Each of us keeps the other's non-public information confidential and uses it only for this project. <span class="fill">[Lawyer to confirm wording]</span></p>
+<p><strong>AI output.</strong> A person checks AI output before it goes live. Results vary.</p>
+<p><strong>Governing law.</strong> <span class="fill">[To be set by lawyer]</span></p>
+<p><strong>Entire agreement.</strong> This agreement and its schedules are the whole agreement and replace earlier discussions.</p>
+<p><strong>Changes.</strong> Changes must be in writing and agreed by both of us.</p>
+
+<h2>15. Signatures</h2>
+<div class="sign">
+ <div><h3>Wayne Conrad Advisory</h3><p>Name: <span class="fill">[name]</span></p><p>Title: <span class="fill">[title]</span></p><p>Date: <span class="fill">[date]</span></p><p>Signature: ______________________</p></div>
+ <div><h3><span class="fill">[Client legal name]</span></h3><p>Name: <span class="fill">[name]</span></p><p>Title: <span class="fill">[title]</span></p><p>Date: <span class="fill">[date]</span></p><p>Signature: ______________________</p></div>
+</div>
+
+<h2>Schedule A: Acceptance criteria</h2>
+<div class="tblw"><table><thead><tr><th>#</th><th>Criterion (one line, measurable)</th><th>How it is tested</th></tr></thead><tbody>
+<tr><td>A1</td><td><span class="fill">[criterion]</span></td><td><span class="fill">[test]</span></td></tr>
+<tr><td>A2</td><td><span class="fill">[criterion]</span></td><td><span class="fill">[test]</span></td></tr>
+<tr><td>A3</td><td><span class="fill">[criterion]</span></td><td><span class="fill">[test]</span></td></tr>
+</tbody></table></div>
+
+<h2>Schedule B: Milestones and dates</h2>
+<div class="tblw"><table><thead><tr><th>#</th><th>Milestone</th><th>Owner</th><th>Contract link</th><th>Date</th></tr></thead><tbody><tr><td>1</td><td>Free 15-minute call</td><td>Wayne</td><td>none</td><td><span class="fill">[date]</span></td></tr><tr><td>2</td><td>Scope and quote in writing</td><td>Wayne</td><td>Sections 2 to 5</td><td><span class="fill">[date]</span></td></tr><tr><td>3</td><td>Agreement signed</td><td>Client + Wayne</td><td>Section 15</td><td><span class="fill">[date]</span></td></tr><tr><td>4</td><td>First payment received, kickoff</td><td>Wayne</td><td>Section 4</td><td><span class="fill">[date]</span></td></tr><tr><td>5</td><td>Access and data received</td><td>Client</td><td>Section 6</td><td><span class="fill">[date]</span></td></tr><tr><td>6</td><td>Build and weekly update</td><td>Wayne</td><td>Schedule B</td><td><span class="fill">[date]</span></td></tr><tr><td>7</td><td>Approval checkpoint (client signs off drafts)</td><td>Client</td><td>Section 6</td><td><span class="fill">[date]</span></td></tr><tr><td>8</td><td>Acceptance test against Schedule A</td><td>Wayne + Client</td><td>Schedule A</td><td><span class="fill">[date]</span></td></tr><tr><td>9</td><td>Handover (runbook, training, report)</td><td>Wayne</td><td>Section 5</td><td><span class="fill">[date]</span></td></tr><tr><td>10</td><td>Final payment, ownership passes</td><td>Client</td><td>Section 10</td><td><span class="fill">[date]</span></td></tr><tr><td>11</td><td>Fix period if a criterion is missed</td><td>Wayne</td><td>Section 7</td><td><span class="fill">[date]</span></td></tr><tr><td>12</td><td>Refund if still missed</td><td>Wayne</td><td>Section 7</td><td><span class="fill">[date]</span></td></tr><tr><td>13</td><td>Support window</td><td>Wayne</td><td>Section 8</td><td><span class="fill">[date]</span></td></tr><tr><td>14</td><td>Close and data deletion</td><td>Wayne</td><td>Section 9</td><td><span class="fill">[date]</span></td></tr></tbody></table></div>
+
+<h2>Schedule C: Tools that may handle client data</h2>
+<ol><li><span class="fill">[tool, purpose, where data is stored]</span></li><li><span class="fill">[tool, purpose, where data is stored]</span></li></ol>
+
+<h2>Schedule D: Contacts</h2>
+<div class="tblw"><table><thead><tr><th>Role</th><th>Name</th><th>Email</th><th>Phone</th></tr></thead><tbody>
+<tr><td>Wayne Conrad Advisory</td><td><span class="fill">[name]</span></td><td><span class="fill">[email]</span></td><td><span class="fill">[phone]</span></td></tr>
+<tr><td>Client lead</td><td><span class="fill">[name]</span></td><td><span class="fill">[email]</span></td><td><span class="fill">[phone]</span></td></tr>
+<tr><td>Client approver</td><td><span class="fill">[name]</span></td><td><span class="fill">[email]</span></td><td><span class="fill">[phone]</span></td></tr>
+</tbody></table></div>
+</article>
+</div></main>
+<footer class="site-foot">
+  <div class="foot-in">
+    <div class="fcol"><p>Wayne Conrad Advisory staff area. Private. Not indexed.</p></div>
+  </div>
+</footer>
+<script>
+(function(){
+var st=document.getElementById('st');
+function say(m){st.textContent=m;setTimeout(function(){st.textContent='';},3000);}
+document.getElementById('print').addEventListener('click',function(){window.print();});
+document.getElementById('copy').addEventListener('click',function(){
+ var t=document.getElementById('contract').innerText;
+ function fb(){try{var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);say('Copied.');}catch(e){say('Copy failed. Select the text and copy it.');}}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){say('Copied.');},fb);}else{fb();}
+});
+})();
 </script>
 </body>
 </html>

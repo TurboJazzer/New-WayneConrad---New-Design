@@ -53,12 +53,12 @@ function loginPage(message, status) {
   const note = message ? '<p class="msg" role="alert">' + message + '</p>' : '';
   const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
     '<meta name="robots" content="noindex, nofollow, noarchive"><title>Staff sign in | Wayne Conrad Advisory</title>' +
-    '<style>*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:16px;font:18px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1f2937;background:linear-gradient(180deg,#1e3a8a 0,#0f172a 320px) #0f172a}' +
-    '.card{width:100%;max-width:420px;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:8px;padding:32px}h1{margin:0 0 6px;font-size:28px;color:#0f172a}p{margin:0 0 18px}' +
-    'label{display:block;font-weight:600;margin-bottom:6px}input{width:100%;min-height:48px;padding:10px 12px;font:inherit;border:1px solid #64748b;border-radius:6px;background:#fff}' +
-    'button{margin-top:16px;width:100%;min-height:48px;font:inherit;font-weight:700;color:#fff;background:#1d4ed8;border:0;border-radius:6px;cursor:pointer}' +
-    'input:focus,button:focus{outline:3px solid #93c5fd;outline-offset:2px}.msg{color:#991b1b;font-weight:600}</style></head><body><main class="card">' +
-    '<h1>Staff sign in</h1><p>Wayne Conrad Advisory. Authorised people only.</p>' + note +
+    '<style>*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:16px;font:18px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#fff;background:#000}' +
+    '.card{width:100%;max-width:440px;background:#0b0f19;border:1px solid #64748b;border-radius:10px;padding:28px}.eyebrow{margin:0 0 8px;color:#93c5fd;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{margin:0 0 8px;font-size:32px;line-height:1.15;color:#fff}p{margin:0 0 18px}' +
+    'label{display:block;font-weight:700;margin-bottom:6px}input{width:100%;min-height:48px;padding:10px 12px;font:inherit;color:#fff;background:#1e293b;border:1px solid #64748b;border-radius:6px}' +
+    'button{margin-top:16px;width:100%;min-height:48px;font:inherit;font-weight:700;color:#fff;background:#1d4ed8;border:2px solid #1d4ed8;border-radius:6px;cursor:pointer}button:hover{background:#2563eb;border-color:#2563eb}' +
+    'input:focus,button:focus{outline:3px solid #93c5fd;outline-offset:3px}.msg{color:#fca5a5;font-weight:700}</style></head><body><main class="card">' +
+    '<p class="eyebrow">Staff area</p><h1>Sign in</h1><p>Wayne Conrad Advisory. Authorised people only.</p>' + note +
     '<form method="post" action="/staff/"><label for="pw">Password</label><input id="pw" name="password" type="password" autocomplete="current-password" required autofocus>' +
     '<button type="submit">Sign in</button></form></main></body></html>';
   return new Response(html, { status, headers: HEADERS });
@@ -74,7 +74,7 @@ export default async (request, context) => {
   const url = new URL(request.url);
 
   if (url.pathname === '/staff/logout.html' || url.pathname === '/staff/logout') {
-    return new Response(null, { status: 303, headers: { ...HEADERS, Location: '/staff/', 'Set-Cookie': 'staff_session=; Max-Age=0; ' + COOKIE_FLAGS } });
+    return new Response(null, { status: 303, headers: { ...HEADERS, Location: '/', 'Set-Cookie': 'staff_session=; Max-Age=0; ' + COOKIE_FLAGS } });
   }
 
   if (await cookieOk(request.headers.get('cookie'), secret)) {
