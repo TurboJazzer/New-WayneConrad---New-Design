@@ -90,7 +90,7 @@ body{
   margin-top: 4px; text-align: left;
 }
 .hero-source{
-  font-size:12px; color: #94a3b8;
+  font-size:12px; color: #cbd5e1;
   padding-bottom: 44px;
 }
 .hero-source a{ color: rgba(255,255,255,0.55); }
@@ -287,6 +287,7 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-links">Menu</button>
   </div>
 </header>
+<main id="main" tabindex="-1">
 <div class="hero">
   <div class="hero-inner">
     <p class="eyebrow">Wayne Conrad Advisory</p>
@@ -358,16 +359,17 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <div class="author-avatar">
       <picture>
         <source srcset="wayne-headshot.webp" type="image/webp">
-        <img src="wayne-headshot.jpg" alt="Wayne Conrad, founder of Wayne Conrad Advisory">
+        <img src="wayne-headshot.jpg" width="1006" height="828" alt="Wayne Conrad, founder of Wayne Conrad Advisory">
       </picture>
     </div>
     <div class="author-text">
       <p class="author-name">Written by Wayne Conrad</p>
-      <p class="author-desc">28 years building and selling two service businesses. Now helps SME and SMB owners remove themselves from the operational centre of their business. <a href="/#background">More about Wayne</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/wayneconrad">LinkedIn</a></p>
+      <p class="author-desc">28 years building and selling two service businesses. Now builds AI automation for SME and SMB service businesses. <a href="/#background">More about Wayne</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/wayneconrad">LinkedIn</a></p>
     </div>
   </div>
 </div>
 
+</main>
 <footer class="site-foot">
   <div class="foot-in">
     <div class="fcol fbrand">
@@ -378,8 +380,8 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <nav class="fcol" aria-label="Sprints">
       <h2 class="fh">Sprints</h2>
       <a href="/pricing.html">AI Cleanup Sprint</a>
-      <a href="/pricing.html">Single Workflow Sprint</a>
-      <a href="/pricing.html">End-to-End Ops Engine</a>
+      <a href="/pricing.html">Single AI workflow sprint</a>
+      <a href="/pricing.html">End-to-end AI ops engine</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
@@ -396,7 +398,8 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
-      <p>A remote-first company</p>
+      <p>A remote-first company, based in South Africa</p>
+      <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
       <p>Last updated: 16 October 2026</p>
     </div>
   </div>
@@ -406,5 +409,6 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
 <script>(function(){document.documentElement.classList.add('js');var mb=document.querySelector('.menu-btn'),ln=document.getElementById('site-links');if(mb&&ln){mb.addEventListener('click',function(){var o=ln.classList.toggle('open');mb.setAttribute('aria-expanded',o?'true':'false');});}})();</script>
 <script src="/cookie-consent.js" defer></script>
 
+<script src="/a11y-labels.js" defer></script>
 </body>
 </html>

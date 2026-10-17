@@ -4,8 +4,8 @@
 
 ## What is offered
 - AI cleanup sprint: repairs failing automations, removes duplicate tool subscriptions, delivers a written map of live automations. From $1,500. Typical length 3 to 5 days, with 30 days of support.
-- Single workflow sprint: one pipeline built and live (usually enquiry triage or client onboarding), approval steps, a recorded handover and a one-page runbook. From $2,900. Typical length 7 to 10 days, with 30 days of tuning.
-- End-to-end ops engine: sales, delivery and finance connected, with an exceptions-only dashboard. From $8,500. Typical length 14 to 21 days, with 90 days of tuning.
+- Single AI workflow sprint: one pipeline built and live (usually enquiry triage or client onboarding), approval steps, a recorded handover and a one-page runbook. From $2,900. Typical length 7 to 10 days, with 30 days of tuning.
+- End-to-end AI ops engine: sales, delivery and finance connected, with an exceptions-only dashboard. From $8,500. Typical length 14 to 21 days, with 90 days of tuning.
 - The final price is confirmed in writing before work starts.
 - Free 15-minute workflow call and a free 2-minute diagnostic that shows which workflows to automate first.
 
@@ -14,11 +14,12 @@
 - [Pricing](https://wayneconrad.com/pricing.html): the three sprints, what is not included, guarantee and data handling
 - [Diagnostic](https://wayneconrad.com/diagnostic.html): free 2-minute diagnostic for owners
 - [Resources](https://wayneconrad.com/resources.html): guides and articles
+- [AI hand-off checklist](https://wayneconrad.com/ai-handoff-checklist.html): free five-question checklist and worksheet to complete before handing a process to AI
 - [Advisory services](https://wayneconrad.com/growth.html)
 - [FAQ](https://wayneconrad.com/faq.html)
-- [Hidden friction tax](https://wayneconrad.com/articles/hidden-friction-tax.html)
-- [Delegate decision rights](https://wayneconrad.com/articles/delegate-decision-rights.html)
-- [Headcount vs architecture](https://wayneconrad.com/articles/headcount-vs-architecture.html)
+- [The hidden cost of manual work](https://wayneconrad.com/articles/hidden-friction-tax.html)
+- [How to set approval rules for AI automation](https://wayneconrad.com/articles/delegate-decision-rights.html)
+- [Why hiring won't fix a manual process](https://wayneconrad.com/articles/headcount-vs-architecture.html)
 - [AI trust gap](https://wayneconrad.com/ai-trust-gap.html)
 - [Privacy](https://wayneconrad.com/privacy.html)
 - [Terms of Service](https://wayneconrad.com/terms.html)

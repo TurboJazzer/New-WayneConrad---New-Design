@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What Manual Coordination Is Costing You | Wayne Conrad Advisory</title>
-<meta name="description" content="A calculator that estimates what manual coordination costs your business each year, based on the numbers you enter.">
-<link rel="canonical" href="https://wayneconrad.com/shadow-payroll-calculator.html">
-<meta property="og:url" content="https://wayneconrad.com/shadow-payroll-calculator.html">
+<title>Manual Work Cost Calculator | Wayne Conrad Advisory</title>
 <link rel="stylesheet" href="/shell.css">
 <style>*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
 :root{
@@ -301,8 +298,9 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-links">Menu</button>
   </div>
 </header>
+<main id="main" tabindex="-1">
 <div class="page-header">
-  <h1>What Manual Coordination Is Costing You</h1>
+  <h1>Manual Work Cost Calculator</h1>
   <p>Calculate what manual coordination is actually costing your business. Enter your team roles, hourly cost, and hours spent on administrative work each week. The number usually surprises people, and it's the number that should come before any AI implementation, not after.</p>
   <div class="header-meta">
     <span>Wayne Conrad Advisory</span>
@@ -429,7 +427,7 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
       <div class="result-box">
         <label>Coordination cost as % of total payroll</label>
         <div class="result-value" id="pctOfPayroll">0%</div>
-        <div class="result-sub">my rule of thumb is 15 to 20% (my own estimate, not an industry benchmark)</div>
+        <div class="result-sub">the share of payroll spent on manual coordination, from your own numbers</div>
       </div>
       <div class="result-box">
         <label>Highest coordination cost role</label>
@@ -449,6 +447,7 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
 
 </div>
 
+</main>
 <footer class="site-foot">
   <div class="foot-in">
     <div class="fcol fbrand">
@@ -459,8 +458,8 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <nav class="fcol" aria-label="Sprints">
       <h2 class="fh">Sprints</h2>
       <a href="/pricing.html">AI Cleanup Sprint</a>
-      <a href="/pricing.html">Single Workflow Sprint</a>
-      <a href="/pricing.html">End-to-End Ops Engine</a>
+      <a href="/pricing.html">Single AI workflow sprint</a>
+      <a href="/pricing.html">End-to-end AI ops engine</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
@@ -477,7 +476,8 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
-      <p>A remote-first company</p>
+      <p>A remote-first company, based in South Africa</p>
+      <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
       <p>Last updated: 16 October 2026</p>
     </div>
   </div>
@@ -613,14 +613,14 @@ function recalc() {
     let level = '';
     let action = '';
     if (pct < 10) {
-      level = 'Your manual coordination cost is below the 15 to 20 percent rule of thumb I use (my own estimate, not a measured industry figure). Either your processes are well-designed, or the hours are being underestimated. Worth a second look at the roles doing the most coordination work.';
-      action = 'Map the three highest-volume coordination tasks in your business and ask whether a defined process could remove the manual step.';
+      level = 'On your numbers, a small share of payroll goes to manual coordination. Either your processes are well-designed, or the hours are being underestimated. Worth a second look at the roles doing the most coordination work.';
+      action = 'Map the three highest-volume coordination tasks in your business and ask whether a defined process, or an AI automation, could remove the manual step.';
     } else if (pct < 20) {
-      level = 'Your manual coordination cost sits within the typical range for a service business at your stage. The cost is real but it is not yet at a level that suggests structural dysfunction. There is meaningful room to recover margin through process improvement.';
-      action = 'Start with the role showing the highest coordination cost. Map exactly what that person does manually each week and identify the single task most suitable for a repeatable process.';
+      level = 'On your numbers, manual coordination takes a meaningful share of payroll. The cost is real, and there is room to recover margin by automating the repeatable steps.';
+      action = 'Start with the role showing the highest coordination cost. Map exactly what that person does manually each week and pick the single task most suitable for AI automation.';
     } else {
-      level = 'Your manual coordination cost is above the typical range. At this level the cost is a margin problem, not an efficiency inconvenience. Your most expensive people are spending a significant portion of their week on work that does not require their expertise.';
-      action = 'This warrants a structured process mapping exercise before the next hire. Adding headcount into an environment with this level of administrative overhead typically makes the problem worse, not better.';
+      level = 'On your numbers, manual coordination takes a large share of payroll. At this level the cost is a margin problem, not an efficiency inconvenience. Your most expensive people are spending a significant portion of their week on work that does not require their expertise.';
+      action = 'This warrants mapping the process and automating the repeatable steps before the next hire. Adding headcount into an environment with this much manual coordination often makes the problem worse, not better.';
     }
     insight.innerHTML = `
       <p>${level}</p>
@@ -648,5 +648,6 @@ recalc();
 <script>(function(){document.documentElement.classList.add('js');var mb=document.querySelector('.menu-btn'),ln=document.getElementById('site-links');if(mb&&ln){mb.addEventListener('click',function(){var o=ln.classList.toggle('open');mb.setAttribute('aria-expanded',o?'true':'false');});}})();</script>
 <script src="/cookie-consent.js" defer></script>
 
+<script src="/a11y-labels.js" defer></script>
 </body>
 </html>

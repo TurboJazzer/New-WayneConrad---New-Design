@@ -40,7 +40,7 @@ exports.handler = async (event) => {
 
     // ── Step 1: Generate report via Claude ──────────────────────────────────
     const claudeBody = JSON.stringify({
-      model: 'claude-sonnet-4-5',
+      model: 'claude-sonnet-5-5',
       max_tokens: 1000,
       messages: payload.messages
     });
@@ -102,7 +102,7 @@ exports.handler = async (event) => {
               </div>
               <div style="border-top: 1px solid #e2e8f0; padding-top: 28px; margin-top: 8px;">
                 <p style="font-size: 15px; color: #374151; margin: 0 0 16px;">If something in this report resonates or raises a question, reply directly to this email. I read every reply personally.</p>
-                <p style="font-size: 15px; color: #374151; margin: 0 0 16px;">While you are thinking through what came up, the <a href="https://wayneconrad.com/resources.html" style="color: #2563eb; text-decoration: none; font-weight: 500;">Decision Rights Mapping Template</a> on my resources page is a practical first step. It walks you through exactly where your business depends on you personally and what to hand over first.</p>
+                <p style="font-size: 15px; color: #374151; margin: 0 0 16px;">While you are thinking through what came up, the <a href="https://wayneconrad.com/resources.html#candidate-map" style="color: #2563eb; text-decoration: none; font-weight: 500;">AI Workflow Candidate Map</a> on my resources page is a practical first step. It lists the workflows that take the most manual hours and helps you pick which to automate first.</p>
                 <p style="font-size: 15px; color: #374151; margin: 0 0 24px;">If you want to talk through what this means for ${company} specifically, reply with a time that works and we will set up a call.</p>
                 <p style="font-size: 15px; color: #374151; margin: 0;">Wayne Conrad<br><span style="color: #6b7280; font-size: 13px;">AI Automation Advisor for SME Owners<br>wayne@wayneconrad.com</span></p>
               </div>

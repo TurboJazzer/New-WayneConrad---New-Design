@@ -230,6 +230,11 @@
   status = 301
   force = true
 [[redirects]]
+  from = "/ai-workflow-candidate-map"
+  to = "/ai-workflow-candidate-map.html"
+  status = 301
+  force = true
+[[redirects]]
   from = "/client-health-scorecard"
   to = "/client-health-scorecard.html"
   status = 301
@@ -269,6 +274,12 @@
 [[redirects]]
   from = "/terms"
   to = "/terms.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ai-handoff-checklist"
+  to = "/ai-handoff-checklist.html"
   status = 301
   force = true
 

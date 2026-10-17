@@ -272,6 +272,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <li>Personalised report, no generic score</li>
   </ul>
 </div></section>
+<section aria-labelledby="example-h" style="max-width:760px;margin:32px auto 0;padding:0 5%">
+  <details style="background:#fff;border:1px dashed #94a3b8;border-radius:8px;padding:16px 20px;color:#0f172a">
+    <summary id="example-h" style="cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center">See an example result (illustrative, not a client)</summary>
+    <p style="margin:8px 0 12px;font-size:14px;color:#475569">Illustrative model, not a client. Your report is written from your own answers.</p>
+    <h3 style="font-size:17px;margin:0 0 4px">Mostly Manual</h3>
+    <p style="margin:0 0 12px">Enquiries, onboarding and weekly reports are handled by hand between tools, and work moves when someone nudges it.</p>
+    <h3 style="font-size:17px;margin:0 0 4px">What this means for the business</h3>
+    <p style="margin:0 0 12px">Slow replies and late invoices are the likely cost. Weekly reporting is the biggest block of repeat work.</p>
+    <h3 style="font-size:17px;margin:0 0 4px">Three things worth doing next</h3>
+    <ol style="margin:0 0 4px 20px;padding:0">
+      <li>Map how an enquiry becomes a client, as it really runs.</li>
+      <li>Automate enquiry replies and onboarding first, with approval above limits you set.</li>
+      <li>Add an exceptions-only weekly report, so one person checks only what looks wrong.</li>
+    </ol>
+  </details>
+</section>
 <div class="wrap" id="start">
   <div class="prog-wrap" id="progWrap">
     <div class="prog-top">
@@ -287,7 +303,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div id="contactSection" class="hidden">
     <div class="contact-card">
       <h2>Almost there.</h2>
-      <p>Your report is ready to generate. Enter your details below and I will write a personalised assessment based on your exact answers.</p>
+      <p>Your report is ready to generate. Enter your details below and AI will write a personalised assessment based on your exact answers.</p>
       <div class="form-row">
         <div class="field"><label for="fName">First name</label><input type="text" id="fName" autocomplete="given-name" aria-required="true" placeholder="Sarah" /></div>
         <div class="field"><label for="lName">Last name</label><input type="text" id="lName" autocomplete="family-name" placeholder="Mitchell" /></div>
@@ -348,8 +364,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <nav class="fcol" aria-label="Sprints">
       <h2 class="fh">Sprints</h2>
       <a href="/pricing.html">AI Cleanup Sprint</a>
-      <a href="/pricing.html">Single Workflow Sprint</a>
-      <a href="/pricing.html">End-to-End Ops Engine</a>
+      <a href="/pricing.html">Single AI workflow sprint</a>
+      <a href="/pricing.html">End-to-end AI ops engine</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
@@ -366,7 +382,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
-      <p>A remote-first company</p>
+      <p>A remote-first company, based in South Africa</p>
+      <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
       <p>Last updated: 16 October 2026</p>
     </div>
   </div>
@@ -631,7 +648,7 @@ async function generateReport() {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5',
+        model: 'claude-sonnet-5-5',
         max_tokens: 1000,
         messages: [{role: 'user', content: prompt}],
         submitterName: (fn + ' ' + ln).trim(),
@@ -690,7 +707,7 @@ function renderReport(name, company, pct, level, text) {
     '</div>' +
     '<div class="score-text">' +
     '<h3>' + level + '</h3>' +
-    '<p>Assessed across operational continuity, process ownership, decision rights, financial visibility, and hiring discipline.</p>' +
+    '<p>Assessed across routine admin, handoffs between tools, how exceptions are handled, financial visibility and how work was handled when it piled up.</p>' +
     '</div></div>';
   var sections = splitSections(text);
   var labels = ['Where you stand', 'What this means for your business', 'Three things worth doing next'];

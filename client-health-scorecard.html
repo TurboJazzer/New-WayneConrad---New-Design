@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Client Health Scorecard | Wayne Conrad Advisory</title>
-<meta name="description" content="A one-page scorecard to rate how healthy each client relationship is. Fill it in on screen, then print it or save it as a PDF.">
-<link rel="canonical" href="https://wayneconrad.com/client-health-scorecard.html">
-<meta property="og:url" content="https://wayneconrad.com/client-health-scorecard.html">
 <link rel="stylesheet" href="/shell.css">
 <style>*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
 :root{
@@ -276,6 +274,7 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-links">Menu</button>
   </div>
 </header>
+<main id="main" tabindex="-1">
 <div class="page-header">
   <h1>Client Health Scorecard</h1>
   <p>Surface the early warning signals of client disengagement before a relationship is lost. Score each client weekly across six signals that predict churn before it happens.</p>
@@ -318,6 +317,7 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
 
 </div>
 
+</main>
 <footer class="site-foot">
   <div class="foot-in">
     <div class="fcol fbrand">
@@ -328,8 +328,8 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <nav class="fcol" aria-label="Sprints">
       <h2 class="fh">Sprints</h2>
       <a href="/pricing.html">AI Cleanup Sprint</a>
-      <a href="/pricing.html">Single Workflow Sprint</a>
-      <a href="/pricing.html">End-to-End Ops Engine</a>
+      <a href="/pricing.html">Single AI workflow sprint</a>
+      <a href="/pricing.html">End-to-end AI ops engine</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
@@ -346,7 +346,8 @@ input[type=checkbox],input[type=radio]{width:24px;height:24px}
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
-      <p>A remote-first company</p>
+      <p>A remote-first company, based in South Africa</p>
+      <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
       <p>Last updated: 16 October 2026</p>
     </div>
   </div>
@@ -526,5 +527,6 @@ function clearAll() {
 addClient();
 addClient();
 </script>
+<script src="/a11y-labels.js" defer></script>
 </body>
 </html>
