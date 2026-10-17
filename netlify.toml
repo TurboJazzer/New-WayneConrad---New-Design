@@ -9,6 +9,9 @@
 # unreliable when toggled off, so this is handled explicitly here instead.
 # Strip Range header for crawlers to ensure full 200 OK HTML responses
 [[edge_functions]]
+  path = "/staff/*"
+  function = "staff-gate"
+[[edge_functions]]
   path = "/*.html"
   function = "strip-range"
 [[edge_functions]]
@@ -300,3 +303,9 @@
   for = "/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/staff/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store"

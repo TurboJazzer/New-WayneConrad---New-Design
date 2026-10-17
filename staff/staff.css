@@ -1,0 +1,46 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body.staff{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#1f2937;background:linear-gradient(180deg,#1e3a8a 0,#0f172a 360px) #0f172a;min-height:100vh}
+@media(min-width:1200px){body.staff{font-size:18px}}
+.topbar{position:sticky;top:0;z-index:20;background:#0f172a;border-bottom:1px solid #1e3a8a;color:#fff}
+.topbar-in{max-width:1400px;margin:0 auto;padding:8px 16px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.topbar .ttl{font-weight:700;margin-right:auto;font-size:16px}
+.topbar a.home{color:#bfdbfe;text-decoration:none;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:6px;border:1px solid #64748b;background:#1e293b;color:#fff;font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.pri{background:#1d4ed8;border-color:#1d4ed8}
+.btn:focus,a:focus,input:focus{outline:3px solid #93c5fd;outline-offset:2px}
+.layout{max-width:1400px;margin:0 auto;padding:32px 16px 64px;display:block}
+@media(min-width:1100px){.layout.has-toc{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;align-items:start}}
+.toc{display:none}
+@media(min-width:1100px){.toc{display:block;position:sticky;top:76px;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:8px;padding:16px;max-height:calc(100vh - 100px);overflow:auto;font-size:15px}}
+.toc h2{font-size:15px;margin:0 0 8px;color:#0f172a;text-transform:uppercase;letter-spacing:.06em}
+.toc a{display:block;padding:6px 8px;border-radius:4px;color:#1f2937;text-decoration:none;min-height:32px}
+.toc a:hover{background:#e2e8f0}.toc a.on{background:#1d4ed8;color:#fff}
+h1{font-size:40px;line-height:1.15;margin:0 0 8px;color:#fff}
+.lede{color:#cbd5e1;margin:0 0 24px;max-width:72ch}
+.card{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:8px;padding:24px;margin:0 0 24px}
+@media(min-width:900px){.card{padding:32px}}
+.card h2{font-size:28px;line-height:1.25;margin:0 0 12px;color:#0f172a}
+.card h3{font-size:20px;margin:18px 0 6px;color:#0f172a}
+.card.sched{background:#e2e8f0}
+.read{max-width:72ch;margin:0 auto}
+.num{font-weight:700;color:#1d4ed8;margin-right:8px}
+.banner{background:#fef3c7;border:1px solid #f59e0b;color:#78350f;border-radius:8px;padding:14px 18px;margin:0 0 24px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th,td{padding:10px 12px;border-bottom:1px solid #cbd5e1;text-align:left;vertical-align:top}
+thead th{background:#e2e8f0}tbody tr:nth-child(even){background:#f8fafc}
+.fill{background:#fef08a;padding:0 3px;border-radius:3px}
+.home-cards{display:grid;gap:24px}@media(min-width:800px){.home-cards{grid-template-columns:1fr 1fr}}
+.home-cards a.card{text-decoration:none;color:inherit;display:block}.home-cards a.card:hover{border-color:#1d4ed8}
+.stepper{max-width:1200px;display:grid;gap:16px;margin:0 0 24px;padding:0;list-style:none}
+@media(min-width:900px){.stepper{grid-template-columns:1fr 1fr}}
+.ms{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:8px;padding:20px 20px 20px 72px;position:relative}
+.ms .badge{position:absolute;left:16px;top:18px;width:40px;height:40px;border-radius:50%;background:#1d4ed8;color:#fff;font-weight:700;display:grid;place-items:center}
+.ms h3{margin:0 0 10px;font-size:20px;color:#0f172a}
+.grid2{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:15px;margin:0 0 12px}
+.grid2 dt{font-weight:700;color:#334155}.grid2 dd{margin:0}
+.pill{display:inline-block;padding:2px 12px;border-radius:99px;font-size:14px;font-weight:700;color:#fff;background:#475569}
+.pill.doing{background:#1d4ed8}.pill.done{background:#15803d}
+.ms select{min-height:44px;font:inherit;padding:0 10px;border:1px solid #64748b;border-radius:6px;background:#fff}
+.rules{background:#e2e8f0}
+.saved{font-size:14px;color:#cbd5e1}
+@media print{body.staff{background:#fff;color:#000;font-size:12pt}.topbar,.toc,.saved,.btn{display:none!important}.layout{display:block;padding:0}h1{color:#000}.lede{color:#000}.card,.ms,.card.sched,.rules{background:#fff;border:0;border-bottom:1px solid #999;border-radius:0;padding:8px 0;margin:0 0 10px}.fill{background:none;border-bottom:1px solid #000}}
