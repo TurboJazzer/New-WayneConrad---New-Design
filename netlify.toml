@@ -201,7 +201,7 @@
   force = true
 [[redirects]]
   from = "/growth"
-  to = "/growth.html"
+  to = "/pricing.html"
   status = 301
   force = true
 [[redirects]]
@@ -309,3 +309,9 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow, noarchive"
     Cache-Control = "no-store"
+
+[[redirects]]
+  from = "/growth.html"
+  to = "/pricing.html"
+  status = 301
+  force = true

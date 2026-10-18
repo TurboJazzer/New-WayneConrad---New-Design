@@ -1,5 +1,6 @@
 const https = require('https');
 const crypto = require('crypto');
+const guard = require('../lib/guard');
 
 function makeRequest(options, body) {
   return new Promise((resolve, reject) => {
@@ -57,6 +58,11 @@ const COPY = {
     close: 'what comes up when you score your clients'
   }
 };
+// Only these resources can be sent. The link is built here from this list; the browser cannot choose it.
+const RESOURCES = {
+  'decision-rights-mapping-template': { name: 'Decision Rights Mapping Template', url: 'https://wayneconrad.com/decision-rights-template.html' },
+  'client-health-scorecard': { name: 'Client Health Scorecard', url: 'https://wayneconrad.com/client-health-scorecard.html' }
+};
 const DEFAULT_COPY = {
   intro: 'Use it on screen, then use your browser\'s Print to PDF function to save a copy.',
   button: 'Open the Resource',
@@ -64,41 +70,53 @@ const DEFAULT_COPY = {
   close: 'what comes up when you use this in your business'
 };
 
-function esc(v){ return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+const esc = guard.esc;
 
 exports.handler = async (event) => {
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Content-Type': 'application/json'
-  };
+  const origin = (event.headers && (event.headers.origin || event.headers.Origin)) || '';
+  const headers = guard.corsHeaders(origin);
 
   if (event.httpMethod === 'OPTIONS') {
-    return { statusCode: 200, headers, body: '' };
+    return { statusCode: guard.originAllowed(event) ? 200 : 403, headers, body: '' };
+  }
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, headers, body: JSON.stringify({ error: 'Method not allowed' }) };
+  }
+  if (!guard.originAllowed(event)) {
+    return { statusCode: 403, headers, body: JSON.stringify({ error: 'Origin not allowed' }) };
   }
 
   const resendKey = process.env.RESEND_API_KEY;
   const tokenSecret = process.env.RESOURCE_TOKEN_SECRET;
 
-  if (!resendKey) {
-    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Email not configured' }) };
+  if (!resendKey || !tokenSecret) {
+    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Service not configured' }) };
   }
-  if (!tokenSecret) {
-    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Token secret not configured' }) };
+  if (event.body && event.body.length > 4000) {
+    return { statusCode: 413, headers, body: JSON.stringify({ error: 'Request too large' }) };
   }
 
   try {
-    const payload = JSON.parse(event.body);
-    const { firstName, lastName, email, resource, resourceName, resourceUrl } = payload;
+    const payload = JSON.parse(event.body || '{}');
+    const firstName = guard.line(payload.firstName, 60);
+    const lastName = guard.line(payload.lastName, 60);
+    const email = guard.line(payload.email, 254);
+    const resource = guard.line(payload.resource, 80);
     const isEstimate = resource === 'manual-work-cost-estimate';
+    const known = Object.prototype.hasOwnProperty.call(RESOURCES, resource) ? RESOURCES[resource] : null;
     const rows = (isEstimate && Array.isArray(payload.summary) ? payload.summary : []).slice(0, 10)
-      .map(r => ({ label: String(r && r.label || '').slice(0, 80), value: String(r && r.value || '').slice(0, 120) }))
+      .map(r => ({ label: guard.line(r && r.label, 80), value: guard.line(r && r.value, 120) }))
       .filter(r => r.label && r.value);
+    // Name and link come from the server list, never from the request.
+    const resourceName = isEstimate ? 'Manual work cost estimate' : (known ? known.name : '');
+    const resourceUrl = known ? known.url : '';
     const fnH = esc(firstName), lnH = esc(lastName), rnH = esc(resourceName), emailH = esc(email);
 
-    if (!firstName || !email || !resource || (!isEstimate && !resourceUrl) || (isEstimate && !rows.length)) {
-      return { statusCode: 400, headers, body: JSON.stringify({ error: 'Missing required fields' }) };
+    if (!firstName || !guard.validEmail(email) || (!isEstimate && !known) || (isEstimate && !rows.length)) {
+      return { statusCode: 400, headers, body: JSON.stringify({ error: 'Invalid request' }) };
+    }
+    if (guard.limited('ip:' + guard.clientIp(event), 8, 3600000) || guard.limited('em:' + email.toLowerCase(), 3, 3600000)) {
+      return { statusCode: 429, headers: { ...headers, 'Retry-After': '3600' }, body: JSON.stringify({ error: 'Too many requests. Please try again later.' }) };
     }
 
     // ── Build the token-protected link ─────────────────────────────────────
@@ -106,7 +124,7 @@ exports.handler = async (event) => {
     if (!isEstimate) {
       const token = generateToken(email, resource, tokenSecret);
       const separator = resourceUrl.includes('?') ? '&' : '?';
-      protectedUrl = `${resourceUrl}${separator}token=${token}`;
+      protectedUrl = esc(`${resourceUrl}${separator}token=${token}`);
     }
 
     const copy = COPY[resource] || DEFAULT_COPY;
@@ -208,6 +226,6 @@ exports.handler = async (event) => {
 
   } catch (err) {
     console.error('Resource gate error:', err.message);
-    return { statusCode: 500, headers, body: JSON.stringify({ error: err.message }) };
+    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Something went wrong' }) };
   }
 };

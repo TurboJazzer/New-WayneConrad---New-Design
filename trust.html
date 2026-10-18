@@ -80,11 +80,18 @@ body{
 }
 .author-avatar img{ width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
 .author-text p.author-name{ font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-.author-text p.author-desc{ font-size: 13.5px; color: var(--mid-grey); line-height: 1.5; margin-bottom: 0; }
+.author-text p.author-desc{ font-size: 13.5px; color: #4b5563; line-height: 1.5; margin-bottom: 0; }
 .author-text a{ color: var(--blue); text-decoration: none; }
 .author-text a:hover{ text-decoration: underline; }
 
 
+.glance{width:100%;border-collapse:collapse;margin:0 0 28px;background:#fff;border:1px solid var(--border);border-radius:6px;font-size:15px}
+.glance th,.glance td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--border);line-height:1.5}
+.glance thead th{background:#0f172a;color:#fff;font-size:13px;letter-spacing:.04em}
+.glance tbody th{font-weight:600;color:var(--navy);width:28%}
+.glance td:last-child{white-space:nowrap}
+.glance a{color:var(--blue-cta)}
+@media(max-width:560px){.glance,.glance tbody,.glance tr,.glance th,.glance td{display:block;width:auto}.glance thead{position:absolute;left:-9999px}.glance tr{padding:10px 14px;border-bottom:1px solid var(--border)}.glance tbody th,.glance th,.glance td{border:0;padding:2px 0;width:auto}.glance td:last-child{white-space:normal;font-size:13.5px;color:#4b5563}}
 .sa{background:#fff;border:1px solid var(--border);border-left:4px solid var(--blue-cta);border-radius:6px;padding:18px 22px;margin:0 0 28px}
 .q{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;margin:0 0 26px}
 .q .n{grid-row:1/3;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
@@ -180,15 +187,44 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
 <main id="main" class="article-body">
   <div class="sa"><p style="margin:0"><strong>Short answer:</strong> an agreement is signed before I see any client data, every tool that may handle it is named in writing, AI workflows keep a person in the approval loop, and you own what is built. I hold no security certification, and this page says so plainly.</p></div>
 
+  <h2>Key terms at a glance</h2>
+  <table class="glance">
+    <caption class="sr-only">Key data terms and where they are set out</caption>
+    <thead><tr><th scope="col">Term</th><th scope="col">What I commit to</th><th scope="col">Where</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Agreement</th><td>Signed before I see any client data.</td><td><a href="/dpa.html">DPA</a></td></tr>
+      <tr><th scope="row">Breach notice</th><td>Within 48 hours of becoming aware.</td><td>DPA 8.1</td></tr>
+      <tr><th scope="row">New sub-processors</th><td>At least 14 days&rsquo; written notice, with a right to object.</td><td>DPA 6.2</td></tr>
+      <tr><th scope="row">Audit</th><td>On 14 days&rsquo; written notice, once in 12 months unless there is a breach.</td><td>DPA 11.1</td></tr>
+      <tr><th scope="row">Deletion</th><td>Project copies deleted when the support window ends, or earlier on request.</td><td>DPA</td></tr>
+      <tr><th scope="row">Transfers</th><td>I am in South Africa and my sub-processors may process data in the United States and elsewhere, under a valid transfer mechanism where the law requires one.</td><td>DPA 12.1</td></tr>
+      <tr><th scope="row">Certification</th><td>None. I hold no SOC 2 or ISO 27001 certificate.</td><td>Below</td></tr>
+    </tbody>
+  </table>
+
   <h2>How your data is handled</h2>
   <ul>
-    <li>I sign a data processing agreement before I see any client data.</li>
+    <li>I sign a <a href="/dpa.html">data processing agreement</a> before I see any client data.</li>
     <li>I name every tool that may handle your data in the written agreement before any data is shared.</li>
     <li>I use business or API accounts, which do not train on your content by default, and send tools only the fields a workflow needs.</li>
     <li>Access is through credentials you grant and can revoke, and it is scoped to the workflow.</li>
     <li>When the support window ends I remove my access and delete project copies, or earlier if you ask. Backups and records I am legally required to keep are the exception.</li>
-    <li>Ask for my sub-processor list at any time.</li>
+    <li>The sub-processors I use for this website are listed below.</li>
   </ul>
+
+  <h2 id="subprocessors">Sub-processors for this website</h2>
+  <ul>
+    <li><strong>Netlify:</strong> website hosting and the functions that run the diagnostic and resource requests.</li>
+    <li><strong>Anthropic:</strong> writes the diagnostic report from your answers, through its API under commercial terms.</li>
+    <li><strong>Resend:</strong> sends the report and resource emails.</li>
+    <li><strong>HubSpot:</strong> call booking.</li>
+    <li><strong>Google Analytics and Tag Manager:</strong> usage analytics, only after you accept cookies.</li>
+  </ul>
+  <p>Checked 18 October 2026. For a sprint, the tools that may handle your data are named in the written agreement before any data is shared.</p>
+
+  <h2 id="dpa">Data processing agreement</h2>
+  <p>The agreement I sign before I see any client data is published in full: <a href="/dpa.html">read the data processing agreement</a> or <a href="/data-processing-agreement.pdf">download the PDF</a>. It covers instructions, confidentiality, security, sub-processors, breach notice within 48 hours, deletion, audits, and international transfers (the EU Standard Contractual Clauses, the UK Addendum, POPIA and the Australian Privacy Principles), plus the US state-law service-provider terms.</p>
+  <p>You contract with Wayne Conrad Advisory, a division of Poseidon Network Systems CC, South Africa.</p>
 
   <h2>Where a person stays in control</h2>
   <ul>
@@ -208,7 +244,7 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
   <h2>What happens to your diagnostic answers</h2>
   <ul>
     <li>They are used only to write your report, which is shown on the page and emailed to you.</li>
-    <li>They are not shared with anyone else, and I delete them if you ask.</li>
+    <li>They are not shared with anyone else, apart from the two services that process them for me: Anthropic writes the report text and Resend sends the email. I delete them if you ask.</li>
     <li>A software service writes the report text from your answers.</li>
   </ul>
 
@@ -229,7 +265,7 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
     <div class="author-avatar">
       <picture>
         <source srcset="/wayne-headshot.webp" type="image/webp">
-        <img src="/wayne-headshot.webp" alt="Wayne Conrad">
+        <img src="/wayne-headshot.webp" alt="Wayne Conrad" width="638" height="525" loading="lazy">
       </picture>
     </div>
     <div class="author-text">
@@ -251,6 +287,7 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
       <a href="/pricing.html">AI Cleanup Sprint</a>
       <a href="/pricing.html">Single AI Workflow Sprint</a>
       <a href="/pricing.html">End-to-End AI Ops Engine</a>
+      <a href="/scenarios.html">Scenarios</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
@@ -258,19 +295,19 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
       <h2 class="fh">Company</h2>
       <a href="/faq.html">FAQ</a>
       <a href="/trust.html">Trust and Data</a>
+      <a href="/dpa.html">Data Processing Agreement</a>
       <a href="/terms.html">Terms of Service</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="/growth.html">Advisory Services</a>
       <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
       <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
-      <a href="/staff/" rel="nofollow">Staff</a>
     </nav>
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
       <p>A remote-first company, based in South Africa</p>
       <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
-      <p>Last updated: 17 October 2026</p>
+      <p><a href="mailto:wayne@wayneconrad.com">wayne@wayneconrad.com</a></p>
+      <p>Last updated: 18 October 2026</p>
     </div>
   </div>
   <div class="foot-base"><p>&copy; 2026 Wayne Conrad Advisory. Available globally, remote-first.</p><p>Invoiced in USD &middot; Serving AU, SEA, UK and US teams</p></div>

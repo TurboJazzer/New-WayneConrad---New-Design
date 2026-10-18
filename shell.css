@@ -14,7 +14,7 @@
 .nav-logo{display:flex;align-items:center;min-height:44px;flex:none;line-height:0}
 .nav-logo img{width:88px;height:32px;border-radius:2px}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
-.nav-links a{display:flex;align-items:center;min-height:44px;padding:0 11px;color:#fff;text-decoration:none;font-size:15px;font-weight:500;border-radius:4px}
+.nav-links a{display:flex;align-items:center;min-height:44px;min-width:44px;justify-content:center;padding:0 11px;color:#fff;text-decoration:none;font-size:15px;font-weight:500;border-radius:4px}
 .nav-links a:hover{background:rgba(255,255,255,.12)}
 .nav-book{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 18px;border-radius:5px;background:#1d4ed8;color:#fff;border:2px solid #3b82f6;font-weight:700;font-size:15px;text-decoration:none;line-height:1.2;text-align:center}
 .nav-book:hover{background:#2563eb}

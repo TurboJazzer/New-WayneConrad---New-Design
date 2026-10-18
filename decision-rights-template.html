@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A free template to map the decisions that wait for one person, set a limit for each and write down who owns it. Fill it in on screen and print to PDF.">
+<link rel="canonical" href="https://wayneconrad.com/decision-rights-template.html">
 <title>Decision Rights Mapping Template | Wayne Conrad Advisory</title>
 <link rel="stylesheet" href="/shell.css">
 <style>*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
@@ -237,6 +240,8 @@ footer{
   .toggle-btn.active-no  { background: #fef2f2; }
 }
 
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #1d4ed8;outline-offset:2px}
 </style>
 
 <style>/* tap targets: at least 44px */
@@ -289,10 +294,10 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
   function showBlocked(reason) {
     var text = 'This link is no longer valid.';
     if (reason === 'expired') text = 'This link has expired. Links are valid for 7 days.';
-    if (reason === 'missing_token') text = 'This page requires an access link.';
+    if (reason === 'missing_token') text = 'This template is sent by email.';
     messageEl.innerHTML =
       '<p style="font-size: 15px; color: #0f172a; font-weight: 600; margin-bottom: 12px;">' + text + '</p>' +
-      '<p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">Request a fresh link from the resources page and it will arrive by email in a moment.</p>' +
+      '<p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">Request your personal link on the resources page and it will arrive by email in a moment. Links last 7 days.</p>' +
       '<a href="/resources.html" style="display: inline-block; background: #1d4ed8; color: #ffffff; font-size: 14px; font-weight: 600; padding: 10px 24px; border-radius: 4px; text-decoration: none;">Go to Resources</a>';
   }
 
@@ -344,7 +349,7 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
   </div>
 </div>
 
-<div class="wrap">
+<div class="wrap" id="main" tabindex="-1">
 
   <div class="how-to">
     <h2>How to use this template</h2>
@@ -614,6 +619,7 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
       <a href="/pricing.html">AI Cleanup Sprint</a>
       <a href="/pricing.html">Single AI Workflow Sprint</a>
       <a href="/pricing.html">End-to-End AI Ops Engine</a>
+      <a href="/scenarios.html">Scenarios</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
@@ -621,18 +627,18 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
       <h2 class="fh">Company</h2>
       <a href="/faq.html">FAQ</a>
       <a href="/trust.html">Trust and Data</a>
+      <a href="/dpa.html">Data Processing Agreement</a>
       <a href="/terms.html">Terms of Service</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="/growth.html">Advisory Services</a>
       <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
       <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
-      <a href="/staff/" rel="nofollow">Staff</a>
     </nav>
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
       <p>A remote-first company, based in South Africa</p>
       <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
+      <p><a href="mailto:wayne@wayneconrad.com">wayne@wayneconrad.com</a></p>
       <p>Last updated: 11 October 2026</p>
     </div>
   </div>

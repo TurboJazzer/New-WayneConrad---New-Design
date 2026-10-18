@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+const guard = require('../lib/guard');
 
 // ── Token verification ──────────────────────────────────────────────────
 // Recomputes the HMAC signature server-side using the secret (never sent
@@ -13,12 +14,7 @@ function base64urlDecode(input) {
 }
 
 exports.handler = async (event) => {
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Content-Type': 'application/json'
-  };
+  const headers = { ...guard.corsHeaders((event.headers && (event.headers.origin || event.headers.Origin)) || ''), 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS' };
 
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };

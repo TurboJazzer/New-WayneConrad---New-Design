@@ -30,7 +30,7 @@
 .nav-logo{display:flex;align-items:center;min-height:44px;flex:none;line-height:0}
 .nav-logo img{width:88px;height:32px;border-radius:2px}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
-.nav-links a{display:flex;align-items:center;min-height:44px;padding:0 11px;color:#fff;text-decoration:none;font-size:15px;font-weight:500;border-radius:4px}
+.nav-links a{display:flex;align-items:center;min-height:44px;min-width:44px;justify-content:center;padding:0 11px;color:#fff;text-decoration:none;font-size:15px;font-weight:500;border-radius:4px}
 .nav-links a:hover{background:rgba(255,255,255,.12)}
 .nav-book{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 18px;border-radius:5px;background:#1d4ed8;color:#fff;border:2px solid #3b82f6;font-weight:700;font-size:15px;text-decoration:none;line-height:1.2;text-align:center}
 .nav-book:hover{background:#2563eb}
@@ -102,7 +102,7 @@ p{margin:0 0 1em}
 .prog-wrap{margin-bottom:24px}
 .prog-top{display:flex;justify-content:space-between;font-size:15px;font-weight:600;color:#0f172a;margin-bottom:8px}
 .prog-track{height:10px;background:#e2e8f0;border:1px solid #94a3b8;border-radius:6px;overflow:hidden}
-.prog-fill{height:100%;background:#1d4ed8;transition:width .4s}
+.prog-fill{height:100%;width:100%;background:#1d4ed8;transform-origin:left;transform:scaleX(0);transition:transform .4s}
 .q-card,.contact-card,.load-card{background:#fff;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden}
 .q-card{padding:28px 18px 24px}
 .contact-card{padding:28px 18px}
@@ -271,7 +271,7 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
       <span id="progLabel" aria-live="polite">Question 1 of 5</span>
       <span id="progPct">0%</span>
     </div>
-    <div class="prog-track" aria-hidden="true"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    <div class="prog-track" aria-hidden="true"><div class="prog-fill" id="progFill"></div></div>
   </div>
   <div id="qSection"></div>
   <div id="teaserSection" class="hidden">
@@ -292,17 +292,17 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
           <label for="teamSize">Team size</label>
           <select id="teamSize">
             <option value="">Select...</option>
-            <option value="1-10">1 to 10 people</option>
-            <option value="11-30">11 to 30 people</option>
-            <option value="31-75">31 to 75 people</option>
-            <option value="76-150">76 to 150 people</option>
-            <option value="150+">150 or more</option>
+            <option value="under-5">Fewer than 5 people</option>
+            <option value="5-15">5 to 15 people</option>
+            <option value="16-30">16 to 30 people</option>
+            <option value="31-50">31 to 50 people</option>
+            <option value="over-50">More than 50 people</option>
           </select>
         </div>
       </div>
       <button class="btn btn-next" style="margin-top:6px" onclick="generateReport()">Generate my report</button>
       <div id="contactErr" role="alert"></div>
-      <p class="data-note"><strong>What happens to your answers.</strong> They are used only to write your report, which is shown here and emailed to you. They are not shared with anyone else, and I delete them if you ask. A software service writes the report text from your answers. To have your details deleted, <a href="mailto:wayne@wayneconrad.com?subject=Please%20delete%20my%20diagnostic%20answers">email me</a>.</p>
+      <p class="data-note"><strong>What happens to your answers.</strong> They are used only to write your report, which is shown here and emailed to you. They are not shared with anyone else, apart from the two services that process them for me: Anthropic writes the report text and Resend sends the email. I delete them if you ask. A software service writes the report text from your answers. To have your details deleted, <a href="mailto:wayne@wayneconrad.com?subject=Please%20delete%20my%20diagnostic%20answers">email me</a>.</p>
     </div>
   </div>
   <div id="loadSection" class="hidden">
@@ -343,6 +343,7 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
       <a href="/pricing.html">AI Cleanup Sprint</a>
       <a href="/pricing.html">Single AI Workflow Sprint</a>
       <a href="/pricing.html">End-to-End AI Ops Engine</a>
+      <a href="/scenarios.html">Scenarios</a>
       <a href="/diagnostic.html">Free Diagnostic</a>
       <a href="/resources.html">Free Tools and Templates</a>
     </nav>
@@ -350,19 +351,19 @@ footer.site-foot .foot-base{display:flex;flex-wrap:wrap;justify-content:space-be
       <h2 class="fh">Company</h2>
       <a href="/faq.html">FAQ</a>
       <a href="/trust.html">Trust and Data</a>
+      <a href="/dpa.html">Data Processing Agreement</a>
       <a href="/terms.html">Terms of Service</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="/growth.html">Advisory Services</a>
       <a href="https://meetings-na2.hubspot.com/wayne-conrad">Book a 15-Minute Call</a>
       <button id="cookie-preferences-link" type="button" onclick="window.showCookieBanner&&window.showCookieBanner()">Manage Cookies</button>
-      <a href="/staff/" rel="nofollow">Staff</a>
     </nav>
     <div class="fcol">
       <h2 class="fh">Who runs it</h2>
       <p>Wayne Conrad Advisory</p>
       <p>A remote-first company, based in South Africa</p>
       <p><a href="https://www.linkedin.com/in/wayneconrad">Wayne Conrad on LinkedIn</a></p>
-      <p>Last updated: 17 October 2026</p>
+      <p><a href="mailto:wayne@wayneconrad.com">wayne@wayneconrad.com</a></p>
+      <p>Last updated: 18 October 2026</p>
     </div>
   </div>
   <div class="foot-base"><p>&copy; 2026 Wayne Conrad Advisory. Available globally, remote-first.</p><p>Invoiced in USD &middot; Serving AU, SEA, UK and US teams</p></div>
@@ -468,7 +469,7 @@ window.addEventListener('pagehide', trackAbandonIfNeeded);
 function renderQ(i) {
   const q = Qs[i];
   const pct = Math.round((i / Qs.length) * 100);
-  document.getElementById('progFill').style.width = pct + '%';
+  document.getElementById('progFill').style.transform = 'scaleX(' + (pct / 100) + ')';
   document.getElementById('progLabel').textContent = 'Question ' + (i+1) + ' of ' + Qs.length;
   document.getElementById('progPct').textContent = pct + '%';
   document.getElementById('qSection').innerHTML =
@@ -544,7 +545,7 @@ function back() {
 }
 function showTeaser() {
   furthestStep = 'quiz_completed';
-  document.getElementById('progFill').style.width = '100%';
+  document.getElementById('progFill').style.transform = 'scaleX(1)';
   document.getElementById('progLabel').textContent = 'Almost done';
   document.getElementById('progPct').textContent = '100%';
   document.getElementById('qSection').innerHTML = '';
@@ -606,54 +607,29 @@ async function generateReport() {
   var s = calcScore();
   var pct = s.pct;
   var level = s.level;
-  function gl(qid) {
-    for (var i=0; i<Qs.length; i++) {
-      if (Qs[i].id === qid) {
-        for (var j=0; j<Qs[i].opts.length; j++) {
-          if (Qs[i].opts[j].v === ans[qid]) return Qs[i].opts[j].l;
-        }
-      }
-    }
-    return 'No answer';
-  }
-  var hrs = hoursRange();
-  var sp = sprintFor();
-  var prompt = 'You are Wayne Conrad. You built and sold two service businesses over 28 years. You now build AI workflows for owners of 5 to 50 person service businesses. You write in first person, plainly, with calm authority. No hype. No corporate language. No em dashes. No semicolons. Short direct sentences. Write about the workflow as the subject, in terms of what the AI workflow will do: draft, check, route, send. Never frame the report around the owner\'s stress, workload or psychology.\n\n' +
-    'A business owner just completed your AI Automation Readiness Diagnostic. Here are their details:\n\n' +
-    'Name: ' + fn + ' ' + ln + '\n' +
-    'Company: ' + co + '\n' +
-    'Team size: ' + (ts || 'not specified') + '\n' +
-    'Readiness: ' + level + '\n\n' +
-    'Their five answers:\n' +
-    '1. Workflow that costs the most manual time: "' + gl('q1') + '"\n' +
-    '2. Team hours a week on it: "' + gl('q2') + '" (their own estimate, about ' + hrs.year + ' on 46 working weeks)\n' +
-    '3. How defined the steps are: "' + gl('q3') + '"\n' +
-    '4. Where the information lives: "' + gl('q4') + '"\n' +
-    '5. How exceptions are decided: "' + gl('q5') + '"\n\n' +
-    'The sprint that matches their first answer is the ' + sp.name + ' (' + sp.price + ', typically ' + sp.time + '). Sprint prices on the site: AI cleanup sprint from $1,500, single AI workflow sprint from $2,900, end-to-end AI ops engine from $8,500. The final price is confirmed in writing before work starts.\n\n' +
-    'Write a personalised AI automation readiness report for ' + fn + '. Use exactly these three section headers on their own lines:\n\n' +
-    'WHERE THIS WORKFLOW STANDS\nWHAT TO FIX BEFORE WE BUILD\nTHE SPRINT THAT FITS\n\n' +
-    'Section 1 — WHERE THIS WORKFLOW STANDS: Two short paragraphs. Name the workflow and what an AI workflow would do in it, step by step. State the manual hours at stake as their own estimate. Say plainly how ready it is to automate, referring to their specific answers. Do not mention a score number.\n\n' +
-    'Section 2 — WHAT TO FIX BEFORE WE BUILD: Two short paragraphs. Name the one or two things in their answers that would make an automation unreliable, such as undefined steps, scattered data or unwritten approval limits. Say how each is fixed and where a person stays in the approval loop. If everything is already clear, say so and name the one thing still worth confirming.\n\n' +
-    'Section 3 — THE SPRINT THAT FITS: One short paragraph naming the ' + sp.name + ', its from-price and typical length, what is delivered, and that the price is confirmed in writing before work starts. Then one sentence suggesting the free 15-minute workflow call as the next step.\n\n' +
-    'Rules: Do not promise revenue, savings or hours saved. Do not name any software tool or product unless it appears in the answers above. Write only the report content. No preamble. No sign-off. No explanation.';
   try {
     var res = await fetch('/.netlify/functions/generate', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        model: 'claude-sonnet-5-5',
-        max_tokens: 1000,
-        messages: [{role: 'user', content: prompt}],
-        submitterName: (fn + ' ' + ln).trim(),
-        submitterEmail: em,
-        submitterCompany: co
+        firstName: fn,
+        lastName: ln,
+        email: em,
+        company: co,
+        teamSize: ts,
+        answers: {q1: ans.q1, q2: ans.q2, q3: ans.q3, q4: ans.q4, q5: ans.q5}
       })
     });
     clearInterval(iv);
     for (var i=0; i<ids.length; i++) {
       document.getElementById(ids[i]).classList.remove('active');
       document.getElementById(ids[i]).classList.add('done');
+    }
+    if (res.status === 429) {
+      document.getElementById('loadSection').classList.add('hidden');
+      document.getElementById('contactSection').classList.remove('hidden');
+      document.getElementById('contactErr').innerHTML = '<div class="err">Too many reports have been requested from this connection. Please try again in an hour, or email wayne@wayneconrad.com.</div>';
+      return;
     }
     var data = await res.json();
     var text = '';

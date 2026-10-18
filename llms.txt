@@ -6,6 +6,7 @@
 - AI cleanup sprint: repairs failing automations, removes duplicate tool subscriptions, delivers a written map of live automations. From $1,500. Typical length 3 to 5 days, with 30 days of support.
 - Single AI workflow sprint: one pipeline built and live (usually enquiry triage or client onboarding), approval steps, a handover and runbook. From $2,900. Typical length 7 to 10 days, with 30 days of tuning.
 - End-to-end AI ops engine: sales, delivery and finance connected, with an exceptions report. From $8,500. Typical length 14 to 21 days, with 90 days of tuning.
+- Typical final prices (the author's own estimates for typical scopes, not observed averages): about $1,500 to $3,000 for the cleanup sprint, $2,900 to $6,000 for the single workflow sprint and $8,500 to $15,000 for the end-to-end engine. Price drivers: number of systems connected, integrations and steps, monthly volume, and data quality.
 - The final price is confirmed in writing before work starts.
 - Typical monthly running costs, paid to the tool vendors and estimated from vendor prices checked on 17 October 2026: about $40 to $150 for a single workflow, about $150 to $500 for the end-to-end AI ops engine, usually no new software for the cleanup sprint. Estimates, not quotes; no savings are promised.
 - Free 15-minute workflow call and a free 2-minute AI Automation Readiness Diagnostic that shows how ready a business's busiest manual workflow is for AI, the hours at stake and which sprint fits.
@@ -13,12 +14,13 @@
 ## Key pages
 - [Home](https://wayneconrad.com/): offer, sprints, how it works
 - [Pricing](https://wayneconrad.com/pricing.html): the three sprints, what is not included, guarantee and data handling
+- [Scenarios](https://wayneconrad.com/scenarios.html): four typical situations (enquiries, onboarding, cleanup, end to end) with the workflow, approval points, sprint that fits and what is not promised. Scenarios, not client case studies.
 - [Diagnostic](https://wayneconrad.com/diagnostic.html): free 2-minute AI Automation Readiness Diagnostic
 - [Resources](https://wayneconrad.com/resources.html): guides and articles
 - [AI Workflow Candidate Map](https://wayneconrad.com/ai-workflow-candidate-map.html): free worksheet that scores up to five manual workflows and shows which to automate first and which sprint fits
+- [Data Processing Agreement](https://wayneconrad.com/dpa.html): the data processing agreement template signed before any client data is shared; also available as a PDF.
 - [Trust and Data](https://wayneconrad.com/trust.html): how data is handled, where a person stays in the approval loop, ownership, and what is not claimed
 - [AI hand-off checklist](https://wayneconrad.com/ai-handoff-checklist.html): free five-question checklist and worksheet to complete before handing a process to AI
-- [Advisory services](https://wayneconrad.com/growth.html)
 - [FAQ](https://wayneconrad.com/faq.html)
 - [Hidden friction tax](https://wayneconrad.com/articles/hidden-friction-tax.html)
 - [Delegate decision rights](https://wayneconrad.com/articles/delegate-decision-rights.html)
@@ -30,7 +32,7 @@
 ## Facts
 - Audience: owners of service businesses with 5 to 50 people.
 - Method: fix the process, then automate it. Approval steps stay with people.
-- Guarantee: written acceptance criteria before work starts; fixes at no charge for up to 10 working days from written notice; if still unmet, a refund of the fee paid for that sprint, as the only remedy for the work missing its criteria. Excludes problems caused by client changes, late access, incorrect data or third-party changes. Defects fixed during the support window.
+- Guarantee: written acceptance criteria before work starts; fixes at no charge for up to 10 working days from written notice; if still unmet, a refund of the fee paid for that sprint, as the only remedy for the work missing its criteria. Excludes problems caused by client changes, late access, incorrect data or third-party changes. Written notice naming the criterion is due within 14 days of handover. Defects are fixed during the support window.
 - Not claimed: no guarantee of revenue, savings or hours saved; no SOC 2 or ISO 27001 certification held by Wayne Conrad Advisory.
 - Data handling: an agreement is signed before data is shared; every tool that may handle client data is named in that agreement; business or API tiers only; minimum data; access is scoped and revocable; project copies are deleted when the support window ends, or earlier on request.
 
